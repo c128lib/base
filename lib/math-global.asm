@@ -65,6 +65,8 @@
  * @param[in] value The 16-bit value to subtract.
  * @param[in,out] dest The memory location of the other 16-bit value.
  * @returns Result is returned in dest memory location.
+ * @remark Register .A will be modified.
+ * @remark Flags N, O, Z and C will be affected.
  *
  * @since 0.1.0
  */
@@ -79,6 +81,8 @@
  *
  * @param[in,out] address The memory location of the 16-bit value to shift left.
  * @returns Result is returned in address memory location.
+ * @remark Register .A will be modified.
+ * @remark Flags N, Z and C will be affected.
  *
  * @since 0.1.0
  */
@@ -93,6 +97,7 @@
  *
  * @param[in,out] address The memory location of the 16-bit value to increment.
  * @returns Result is returned in address memory location.
+ * @remark Flags N and Z will be affected.
  *
  * @since 0.1.0
  */
@@ -107,6 +112,8 @@
  *
  * @param[in,out] address The memory location of the 16-bit value to decrement.
  * @returns Result is returned in address memory location.
+ * @remark Register .A will be modified.
+ * @remark Flags N and Z will be affected.
  *
  * @since 0.1.0
  */
@@ -123,7 +130,7 @@
  * @param[in] divisor divisor
  * @param[out] remainder remainder (wide as divisor)
  * @remark Registers .A, .X and .Y will be modified.
- * Flags N, Z and C will be affected.
+ * @remark Flags N, O, Z and C will be affected.
  *
  * @since 0.1.0
  */
@@ -139,8 +146,8 @@
  * @param[in,out] dividend dividend and also quotient
  * @param[in] divisor divisor
  * @param[out] remainder remainder (wide as divisor)
- * @remark Registers .A, .X and .Y will be modified.
- * @remark Flags N, Z and C will be affected.
+ * @remark Registers .A and .X will be modified.
+ * @remark Flags N, O, Z and C will be affected.
  *
  * @since 0.1.0
  */
