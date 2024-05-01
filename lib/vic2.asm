@@ -31,7 +31,7 @@
 
 #importonce
 
-#import "label/lib/vic2.asm"
+#import "labels/lib/vic2.asm"
 
 .filenamespace c128lib
 
