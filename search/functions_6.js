@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['sub16_0',['Sub16',['../math_8asm.html#a277d29a8e58c921e5db820e1cf158bff',1,'math.asm']]]
+  ['setbackgroundcolor_0',['SetBackgroundColor',['../vic2_8asm.html#a805440d17d14e6a7222ad8e12e211785',1,'vic2.asm']]],
+  ['setborderandbackgroundcolor_1',['SetBorderAndBackgroundColor',['../vic2_8asm.html#aaf271dfc5676d30854f6ee2ba9082f40',1,'vic2.asm']]],
+  ['setbordercolor_2',['SetBorderColor',['../vic2_8asm.html#ad745239cfce1e840c94493ca9639e75e',1,'vic2.asm']]],
+  ['setscreenandcharactermemory_3',['SetScreenAndCharacterMemory',['../vic2_8asm.html#a41bd78bc1430779dd005bd6eb18cc8bd',1,'vic2.asm']]],
+  ['setscreenmemoryandbitmappointer_4',['SetScreenMemoryAndBitmapPointer',['../vic2_8asm.html#a019728b3c82a42e44d6967ffbe8a28d4',1,'vic2.asm']]],
+  ['sub16_5',['Sub16',['../math_8asm.html#a277d29a8e58c921e5db820e1cf158bff',1,'math.asm']]]
 ];

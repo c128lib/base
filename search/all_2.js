@@ -9,7 +9,12 @@ var searchData=
   ['c128lib_5ffbmi_6',['c128lib_fbmi',['../common-global_8asm.html#ae58c2d2ecaf1f626d4974a75b87f4b56',1,'common-global.asm']]],
   ['c128lib_5ffbne_7',['c128lib_fbne',['../common-global_8asm.html#a60ea2a187d9be7d14287b5fc88b30400',1,'common-global.asm']]],
   ['c128lib_5finc16_8',['c128lib_Inc16',['../math-global_8asm.html#a2b2cb0369c6aaf9cb284a3550724ece8',1,'math-global.asm']]],
-  ['c128lib_5fsub16_9',['c128lib_Sub16',['../math-global_8asm.html#a99eb50c46d857ee7b32f8ae1f813ceb1',1,'math-global.asm']]],
-  ['common_2dglobal_2easm_10',['common-global.asm',['../common-global_8asm.html',1,'']]],
-  ['common_2easm_11',['common.asm',['../common_8asm.html',1,'']]]
+  ['c128lib_5fsetbackgroundcolor_9',['c128lib_SetBackgroundColor',['../vic2-global_8asm.html#aa2ba80b5bea957169c156383d8351076',1,'vic2-global.asm']]],
+  ['c128lib_5fsetborderandbackgroundcolor_10',['c128lib_SetBorderAndBackgroundColor',['../vic2-global_8asm.html#a1552c40009ea281beda3135c00ccfbdd',1,'vic2-global.asm']]],
+  ['c128lib_5fsetbordercolor_11',['c128lib_SetBorderColor',['../vic2-global_8asm.html#a1d25d9c0f296b1f0d7fe9a4ee6833b1a',1,'vic2-global.asm']]],
+  ['c128lib_5fsetscreenandcharactermemory_12',['c128lib_SetScreenAndCharacterMemory',['../vic2-global_8asm.html#ac7bc583c36627928a8a4bc8cb70a9cda',1,'vic2-global.asm']]],
+  ['c128lib_5fsetscreenmemoryandbitmappointer_13',['c128lib_SetScreenMemoryAndBitmapPointer',['../vic2-global_8asm.html#a4d9519360e0285099b393dfc1e788791',1,'vic2-global.asm']]],
+  ['c128lib_5fsub16_14',['c128lib_Sub16',['../math-global_8asm.html#a99eb50c46d857ee7b32f8ae1f813ceb1',1,'math-global.asm']]],
+  ['common_2dglobal_2easm_15',['common-global.asm',['../common-global_8asm.html',1,'']]],
+  ['common_2easm_16',['common.asm',['../common_8asm.html',1,'']]]
 ];
