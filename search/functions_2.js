@@ -9,10 +9,15 @@ var searchData=
   ['c128lib_5ffbmi_6',['c128lib_fbmi',['../common-global_8asm.html#ae58c2d2ecaf1f626d4974a75b87f4b56',1,'common-global.asm']]],
   ['c128lib_5ffbne_7',['c128lib_fbne',['../common-global_8asm.html#a60ea2a187d9be7d14287b5fc88b30400',1,'common-global.asm']]],
   ['c128lib_5finc16_8',['c128lib_Inc16',['../math-global_8asm.html#a2b2cb0369c6aaf9cb284a3550724ece8',1,'math-global.asm']]],
-  ['c128lib_5fsetbackgroundcolor_9',['c128lib_SetBackgroundColor',['../vic2-global_8asm.html#aa2ba80b5bea957169c156383d8351076',1,'vic2-global.asm']]],
-  ['c128lib_5fsetborderandbackgroundcolor_10',['c128lib_SetBorderAndBackgroundColor',['../vic2-global_8asm.html#a1552c40009ea281beda3135c00ccfbdd',1,'vic2-global.asm']]],
-  ['c128lib_5fsetbordercolor_11',['c128lib_SetBorderColor',['../vic2-global_8asm.html#a1d25d9c0f296b1f0d7fe9a4ee6833b1a',1,'vic2-global.asm']]],
-  ['c128lib_5fsetscreenandcharactermemory_12',['c128lib_SetScreenAndCharacterMemory',['../vic2-global_8asm.html#ac7bc583c36627928a8a4bc8cb70a9cda',1,'vic2-global.asm']]],
-  ['c128lib_5fsetscreenmemoryandbitmappointer_13',['c128lib_SetScreenMemoryAndBitmapPointer',['../vic2-global_8asm.html#a4d9519360e0285099b393dfc1e788791',1,'vic2-global.asm']]],
-  ['c128lib_5fsub16_14',['c128lib_Sub16',['../math-global_8asm.html#a99eb50c46d857ee7b32f8ae1f813ceb1',1,'math-global.asm']]]
+  ['c128lib_5fopenfile_9',['c128lib_OpenFile',['../io-global_8asm.html#a91d52675ce72abaeed5aefc8c6c69b07',1,'io-global.asm']]],
+  ['c128lib_5fopeniochannel_10',['c128lib_OpenIOChannel',['../io-global_8asm.html#ac02b781f904890be296f7a1f814a52da',1,'io-global.asm']]],
+  ['c128lib_5fsetbackgroundcolor_11',['c128lib_SetBackgroundColor',['../vic2-global_8asm.html#aa2ba80b5bea957169c156383d8351076',1,'vic2-global.asm']]],
+  ['c128lib_5fsetborderandbackgroundcolor_12',['c128lib_SetBorderAndBackgroundColor',['../vic2-global_8asm.html#a1552c40009ea281beda3135c00ccfbdd',1,'vic2-global.asm']]],
+  ['c128lib_5fsetbordercolor_13',['c128lib_SetBorderColor',['../vic2-global_8asm.html#a1d25d9c0f296b1f0d7fe9a4ee6833b1a',1,'vic2-global.asm']]],
+  ['c128lib_5fsetinputchannel_14',['c128lib_SetInputChannel',['../io-global_8asm.html#a348ac48c2acaa04d8a45161e4ec3c96e',1,'io-global.asm']]],
+  ['c128lib_5fsetioname_15',['c128lib_SetIOName',['../io-global_8asm.html#a48d03d6b05c12d5812cf2db1fa89a942',1,'io-global.asm']]],
+  ['c128lib_5fsetoutputchannel_16',['c128lib_SetOutputChannel',['../io-global_8asm.html#aa0d25b30762bd148f1f29db4ea259a22',1,'io-global.asm']]],
+  ['c128lib_5fsetscreenandcharactermemory_17',['c128lib_SetScreenAndCharacterMemory',['../vic2-global_8asm.html#ac7bc583c36627928a8a4bc8cb70a9cda',1,'vic2-global.asm']]],
+  ['c128lib_5fsetscreenmemoryandbitmappointer_18',['c128lib_SetScreenMemoryAndBitmapPointer',['../vic2-global_8asm.html#a4d9519360e0285099b393dfc1e788791',1,'vic2-global.asm']]],
+  ['c128lib_5fsub16_19',['c128lib_Sub16',['../math-global_8asm.html#a99eb50c46d857ee7b32f8ae1f813ceb1',1,'math-global.asm']]]
 ];
