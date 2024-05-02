@@ -146,9 +146,9 @@ Functions</h2></td></tr>
 <p>This macro opens an I/O channel with the specified file number, device number, and secondary address. It loads the parameters into the appropriate registers and then calls the SETLFS routine in the C128 Kernal.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filenumber</td><td>The file number for the I/O channel. </td></tr>
-    <tr><td class="paramname">devicenumber</td><td>The device number for the I/O channel. </td></tr>
-    <tr><td class="paramname">secondary</td><td>The secondary address for the I/O channel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filenumber</td><td>The file number for the I/O channel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">devicenumber</td><td>The device number for the I/O channel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">secondary</td><td>The secondary address for the I/O channel. </td></tr>
   </table>
   </dd>
 </dl>
@@ -182,8 +182,8 @@ Flags N and Z will be affected.</dd></dl>
 <p>This macro sets the name for I/O operations. It loads the length of the name and the address of the name into the appropriate registers, then calls the Kernal.JSETNAM routine.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">length</td><td>The length of the name. </td></tr>
-    <tr><td class="paramname">address</td><td>The address where the name is stored. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of the name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>The address where the name is stored. </td></tr>
   </table>
   </dd>
 </dl>
@@ -213,7 +213,7 @@ Flags N and Z will be affected.</dd></dl>
 <p>This macro sets the input channel for subsequent I/O operations. It loads the file number into the X register and then calls the CHKIN routine in the C128 Kernal.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filenumber</td><td>The file number for the input channel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filenumber</td><td>The file number for the input channel. </td></tr>
   </table>
   </dd>
 </dl>
@@ -244,7 +244,7 @@ Flags N and Z will be affected.</dd></dl>
 <p>This macro sets the output channel for subsequent I/O operations. It loads the file number into the X register and then calls the Kernal.JCHKOUT routine.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filenumber</td><td>The file number for the output channel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filenumber</td><td>The file number for the output channel. </td></tr>
   </table>
   </dd>
 </dl>
@@ -293,11 +293,11 @@ Flags N and Z will be affected.</dd></dl>
 <p>This macro opens a file for I/O operations. It sets the name for I/O operations, opens an I/O channel with the specified file number, device number, and secondary address, calls the OPEN routine in the C128 Kernal, and sets the input channel for subsequent I/O operations.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">length</td><td>The length of the name. </td></tr>
-    <tr><td class="paramname">address</td><td>The address where the name is stored. </td></tr>
-    <tr><td class="paramname">filenumber</td><td>The file number for the I/O channel. </td></tr>
-    <tr><td class="paramname">devicenumber</td><td>The device number for the I/O channel. </td></tr>
-    <tr><td class="paramname">secondary</td><td>The secondary address for the I/O channel.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of the name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>The address where the name is stored. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filenumber</td><td>The file number for the I/O channel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">devicenumber</td><td>The device number for the I/O channel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">secondary</td><td>The secondary address for the I/O channel.</td></tr>
   </table>
   </dd>
 </dl>
@@ -311,7 +311,7 @@ Flags N and Z will be affected.</dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="io-global_8asm.html">io-global.asm</a></li>
-    <li class="footer">Generated on Thu May 2 2024 20:22:46 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Thu May 2 2024 20:59:06 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

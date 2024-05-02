@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['inc16_0',['Inc16',['../math_8asm.html#a1f7eeabfb5695acf8eaa35149cfabaea',1,'math.asm']]],
-  ['incargument_1',['incArgument',['../common_8asm.html#a09bc8465ef30b0f07c9e0f342f3f3859',1,'common.asm']]]
+  ['getfirepressedport1_0',['GetFirePressedPort1',['../cia_8asm.html#a6601893cdf8b7512ffde9250235531cd',1,'cia.asm']]],
+  ['getfirepressedport2_1',['GetFirePressedPort2',['../cia_8asm.html#a2b820efff6c6e69199e09d8f4c820064',1,'cia.asm']]]
 ];
