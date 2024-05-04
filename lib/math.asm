@@ -195,7 +195,7 @@
  *
  * @details Divides the two-byte number dividend by the two-byte number divisor,
  * leaving the quotient in dividend and the remainder in remainder.
- * Addressing mode of 16-bit numbers uses little endian. 
+ * Addressing mode of 16-bit numbers uses little endian.
  *
  * @param[in,out] dividend dividend and also quotient
  * @param[in] divisor divisor
@@ -208,19 +208,19 @@
  * @since 0.1.0
  */
 .macro Div16By16(dividend, divisor, remainder) {
-    lda #0          
+    lda #0
     sta remainder     // Initialize remainder to 0.
     sta remainder+1
     ldx #16           // There are 16 bits in the dividend
 
   loop1:
     /* Shift the hi bit of dividend into remainder */
-    asl dividend     
-    rol dividend+1   
-    rol remainder    
+    asl dividend
+    rol dividend+1
+    rol remainder
     rol remainder+1
 
-    /* Trial subtraction */  
+    /* Trial subtraction */
     lda remainder
     sec
     sbc divisor
@@ -257,16 +257,16 @@
  * @since 0.1.0
  */
 .macro Div16By8(dividend, divisor, remainder) {
-    lda #0          
+    lda #0
     sta remainder     // Initialize remainder to 0.
     ldx #16           // There are 16 bits in the dividend
   loop1:
     /* Shift the hi bit of dividend into remainder */
-    asl dividend     
-    rol dividend+1   
-    rol remainder    
+    asl dividend
+    rol dividend+1
+    rol remainder
 
-    /* Trial subtraction */  
+    /* Trial subtraction */
     lda remainder
     sec
     sbc divisor

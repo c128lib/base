@@ -124,7 +124,7 @@
  *
  * @details Divides the two-byte number dividend by the two-byte number divisor,
  * leaving the quotient in dividend and the remainder in remainder.
- * Addressing mode of 16-bit numbers uses little endian. 
+ * Addressing mode of 16-bit numbers uses little endian.
  *
  * @param[in,out] dividend dividend and also quotient
  * @param[in] divisor divisor
