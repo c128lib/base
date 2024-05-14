@@ -104,10 +104,10 @@ $(function(){initNavTree('math-global_8asm.html',''); initResizable(); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a107847d229794da8d1da21676ddcd569" id="r_a107847d229794da8d1da21676ddcd569"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a107847d229794da8d1da21676ddcd569">c128lib_Add16</a> (value, dest)</td></tr>
+<tr class="memitem:a107847d229794da8d1da21676ddcd569" id="r_a107847d229794da8d1da21676ddcd569"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a107847d229794da8d1da21676ddcd569">c128lib_Add16</a> (<a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a>, dest)</td></tr>
 <tr class="memdesc:a107847d229794da8d1da21676ddcd569"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro performs a 16-bit addition operation.  <br /></td></tr>
 <tr class="separator:a107847d229794da8d1da21676ddcd569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99eb50c46d857ee7b32f8ae1f813ceb1" id="r_a99eb50c46d857ee7b32f8ae1f813ceb1"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99eb50c46d857ee7b32f8ae1f813ceb1">c128lib_Sub16</a> (value, dest)</td></tr>
+<tr class="memitem:a99eb50c46d857ee7b32f8ae1f813ceb1" id="r_a99eb50c46d857ee7b32f8ae1f813ceb1"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99eb50c46d857ee7b32f8ae1f813ceb1">c128lib_Sub16</a> (<a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a>, dest)</td></tr>
 <tr class="memdesc:a99eb50c46d857ee7b32f8ae1f813ceb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro performs a 16-bit subtraction operation.  <br /></td></tr>
 <tr class="separator:a99eb50c46d857ee7b32f8ae1f813ceb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e42e35cd554ada4862166e904014ecb" id="r_a9e42e35cd554ada4862166e904014ecb"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e42e35cd554ada4862166e904014ecb">c128lib_Asl16</a> (<a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
@@ -147,7 +147,7 @@ John Palermo</dd></dl>
         <tr>
           <td class="memname">macro c128lib_Add16 </td>
           <td>(</td>
-          <td class="paramtype">value</td>          <td class="paramname"><span class="paramname">, </span></td>
+          <td class="paramtype"><a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a></td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -167,7 +167,7 @@ John Palermo</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Result is returned in dest memory location.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>0.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
@@ -180,7 +180,7 @@ John Palermo</dd></dl>
         <tr>
           <td class="memname">macro c128lib_Sub16 </td>
           <td>(</td>
-          <td class="paramtype">value</td>          <td class="paramname"><span class="paramname">, </span></td>
+          <td class="paramtype"><a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a></td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -203,7 +203,7 @@ John Palermo</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
 <dd>
 Flags N, O, Z and C will be affected.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>0.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
@@ -234,7 +234,7 @@ Flags N, O, Z and C will be affected.</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
 <dd>
 Flags N, Z and C will be affected.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>0.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
@@ -263,7 +263,7 @@ Flags N, Z and C will be affected.</dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Result is returned in address memory location. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Flags N and Z will be affected.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>0.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
@@ -294,7 +294,7 @@ Flags N, Z and C will be affected.</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
 <dd>
 Flags N and Z will be affected.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>0.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
@@ -335,7 +335,7 @@ Flags N and Z will be affected.</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Registers .A, .X and .Y will be modified. </dd>
 <dd>
 Flags N, O, Z and C will be affected.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>0.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
@@ -376,7 +376,7 @@ Flags N, O, Z and C will be affected.</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Registers .A and .X will be modified. </dd>
 <dd>
 Flags N, O, Z and C will be affected.</dd></dl>
-<dl class="section since"><dt>Since</dt><dd>0.1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
@@ -386,7 +386,7 @@ Flags N, O, Z and C will be affected.</dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="math-global_8asm.html">math-global.asm</a></li>
-    <li class="footer">Generated on Thu May 2 2024 20:59:06 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Tue May 14 2024 19:53:16 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

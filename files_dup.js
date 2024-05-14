@@ -8,6 +8,8 @@ var files_dup =
     [ "io.asm", "io_8asm.html", "io_8asm" ],
     [ "math-global.asm", "math-global_8asm.html", "math-global_8asm" ],
     [ "math.asm", "math_8asm.html", "math_8asm" ],
+    [ "mem-global.asm", "mem-global_8asm.html", "mem-global_8asm" ],
+    [ "mem.asm", "mem_8asm.html", "mem_8asm" ],
     [ "vic2-global.asm", "vic2-global_8asm.html", "vic2-global_8asm" ],
     [ "vic2.asm", "vic2_8asm.html", "vic2_8asm" ]
 ];
