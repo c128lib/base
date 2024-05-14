@@ -51,7 +51,7 @@
  *
  * @note Use c128lib_Add16 in math-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
  .macro Add16(value, dest) {
   clc
@@ -84,7 +84,7 @@
  *
  * @note Use c128lib_Sub16 in math-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro Sub16(value, dest) {
   sec
@@ -118,7 +118,7 @@
  *
  * @note Use c128lib_Asl16 in math-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro Asl16(address) {
   asl16 address
@@ -148,7 +148,7 @@
  *
  * @note Use c128lib_Inc16 in math-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro Inc16(address) {
   inc16 address
@@ -175,7 +175,7 @@
  *
  * @note Use c128lib_Dec16 in math-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro Dec16(address) {
   dec16 address
@@ -205,7 +205,7 @@
  *
  * @note Use c128lib_div16By16 in math-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro Div16By16(dividend, divisor, remainder) {
     lda #0
@@ -254,7 +254,7 @@
  *
  * @note Use c128lib_Div16By8 in math-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro Div16By8(dividend, divisor, remainder) {
     lda #0

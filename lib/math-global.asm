@@ -49,7 +49,7 @@
  * @param[in,out] dest The memory location of the other 16-bit value.
  * @returns Result is returned in dest memory location.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_Add16(value, dest) { Add16(value, dest) }
 
@@ -68,7 +68,7 @@
  * @remark Register .A will be modified.
  * @remark Flags N, O, Z and C will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_Sub16(value, dest) { Sub16(value, dest) }
 
@@ -84,7 +84,7 @@
  * @remark Register .A will be modified.
  * @remark Flags N, Z and C will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_Asl16(address) { Asl16(address) }
 
@@ -99,7 +99,7 @@
  * @returns Result is returned in address memory location.
  * @remark Flags N and Z will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_Inc16(address) { Inc16(address) }
 
@@ -115,7 +115,7 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_Dec16(address) { Dec16(address) }
 
@@ -132,7 +132,7 @@
  * @remark Registers .A, .X and .Y will be modified.
  * @remark Flags N, O, Z and C will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_Div16By16(dividend, divisor, remainder) { Div16By16(dividend, divisor, remainder) }
 
@@ -149,6 +149,6 @@
  * @remark Registers .A and .X will be modified.
  * @remark Flags N, O, Z and C will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_Div16By8(dividend, divisor, remainder) { Div16By8(dividend, divisor, remainder) }

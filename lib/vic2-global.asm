@@ -46,7 +46,7 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_SetBorderAndBackgroundColor(borderColor, backgroundColor) { SetBorderAndBackgroundColor(borderColor, backgroundColor) }
 
@@ -60,7 +60,7 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_SetBorderColor(borderColor) { SetBorderColor(borderColor) }
 
@@ -73,7 +73,7 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_SetBackgroundColor(backgroundColor) { SetBackgroundColor(backgroundColor) }
 
@@ -127,7 +127,7 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_SetScreenAndCharacterMemory(config) { SetScreenAndCharacterMemory(config) }
 
@@ -142,6 +142,6 @@
  * @remark Flags N and Z will be affected.
  * @remark Labels Vic2.CHAR* and Vic2.SCREEN_MEM* can be used to compose.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_SetScreenMemoryAndBitmapPointer(config) { SetScreenMemoryAndBitmapPointer(config) }

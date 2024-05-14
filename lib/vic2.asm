@@ -48,7 +48,7 @@
  *
  * @note Use c128lib_SetBorderAndBackgroundColor in vic2-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro SetBorderAndBackgroundColor(borderColor, backgroundColor) {
   .errorif (borderColor < 0 || borderColor > 15), "borderColor must be from 0 to 15"
@@ -83,7 +83,7 @@
  *
  * @note Use c128lib_SetBorderColor in vic2-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro SetBorderColor(borderColor) {
   .errorif (borderColor < 0 || borderColor > 15), "borderColor must be from 0 to 15"
@@ -107,7 +107,7 @@
  *
  * @note Use c128lib_SetBackgroundColor in vic2-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro SetBackgroundColor(backgroundColor) {
   .errorif (backgroundColor < 0 || backgroundColor > 15), "backgroundColor must be from 0 to 15"
@@ -172,7 +172,7 @@
  *
  * @note Use c128lib_SetScreenAndCharacterMemory in vic2-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro SetScreenAndCharacterMemory(config) {
     lda #config
@@ -195,7 +195,7 @@
  *
  * @note Use c128lib_SetScreenMemoryAndBitmapPointer in vic2-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro SetScreenMemoryAndBitmapPointer(config) {
     lda #config

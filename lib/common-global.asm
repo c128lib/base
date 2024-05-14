@@ -45,7 +45,7 @@
  *
  * @param[in] sysAddress The address to which the BASIC program will SYS to start the machine code part.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_BasicUpstart128(sysAddress) { BasicUpstart128(sysAddress) }
 
@@ -62,7 +62,7 @@
  *
  * @param[in] label The label to jump to if the zero flag is not set.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_fbne(label) { fbne(label) }
 
@@ -79,6 +79,6 @@
  *
  * @param[in] label The label to jump to if the negative flag is set.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_fbmi(label) { fbmi(label) }

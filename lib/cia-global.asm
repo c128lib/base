@@ -45,7 +45,7 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_GetFirePressedPort1() { GetFirePressedPort1() }
 
@@ -59,6 +59,6 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_GetFirePressedPort2() { GetFirePressedPort2() }

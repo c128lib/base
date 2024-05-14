@@ -49,7 +49,7 @@
  *
  * @note Use c128lib_BasicUpstart128 in common-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro BasicUpstart128(sysAddress) {
     .pc = $1c01 "C128 Basic"
@@ -78,7 +78,7 @@ upstartEnd:
  *
  * @note Use c128lib_fbne in common-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro fbne(label) {
   here: // we have to add 2 to "here", because relative jump is counted right after bne xx, and this instruction takes 2 bytes
@@ -118,7 +118,7 @@ upstartEnd:
  *
  * @note Use c128lib_fbmi in common-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
  .macro fbmi(label) {
   here: // we have to add 2 to "here", because relative jump is counted right after bne xx, and this instruction takes 2 bytes

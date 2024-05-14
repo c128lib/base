@@ -51,7 +51,7 @@
  *
  * @note Usage: c128lib_copyFast($C000, $C100, 256)  // Copies 256 bytes from memory location $C000 to $C100
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_copyFast(source, destination, count) { copyFast(source, destination, count) }
 
@@ -73,7 +73,7 @@
  * @note Minimum length is set to 5 because it's not convenient to use this
  * macro for lower values.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_copyWithRelocation(source, destination, count) { copyWithRelocation(source, destination, count) }
 
@@ -90,7 +90,7 @@
  *
  * @note Usage: c128lib_fillMemory($0400, $E0)  // Fills the screen starting from memory location $0400 with the value $E0
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_fillMemory(address, length, value) { fillMemory(address, length, value) }
 
@@ -110,7 +110,7 @@
  *
  * @note Usage: cmp16($1234, $C000)  // Compares the 16-bit value $1234 with the 16-bit memory location starting at $C000
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro @c128lib_cmp16(value, address) { cmp16(value, address) }
 
@@ -123,6 +123,6 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
 */
 .macro @c128lib_set16(value, address) { set16(value, address) }

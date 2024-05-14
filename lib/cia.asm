@@ -47,7 +47,7 @@
  *
  * @note Use c128lib_GetFirePressedPort1 in cia-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro GetFirePressedPort1() {
   lda Cia.CIA1_DATA_PORT_B
@@ -66,7 +66,7 @@
  *
  * @note Use c128lib_GetFirePressedPort2 in cia-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro GetFirePressedPort2() {
   lda Cia.CIA1_DATA_PORT_A

@@ -47,7 +47,7 @@
  * @remark Register .A, .X and .Y will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_OpenIOChannel(filenumber, devicenumber, secondary) { OpenIOChannel(filenumber, devicenumber, secondary) }
 
@@ -62,7 +62,7 @@
  * @remark Register .A, .X and .Y will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_SetIOName(length, address) { SetIOName(length, address) }
 
@@ -77,7 +77,7 @@
  *
  * @note Use c128lib_SetInputChannel in io-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_SetInputChannel(filenumber) { SetInputChannel(filenumber) }
 
@@ -90,7 +90,7 @@
  * @remark Register .X will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_SetOutputChannel(filenumber) { SetOutputChannel(filenumber) }
 
@@ -106,6 +106,6 @@
  * @param[in] devicenumber The device number for the I/O channel.
  * @param[in] secondary The secondary address for the I/O channel.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro c128lib_OpenFile(length, address, filenumber, devicenumber, secondary) { OpenFile(length, address, filenumber, devicenumber, secondary) }

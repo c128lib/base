@@ -5,7 +5,45 @@ TBD
 
 ## Guide to contributing documentation
 ### File header
-TBD
+Every file should have an header like this:
+
+<pre>
+/**
+ * @file math.asm
+ * @brief Math module
+ * @details Simple macros for math operations.
+ *
+ * @author Raffaele Intorcia <a href="https://github.com/intoinside">@intoinside</a> raffaele.intorcia@gmail.com
+ *
+ * @copyright MIT License
+ * Copyright (c) 2024 c128lib - https://github.com/c128lib
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ * @date 2024
+ */
+</pre>
+
+* a @brief keyword with a short description (typically one or two line)
+* a @details keyword (optional) with a longer description, with some hint about code used and comparison with similar code
+* one or more @author keyword with name, Github profile link and email
+* a @date keyword indicating year of creating file
 
 ### Subroutine and macro header
 Every subroutine and macro should have an header like this:

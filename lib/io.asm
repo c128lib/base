@@ -49,7 +49,7 @@
  *
  * @note Use c128lib_OpenIOChannel in io-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro OpenIOChannel(filenumber, devicenumber, secondary) {
   lda #filenumber
@@ -74,7 +74,7 @@
  *
  * @note Use c128lib_SetIOName in io-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro SetIOName(length, address) {
   lda #length
@@ -97,7 +97,7 @@
  *
  * @note Use c128lib_SetInputChannel in io-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro SetInputChannel(filenumber) {
   ldx #filenumber
@@ -118,7 +118,7 @@
  *
  * @note Use c128lib_SetOutputChannel in io-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro SetOutputChannel(filenumber) {
   ldx #filenumber
@@ -142,7 +142,7 @@
  *
  * @note Use c128lib_OpenFile in io-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro OpenFile(length, address, filenumber, devicenumber, secondary) {
   SetIOName(length, address)

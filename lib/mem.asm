@@ -52,7 +52,7 @@
  * @note Usage: copyFast($C000, $C100, 256)  // Copies 256 bytes from memory location $C000 to $C100
  * @note Use c128lib_copyFast in mem-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro copyFast(source, destination, count) {
   .for(var i = 0; i < count; i++) {
@@ -86,7 +86,7 @@
  * @note Usage: copyWithRelocation($C000, $C100, 256)  // Copies 256 bytes from memory location $C000 to $C100 with relocation
  * @note Use c128lib_copyWithRelocation in mem-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro copyWithRelocation(source, destination, count) {
     .label TEMP = $fe
@@ -128,7 +128,7 @@
  * @note Minimum length is set to 5 because it's not convenient to use this
  * macro for lower values.
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro fillMemory(address, length, value) {
   .errorif (length < 5 || length > 255), "length must be from 5 to 255"
@@ -195,7 +195,7 @@
  * @note Usage: cmp16($1234, $C000)  // Compares the 16-bit value $1234 with the 16-bit memory location starting at $C000
  * @note Use c128lib_cmp16 in mem-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
  */
 .macro cmp16(value, address) {
   lda #<value
@@ -226,7 +226,7 @@ end:
  *
  * @note Use c128lib_set16 in mem-global.asm
  *
- * @since 0.1.0
+ * @since 1.0.0
 */
 .macro set16(value, address) {
   set8(<value, address)
