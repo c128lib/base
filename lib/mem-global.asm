@@ -93,3 +93,36 @@
  * @since 0.1.0
  */
 .macro c128lib_fillMemory(address, length, value) { fillMemory(address, length, value) }
+
+/**
+ * @brief This macro compares a 16-bit value with a 16-bit memory location.
+ * 
+ * @details The macro first compares the low byte of the value with the low byte of the memory location, 
+ * and if they are equal, it then compares the high byte of the value with the high byte of the memory location.
+ *
+ * @param value The 16-bit value to be compared.
+ * @param address The starting address of the 16-bit memory location to be compared with.
+ * @return Flag C is set if value is greater than or equal to the value of the
+ * memory location, otherwise it is cleared.
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N, Z and C will be affected.
+ *
+ * @note Usage: cmp16($1234, $C000)  // Compares the 16-bit value $1234 with the 16-bit memory location starting at $C000
+ *
+ * @since 0.1.0
+ */
+.macro @c128lib_cmp16(value, address) { cmp16(value, address) }
+
+/**
+ * @brief Fills two-byte located in memory address "mem" with byte "value".
+ *
+ * @param[in] value value to set on specified address
+ * @param[in] address address to set
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N and Z will be affected.
+ *
+ * @since 0.1.0
+*/
+.macro @c128lib_set16(value, address) { set16(value, address) }
