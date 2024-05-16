@@ -328,6 +328,9 @@ InitText: {
  * @param[in] background Background color
  * @param[in] foreground Foreground color
  *
+ * @remark Register .A and .X will be modified.
+ * @remark Flags N, Z and O will be affected.
+ *
  * @note Use c128lib_SetBackgroundForegroundColor in vdc-global.asm
  *
  * @since 1.1.0
@@ -364,6 +367,9 @@ InitText: {
  *
  * @param[in] background Background color address
  * @param[in] foreground Foreground color address
+ *
+ * @remark Register .A and .X will be modified.
+ * @remark Flags N, Z, C and O will be affected.
  *
  * @note Use c128lib_SetBackgroundForegroundColorWithVars in vdc-global.asm
  *
@@ -408,6 +414,9 @@ InitText: {
  * @param[in] yPos Y coord on Vdc screen
  * @param[in] destination Vic screen memory absolute address
  * @param[in] qty Number of byte to copy
+ *
+ * @remark Register .A and .X will be modified.
+ * @remark Flags N, Z and O will be affected.
  *
  * @note Use c128lib_ReadFromVdcMemoryByCoordinates in vdc-global.asm
  *
@@ -465,6 +474,9 @@ InitText: {
  * @param[in] destination Vic screen memory absolute address
  * @param[in] qty Number of byte to copy
  *
+ * @remark Register .A, .X and .Y will be modified.
+ * @remark Flags N, Z and C will be affected.
+ *
  * @note Use c128lib_ReadFromVdcMemoryByAddress in vdc-global.asm
  *
  * @since 1.1.0
@@ -474,14 +486,14 @@ InitText: {
   .errorif (qty > 255), "qty must be lower than 256"
     ldx #$12
     lda #>source
-    jsr c128lib.ScreenEditor.WRITEREG
+    jsr ScreenEditor.WRITEREG
     lda #<source
     inx
-    jsr c128lib.ScreenEditor.WRITEREG
+    jsr ScreenEditor.WRITEREG
 
     ldy #0
   CopyLoop:
-    jsr c128lib.ScreenEditor.WRITE80
+    jsr ScreenEditor.WRITE80
     sta destination, y
     iny
     cpy #qty
@@ -509,6 +521,9 @@ InitText: {
  * @param[in] destination Vdc internal memory absolute address
  * @param[in] qty Number of byte to copy
  *
+ * @remark Register .A, .X and .Y will be modified.
+ * @remark Flags N, Z and C will be affected.
+ *
  * @note Use c128lib_WriteToVdcMemoryByCoordinates in vdc-global.asm
  *
  * @since 1.1.0
@@ -522,15 +537,15 @@ InitText: {
   .if (xPos != -1 && yPos != -1) {
     ldx #$12
     lda #>getTextOffset80Col(xPos, yPos)
-    jsr c128lib.ScreenEditor.WRITEREG
+    jsr ScreenEditor.WRITEREG
     lda #<getTextOffset80Col(xPos, yPos)
     inx
-    jsr c128lib.ScreenEditor.WRITEREG
+    jsr ScreenEditor.WRITEREG
   }
     ldy #0
   CopyLoop:
     lda source, y
-    jsr c128lib.ScreenEditor.WRITE80
+    jsr ScreenEditor.WRITE80
     iny
     cpy #qty
     bne CopyLoop
@@ -565,6 +580,9 @@ InitText: {
  * @param[in] destination Vic screen memory absolute address
  * @param[in] qty Number of byte to copy
  *
+ * @remark Register .A, .X and .Y will be modified.
+ * @remark Flags N, Z and C will be affected.
+ *
  * @note Use c128lib_WriteToVdcMemoryByAddress in vdc-global.asm
  *
  * @since 1.1.0
@@ -574,15 +592,15 @@ InitText: {
   .errorif (qty > 255), "qty must be lower than 256"
     ldx #$12
     lda #>destination
-    jsr c128lib.ScreenEditor.WRITEREG
+    jsr ScreenEditor.WRITEREG
     lda #<destination
     inx
-    jsr c128lib.ScreenEditor.WRITEREG
+    jsr ScreenEditor.WRITEREG
 
     ldy #0
   CopyLoop:
     lda source, y
-    jsr c128lib.ScreenEditor.WRITE80
+    jsr ScreenEditor.WRITE80
     iny
     cpy #qty
     bne CopyLoop
@@ -608,8 +626,6 @@ InitText: {
  * @param[in] yPos Y coord on Vdc screen
  * @return Memory offset of Vdc specified coordinate
  *
- * @note Use c128lib_WriteToVdcMemoryByAddress in vdc-global.asm
- *
  * @since 1.1.0
  */
 .function getTextOffset80Col(xPos, yPos) {
@@ -626,6 +642,9 @@ InitText: {
  * is stored in Vdc register SCREEN_MEMORY_STARTING_HIGH_ADDRESS and
  * SCREEN_MEMORY_STARTING_LOW_ADDRESS.
  * The 16-bit value is stored in $FB and $FC.
+ *
+ * @remark Register .A and .X will be modified.
+ * @remark Flags N, Z and O will be affected.
  *
  * @note Use c128lib_GetVdcDisplayStart in vdc-global.asm
  *
@@ -647,6 +666,9 @@ InitText: {
  * and CURRENT_MEMORY_LOW_ADDRESS.
  *
  * @param[in] address Address of update area
+ *
+ * @remark Register .A and .X will be modified.
+ * @remark Flags N, Z and O will be affected.
  *
  * @note Use c128lib_SetVdcUpdateAddress in vdc-global.asm
  *
