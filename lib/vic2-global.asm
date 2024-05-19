@@ -87,7 +87,7 @@
  *
  * @since 1.1.0
  */
-.function c128lib_getTextOffset(xPos, yPos) { .return getTextOffset(xPos, yPos) }
+.function @c128lib_getTextOffset(xPos, yPos) { .return getTextOffset(xPos, yPos) }
 
 /**
  * @brief Set screen memory and charset memory position

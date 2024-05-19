@@ -47,7 +47,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_BasicUpstart128(sysAddress) { BasicUpstart128(sysAddress) }
+.macro @c128lib_BasicUpstart128(sysAddress) { BasicUpstart128(sysAddress) }
 
 /**
  * @brief This macro provides a far branch if not equal (BNE) operation.
