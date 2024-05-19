@@ -62,3 +62,17 @@
  * @since 1.0.0
  */
 .macro c128lib_GetFirePressedPort2() { GetFirePressedPort2() }
+
+/**
+ * @brief Disables the interrupts from both CIA chips.
+ *
+ * This macro disables the interrupts from both CIA chips on a Commodore 64. It loads the accumulator with the value $7F, which disables all interrupt sources, 
+ * and then stores this value in the IRQ control registers of both CIA chips. It then reads the IRQ control registers to confirm the changes.
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N and Z will be affected.
+ *
+ * @since 1.1.0
+ */
+.macro c128lib_DisableCIAInterrupts() { DisableCIAInterrupts() }
+

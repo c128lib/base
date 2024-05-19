@@ -72,3 +72,24 @@
   lda Cia.CIA1_DATA_PORT_A
   and #Cia.JOY_FIRE
 }
+
+/**
+ * @brief Disables the interrupts from both CIA chips.
+ *
+ * This macro disables the interrupts from both CIA chips on a Commodore 64. It loads the accumulator with the value $7F, which disables all interrupt sources, 
+ * and then stores this value in the IRQ control registers of both CIA chips. It then reads the IRQ control registers to confirm the changes.
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N and Z will be affected.
+ *
+ * @note Use c128lib_GetFirePressedPort2 in cia-global.asm
+ *
+ * @since 1.1.0
+ */
+.macro DisableCIAInterrupts() {
+  lda #$7f
+  sta Cia.CIA1_IRQ_CONTROL
+  sta Cia.CIA2_IRQ_CONTROL
+  lda Cia.CIA1_IRQ_CONTROL
+  lda Cia.CIA2_IRQ_CONTROL
+}
