@@ -64,7 +64,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_fbne(label) { fbne(label) }
+.macro @c128lib_Fbne(label) { Fbne(label) }
 
 /**
  * @brief This macro provides a far branch if minus (BMI) operation.
@@ -81,4 +81,4 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_fbmi(label) { fbmi(label) }
+.macro @c128lib_Fbmi(label) { Fbmi(label) }

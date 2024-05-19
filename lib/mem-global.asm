@@ -49,17 +49,17 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Usage: c128lib_copyFast($C000, $C100, 256)  // Copies 256 bytes from memory location $C000 to $C100
+ * @note Usage: c128lib_CopyFast($C000, $C100, 256)  // Copies 256 bytes from memory location $C000 to $C100
  *
  * @since 1.0.0
  */
-.macro c128lib_copyFast(source, destination, count) { copyFast(source, destination, count) }
+.macro @c128lib_CopyFast(source, destination, count) { CopyFast(source, destination, count) }
 
 /**
  * @brief This macro copies a block of memory from one location to another using page relocation.
  *
  * @details This macro also handles the page relocation of the memory block during the copy operation.
- * It's slower than @sa copyFast but it uses much less memory, especially for large memory blocks copy.
+ * It's slower than @sa c128lib_CopyFast but it uses much less memory, especially for large memory blocks copy.
  *
  * @param[in] source The starting address of the memory block to be copied.
  * @param[in] destination The starting address of the location where the memory block will be copied to.
@@ -69,13 +69,13 @@
  * @remark Flags N and Z will be affected.
  * @remark Zeropage location $fe will be used.
  *
- * @note Usage: c128lib_copyWithRelocation($C000, $C100, 256)  // Copies 256 bytes from memory location $C000 to $C100 with relocation
+ * @note Usage: c128lib_CopyWithRelocation($C000, $C100, 256)  // Copies 256 bytes from memory location $C000 to $C100 with relocation
  * @note Minimum length is set to 5 because it's not convenient to use this
  * macro for lower values.
  *
  * @since 1.0.0
  */
-.macro c128lib_copyWithRelocation(source, destination, count) { copyWithRelocation(source, destination, count) }
+.macro @c128lib_CopyWithRelocation(source, destination, count) { CopyWithRelocation(source, destination, count) }
 
 /**
  * @brief This macro fills memory with a specified value.
@@ -88,11 +88,11 @@
  * @remark Registers .A and .X will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Usage: c128lib_fillMemory($0400, $E0)  // Fills the screen starting from memory location $0400 with the value $E0
+ * @note Usage: c128lib_FillMemory($0400, $E0)  // Fills the screen starting from memory location $0400 with the value $E0
  *
  * @since 1.0.0
  */
-.macro c128lib_fillMemory(address, length, value) { fillMemory(address, length, value) }
+.macro @c128lib_FillMemory(address, length, value) { FillMemory(address, length, value) }
 
 /**
  * @brief This macro compares a 16-bit value with a 16-bit memory location.
@@ -108,11 +108,11 @@
  * @remark Register .A will be modified.
  * @remark Flags N, Z and C will be affected.
  *
- * @note Usage: cmp16($1234, $C000)  // Compares the 16-bit value $1234 with the 16-bit memory location starting at $C000
+ * @note Usage: c128lib_Cmp16($1234, $C000)  // Compares the 16-bit value $1234 with the 16-bit memory location starting at $C000
  *
  * @since 1.0.0
  */
-.macro @c128lib_cmp16(value, address) { cmp16(value, address) }
+.macro @c128lib_Cmp16(value, address) { Cmp16(value, address) }
 
 /**
  * @brief Fills two-byte located in memory address "mem" with byte "value".
@@ -125,4 +125,4 @@
  *
  * @since 1.0.0
 */
-.macro @c128lib_set16(value, address) { set16(value, address) }
+.macro @c128lib_Set16(value, address) { Set16(value, address) }

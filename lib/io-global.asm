@@ -49,7 +49,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_OpenIOChannel(filenumber, devicenumber, secondary) { OpenIOChannel(filenumber, devicenumber, secondary) }
+.macro @c128lib_OpenIOChannel(filenumber, devicenumber, secondary) { OpenIOChannel(filenumber, devicenumber, secondary) }
 
 /**
  * @brief Sets the name for I/O operations.
@@ -64,7 +64,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_SetIOName(length, address) { SetIOName(length, address) }
+.macro @c128lib_SetIOName(length, address) { SetIOName(length, address) }
 
 /**
  * @brief Sets the input channel.
@@ -79,7 +79,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_SetInputChannel(filenumber) { SetInputChannel(filenumber) }
+.macro @c128lib_SetInputChannel(filenumber) { SetInputChannel(filenumber) }
 
 /**
  * @brief Sets the output channel.
@@ -92,7 +92,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_SetOutputChannel(filenumber) { SetOutputChannel(filenumber) }
+.macro @c128lib_SetOutputChannel(filenumber) { SetOutputChannel(filenumber) }
 
 /**
  * @brief Opens a file for I/O operations.
@@ -108,4 +108,4 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_OpenFile(length, address, filenumber, devicenumber, secondary) { OpenFile(length, address, filenumber, devicenumber, secondary) }
+.macro @c128lib_OpenFile(length, address, filenumber, devicenumber, secondary) { OpenFile(length, address, filenumber, devicenumber, secondary) }

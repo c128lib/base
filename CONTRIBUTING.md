@@ -77,3 +77,19 @@ or output value
 #### Other keywords under evaluation
 * a @example keyword (optional) for pointing to other source code where method is used
 * a @note keyword (optional) for a simple usage code
+
+### Declaration case type
+Labels must use the **Snake Case with all capital letters**.
+<pre>
+.label PAGE0_PAGE_POINTER   = $D507
+</pre>
+
+Macro must use the **Pascal Case**.
+<pre>
+.macro BasicUpstart128() { }
+</pre>
+
+Functions must use the **Camel Case**.
+<pre>
+.function incArgument() { }
+</pre>

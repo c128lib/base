@@ -47,7 +47,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_GetFirePressedPort1() { GetFirePressedPort1() }
+.macro @c128lib_GetFirePressedPort1() { GetFirePressedPort1() }
 
 /**
  * @brief Checks if the fire button is pressed on joystick port 2.
@@ -61,7 +61,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_GetFirePressedPort2() { GetFirePressedPort2() }
+.macro @c128lib_GetFirePressedPort2() { GetFirePressedPort2() }
 
 /**
  * @brief Disables the interrupts from both CIA chips.
@@ -74,5 +74,5 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_DisableCIAInterrupts() { DisableCIAInterrupts() }
+.macro @c128lib_DisableCIAInterrupts() { DisableCIAInterrupts() }
 

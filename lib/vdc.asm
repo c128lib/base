@@ -317,7 +317,7 @@ InitText: {
  *
  * @since 1.1.0
  */
-.function CalculateBackgroundAndForeground(background, foreground) {
+.function calculateBackgroundAndForeground(background, foreground) {
   .return ((foreground << 4) + background)
 }
 
@@ -343,7 +343,7 @@ InitText: {
     and #%10111111
     WriteVdc()
 
-    lda #CalculateBackgroundAndForeground(background, foreground)
+    lda #calculateBackgroundAndForeground(background, foreground)
     ldx #Vdc.FOREGROUND_BACKGROUND_COLOR
     WriteVdc()
 }

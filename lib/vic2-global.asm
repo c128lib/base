@@ -48,7 +48,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_SetBorderAndBackgroundColor(borderColor, backgroundColor) { SetBorderAndBackgroundColor(borderColor, backgroundColor) }
+.macro @c128lib_SetBorderAndBackgroundColor(borderColor, backgroundColor) { SetBorderAndBackgroundColor(borderColor, backgroundColor) }
 
 /**
  * @brief Sets the border color.
@@ -62,7 +62,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_SetBorderColor(borderColor) { SetBorderColor(borderColor) }
+.macro @c128lib_SetBorderColor(borderColor) { SetBorderColor(borderColor) }
 
 /**
  * @brief Sets the background color.
@@ -75,7 +75,19 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_SetBackgroundColor(backgroundColor) { SetBackgroundColor(backgroundColor) }
+.macro @c128lib_SetBackgroundColor(backgroundColor) { SetBackgroundColor(backgroundColor) }
+
+/**
+ * @brief Calculates memory offset of text cell specified by given coordinates
+ * on 40 cols screen
+ *
+ * @param[in] xPos X coord on Vdc screen
+ * @param[in] yPos Y coord on Vdc screen
+ * @return Memory offset of Vic2 specified coordinate
+ *
+ * @since 1.1.0
+ */
+.function c128lib_getTextOffset(xPos, yPos) { .return getTextOffset(xPos, yPos) }
 
 /**
  * @brief Set screen memory and charset memory position
@@ -129,7 +141,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_SetScreenAndCharacterMemory(config) { SetScreenAndCharacterMemory(config) }
+.macro @c128lib_SetScreenAndCharacterMemory(config) { SetScreenAndCharacterMemory(config) }
 
 /**
  * @brief Set screen memory and bitmap memory pointer
@@ -144,4 +156,4 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_SetScreenMemoryAndBitmapPointer(config) { SetScreenMemoryAndBitmapPointer(config) }
+.macro @c128lib_SetScreenMemoryAndBitmapPointer(config) { SetScreenMemoryAndBitmapPointer(config) }

@@ -33,10 +33,6 @@
 
 .filenamespace c128lib
 
-.function incArgument(arg) {
-  .return CmdArgument(arg.getType(), arg.getValue() + 1)
-}
-
 /**
  * @brief This macro sets up a BASIC program for the Commodore 128.
  *
@@ -63,6 +59,10 @@ upstartEnd:
     .pc = $1c0e "Basic End"
 }
 
+.function incArgument(arg) {
+  .return CmdArgument(arg.getType(), arg.getValue() + 1)
+}
+
 /**
  * @brief This macro provides a far branch if not equal (BNE) operation.
  *
@@ -76,11 +76,11 @@ upstartEnd:
  *
  * @param[in] label The label to jump to if the zero flag is not set.
  *
- * @note Use c128lib_fbne in common-global.asm
+ * @note Use c128lib_Fbne in common-global.asm
  *
  * @since 1.0.0
  */
-.macro fbne(label) {
+.macro Fbne(label) {
   here: // we have to add 2 to "here", because relative jump is counted right after bne xx, and this instruction takes 2 bytes
     .if (here > label) {
       // jump back
@@ -116,11 +116,11 @@ upstartEnd:
  *
  * @param[in] label The label to jump to if the negative flag is set.
  *
- * @note Use c128lib_fbmi in common-global.asm
+ * @note Use c128lib_Fbmi in common-global.asm
  *
  * @since 1.0.0
  */
- .macro fbmi(label) {
+ .macro Fbmi(label) {
   here: // we have to add 2 to "here", because relative jump is counted right after bne xx, and this instruction takes 2 bytes
     .if (here > label) {
       // jump back

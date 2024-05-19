@@ -43,7 +43,7 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_Go40() { Go40() }
+.macro @c128lib_Go40() { Go40() }
 
 /**
  * @brief Go to 80 columns mode
@@ -53,7 +53,7 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_Go80() { Go80() }
+.macro @c128lib_Go80() { Go80() }
 
 /**
  * @brief Set background and foreground color, also disable bit 6 of
@@ -67,7 +67,7 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_SetBackgroundForegroundColor(background, foreground) { SetBackgroundForegroundColor(background, foreground) }
+.macro @c128lib_SetBackgroundForegroundColor(background, foreground) { SetBackgroundForegroundColor(background, foreground) }
 
 /**
  * @brief Set background and foreground color, also disable bit 6 of
@@ -83,7 +83,7 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_SetBackgroundForegroundColorWithVars(background, foreground) { SetBackgroundForegroundColorWithVars(background, foreground) }
+.macro @c128lib_SetBackgroundForegroundColorWithVars(background, foreground) { SetBackgroundForegroundColorWithVars(background, foreground) }
 
 /**
  * @brief Read from Vdc internal memory and write it to Vic screen memory by
@@ -99,7 +99,7 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_ReadFromVdcMemoryByCoordinates(xPos, yPos, destination, qty) { ReadFromVdcMemoryByCoordinates(xPos, yPos, destination, qty) }
+.macro @c128lib_ReadFromVdcMemoryByCoordinates(xPos, yPos, destination, qty) { ReadFromVdcMemoryByCoordinates(xPos, yPos, destination, qty) }
 
 /**
  * @brief Read from Vdc internal memory and write it to Vic screen memory by
@@ -114,7 +114,7 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_ReadFromVdcMemoryByAddress(source, destination, qty) { ReadFromVdcMemoryByAddress(source, destination, qty) }
+.macro @c128lib_ReadFromVdcMemoryByAddress(source, destination, qty) { ReadFromVdcMemoryByAddress(source, destination, qty) }
 
 /**
  * @brief Read from Vic screen memory and write it to Vdc internal memory by
@@ -130,7 +130,7 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_WriteToVdcMemoryByCoordinates(source, xPos, yPos, qty) { WriteToVdcMemoryByCoordinates(source, xPos, yPos, qty) }
+.macro @c128lib_WriteToVdcMemoryByCoordinates(source, xPos, yPos, qty) { WriteToVdcMemoryByCoordinates(source, xPos, yPos, qty) }
 
 /**
  * @brief Read from Vic screen memory and write it to Vdc internal memory by
@@ -145,7 +145,19 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_WriteToVdcMemoryByAddress(source, destination, qty) { WriteToVdcMemoryByAddress(source, destination, qty) }
+.macro @c128lib_WriteToVdcMemoryByAddress(source, destination, qty) { WriteToVdcMemoryByAddress(source, destination, qty) }
+
+/**
+ * @brief Calculates memory offset of text cell specified by given coordinates
+ * on 80 cols screen
+ *
+ * @param[in] xPos X coord on Vdc screen
+ * @param[in] yPos Y coord on Vdc screen
+ * @return Memory offset of Vdc specified coordinate
+ *
+ * @since 1.2.0
+ */
+.function c128lib_getTextOffset80Col(xPos, yPos) { .return getTextOffset80Col(xPos, yPos) }
 
 /**
  * @brief Returns the address start of Vdc display memory data. This
@@ -158,7 +170,7 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_GetVdcDisplayStart() { GetVdcDisplayStart() }
+.macro @c128lib_GetVdcDisplayStart() { GetVdcDisplayStart() }
 
 /**
  * @brief Set the pointer to the RAM area that is to be updated.
@@ -172,7 +184,7 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_SetVdcUpdateAddress(address) { SetVdcUpdateAddress(address) }
+.macro @c128lib_SetVdcUpdateAddress(address) { SetVdcUpdateAddress(address) }
 
 /**
  * @brief Write a value into Vdc register without using kernal
@@ -188,7 +200,7 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_WriteVdc() { WriteVdc() }
+.macro @c128lib_WriteVdc() { WriteVdc() }
 
 /**
  * @brief Read a value from Vdc register without using kernal
@@ -205,4 +217,4 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_ReadVdc() { ReadVdc() }
+.macro @c128lib_ReadVdc() { ReadVdc() }

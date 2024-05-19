@@ -121,6 +121,25 @@
 }
 
 /**
+ * @brief Calculates memory offset of text cell specified by given coordinates
+ * on 40 cols screen
+ *
+ * @param[in] xPos X coord on Vdc screen
+ * @param[in] yPos Y coord on Vdc screen
+ * @return Memory offset of Vic2 specified coordinate
+ *
+ * @since 1.1.0
+ */
+.function getTextOffset(xPos, yPos) {
+  .return xPos + Vic2.TEXT_SCREEN_WIDTH * yPos
+}
+.assert "getTextOffset(0,0) gives 0", getTextOffset(0, 0), 0
+.assert "getTextOffset(39,0) gives 39", getTextOffset(39, 0), 39
+.assert "getTextOffset(0,1) gives 40", getTextOffset(0, 1), 40
+.assert "getTextOffset(19,12) gives 499", getTextOffset(19, 12), 499
+.assert "getTextOffset(39,24) gives 999", getTextOffset(39, 24), 999
+
+/**
  * @brief Set screen memory and charset memory position
  *
  * @details Set screen memory and charset memory position by

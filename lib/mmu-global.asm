@@ -81,7 +81,7 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_SetMMUConfiguration(config) { SetMMUConfiguration(config) }
+.macro @c128lib_SetMMUConfiguration(config) { SetMMUConfiguration(config) }
 
 /**
  * @brief Macro for Mmu configuration. Uses $FF00 instead of $D500.
@@ -129,4 +129,4 @@
  *
  * @since 1.1.0
  */
-.macro c128lib_SetMMULoadConfiguration(config) { SetMMULoadConfiguration(config) }
+.macro @c128lib_SetMMULoadConfiguration(config) { SetMMULoadConfiguration(config) }

@@ -51,7 +51,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_Add16(value, dest) { Add16(value, dest) }
+.macro @c128lib_Add16(value, dest) { Add16(value, dest) }
 
 /**
  * @brief This macro performs a 16-bit subtraction operation.
@@ -70,7 +70,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_Sub16(value, dest) { Sub16(value, dest) }
+.macro @c128lib_Sub16(value, dest) { Sub16(value, dest) }
 
 /**
  * @brief This macro performs a 16-bit arithmetic shift left (ASL) operation.
@@ -86,7 +86,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_Asl16(address) { Asl16(address) }
+.macro @c128lib_Asl16(address) { Asl16(address) }
 
 /**
  * @brief This macro performs a 16-bit increment operation.
@@ -101,7 +101,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_Inc16(address) { Inc16(address) }
+.macro @c128lib_Inc16(address) { Inc16(address) }
 
 /**
  * @brief This macro performs a 16-bit decrement operation.
@@ -117,7 +117,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_Dec16(address) { Dec16(address) }
+.macro @c128lib_Dec16(address) { Dec16(address) }
 
 /**
  * @brief Divides a 16 bit number by a 16 bit number
@@ -134,7 +134,7 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_Div16By16(dividend, divisor, remainder) { Div16By16(dividend, divisor, remainder) }
+.macro @c128lib_Div16By16(dividend, divisor, remainder) { Div16By16(dividend, divisor, remainder) }
 
 /**
  * @brief Divides a 16 bit number by a 8 bit number
@@ -151,4 +151,4 @@
  *
  * @since 1.0.0
  */
-.macro c128lib_Div16By8(dividend, divisor, remainder) { Div16By8(dividend, divisor, remainder) }
+.macro @c128lib_Div16By8(dividend, divisor, remainder) { Div16By8(dividend, divisor, remainder) }
