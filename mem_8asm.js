@@ -1,10 +1,10 @@
 var mem_8asm =
 [
-    [ "copyFast", "mem_8asm.html#afc2727473d6de1b8913efc1c55366d88", null ],
-    [ "copyWithRelocation", "mem_8asm.html#a6e5c5b954e78454f629d566b8cb82ac6", null ],
-    [ "fillMemory", "mem_8asm.html#a11505ec4ce2375e2b1533fc2b0cd6315", null ],
-    [ "cmp16", "mem_8asm.html#a9b329476eb3c350a1536eb2db74e9d50", null ],
-    [ "set8", "mem_8asm.html#acf6111bcf2fbbc8f3dff73a33e4fd2c0", null ],
-    [ "set16", "mem_8asm.html#a5e7eddb54f71c8bb1e3d8295cf05dc53", null ],
+    [ "CopyFast", "mem_8asm.html#a91f628c476ff15d21e675cd8c0441002", null ],
+    [ "CopyWithRelocation", "mem_8asm.html#a55061d19016a525ff8bbbf7946862bd4", null ],
+    [ "FillMemory", "mem_8asm.html#a1a42825fbfb732a2839f5adf6ccc5da4", null ],
+    [ "Cmp16", "mem_8asm.html#a8eecc5c843b1e6d33e725bff22e509de", null ],
+    [ "Set8", "mem_8asm.html#a4709c4cd23c0927e213e70b509f40da2", null ],
+    [ "Set16", "mem_8asm.html#a697bfde9d9ace484fb0c9b86fa208cb9", null ],
     [ "value", "mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f", null ]
 ];

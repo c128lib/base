@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>c128lib Base: common-global.asm File Reference</title>
+<title>c128lib Base: mmu.asm File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,7 +67,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('common-global_8asm.html',''); initResizable(); });
+$(function(){initNavTree('mmu_8asm.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -95,27 +95,24 @@ $(function(){initNavTree('common-global_8asm.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">common-global.asm File Reference</div></div>
+  <div class="headertitle"><div class="title">mmu.asm File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Common module.  
+<p>Mmu module.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a83e3c1a543120b67e330db3c1779656c" id="r_a83e3c1a543120b67e330db3c1779656c"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83e3c1a543120b67e330db3c1779656c">c128lib_BasicUpstart128</a> (sysAddress)</td></tr>
-<tr class="memdesc:a83e3c1a543120b67e330db3c1779656c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro sets up a BASIC program for the Commodore 128.  <br /></td></tr>
-<tr class="separator:a83e3c1a543120b67e330db3c1779656c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39f4554684593295ffd26a2e911c12c8" id="r_a39f4554684593295ffd26a2e911c12c8"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39f4554684593295ffd26a2e911c12c8">c128lib_Fbne</a> (label)</td></tr>
-<tr class="memdesc:a39f4554684593295ffd26a2e911c12c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro provides a far branch if not equal (BNE) operation.  <br /></td></tr>
-<tr class="separator:a39f4554684593295ffd26a2e911c12c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae98a137386860d11f55492f2e200df60" id="r_ae98a137386860d11f55492f2e200df60"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae98a137386860d11f55492f2e200df60">c128lib_Fbmi</a> (label)</td></tr>
-<tr class="memdesc:ae98a137386860d11f55492f2e200df60"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro provides a far branch if minus (BMI) operation.  <br /></td></tr>
-<tr class="separator:ae98a137386860d11f55492f2e200df60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e367e41fc25de49987703726aed4474" id="r_a0e367e41fc25de49987703726aed4474"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e367e41fc25de49987703726aed4474">SetMMUConfiguration</a> (config)</td></tr>
+<tr class="memdesc:a0e367e41fc25de49987703726aed4474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for Mmu configuration.  <br /></td></tr>
+<tr class="separator:a0e367e41fc25de49987703726aed4474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8028a51bdb8333c33e0a385e82b54716" id="r_a8028a51bdb8333c33e0a385e82b54716"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8028a51bdb8333c33e0a385e82b54716">SetMMULoadConfiguration</a> (config)</td></tr>
+<tr class="memdesc:a8028a51bdb8333c33e0a385e82b54716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for Mmu configuration. Uses $FF00 instead of $D500.  <br /></td></tr>
+<tr class="separator:a8028a51bdb8333c33e0a385e82b54716"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Common module. </p>
+<div class="textblock"><p>Mmu module. </p>
 <p>Simple macros for the Commodore 128.</p>
 <dl class="section author"><dt>Author</dt><dd>Raffaele Intorcia <a href="#" onclick="location.href='mai'+'lto:'+'raf'+'fa'+'ele'+'.i'+'nto'+'rc'+'ia@'+'gm'+'ail'+'.c'+'om'; return false;">raffa<span class="obfuscator">.nosp@m.</span>ele.<span class="obfuscator">.nosp@m.</span>intor<span class="obfuscator">.nosp@m.</span>cia@<span class="obfuscator">.nosp@m.</span>gmail<span class="obfuscator">.nosp@m.</span>.com</a></dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>MIT License Copyright (c) 2024 c128lib - <a href="https://github.com/c128lib">https://github.com/c128lib</a></dd></dl>
@@ -124,86 +121,127 @@ Functions</h2></td></tr>
 <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <dl class="section date"><dt>Date</dt><dd>2024 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a83e3c1a543120b67e330db3c1779656c" name="a83e3c1a543120b67e330db3c1779656c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83e3c1a543120b67e330db3c1779656c">&#9670;&#160;</a></span>c128lib_BasicUpstart128()</h2>
+<a id="a0e367e41fc25de49987703726aed4474" name="a0e367e41fc25de49987703726aed4474"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e367e41fc25de49987703726aed4474">&#9670;&#160;</a></span>SetMMUConfiguration()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">macro c128lib_BasicUpstart128 </td>
+          <td class="memname">macro SetMMUConfiguration </td>
           <td>(</td>
-          <td class="paramtype">sysAddress</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype">config</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This macro sets up a BASIC program for the Commodore 128. </p>
-<p>The macro sets the program counter to $1c01, which is the start of the BASIC area in C128. It then writes a link address to the end of the BASIC program, a line number, a SYS token, and the address to SYS to in ASCII decimal, followed by a null byte. After that, it writes a zero word to signal the end of the BASIC program and sets the program counter to $1c0e.</p>
+<p>Macro for Mmu configuration. </p>
+<p>I/O block selection</p>
+<ul>
+<li>Mmu.IO_ROM set I/O block visible on $D000-$DFFF</li>
+<li>Mmu.IO_RAM set area on $D000-$DFFF dependant from Mmu.ROM_HI selection</li>
+</ul>
+<p>If omitted, Mmu.IO_ROM will be used.</p>
+<p>Low-ram selection</p>
+<ul>
+<li>Mmu.ROM_LOW_ROM set rom active for low BASIC ($4000-$7FFF)</li>
+<li>Mmu.ROM_LOW_RAM set ram active on $4000-$7FFF</li>
+</ul>
+<p>If omitted, Mmu.ROM_LOW_ROM will be used.</p>
+<p>Mid-ram selection</p>
+<ul>
+<li>Mmu.ROM_MID_RAM set ram active on $8000-$AFFF and $B000-$BFFF</li>
+<li>Mmu.ROM_MID_EXT set external function ROM</li>
+<li>Mmu.ROM_MID_INT set internal function ROM</li>
+<li>Mmu.ROM_MID_ROM set rom active for BASIC ($8000-$AFFF) and monitor ($B000-$BFFF)</li>
+</ul>
+<p>If omitted, Mmu.ROM_MID_ROM will be used.</p>
+<p>Hi-ram selection</p>
+<ul>
+<li>Mmu.ROM_HI_RAM set ram active on $C000-$CFFF, $D000-$DFFF and $E000-$FFFF</li>
+<li>Mmu.ROM_HI_EXT set external function ROM</li>
+<li>Mmu.ROM_HI_INT set internal function ROM</li>
+<li>Mmu.ROM_HI set rom active for Screen editor ($C000-$CFFF), character ($D000-$DFFF), Kernal ($E000-$FFFF)</li>
+</ul>
+<p>If omitted, Mmu.ROM_HI will be used.</p>
+<p>Bank selection</p>
+<ul>
+<li>Mmu.RAM0 or Mmu.RAM1 can be used to set ram bank 0 or 1. If omitted, bank 0 will be selected.</li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">sysAddress</td><td>The address to which the BASIC program will SYS to start the machine code part.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>Values for Mmu confiuration</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
+<dd>
+Flags N and Z will be affected.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Use c128lib_SetMMUConfiguration in <a class="el" href="mmu-global_8asm.html" title="Mmu module.">mmu-global.asm</a></dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.1.0 </dd></dl>
 
 </div>
 </div>
-<a id="a39f4554684593295ffd26a2e911c12c8" name="a39f4554684593295ffd26a2e911c12c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39f4554684593295ffd26a2e911c12c8">&#9670;&#160;</a></span>c128lib_Fbne()</h2>
+<a id="a8028a51bdb8333c33e0a385e82b54716" name="a8028a51bdb8333c33e0a385e82b54716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8028a51bdb8333c33e0a385e82b54716">&#9670;&#160;</a></span>SetMMULoadConfiguration()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">macro c128lib_Fbne </td>
+          <td class="memname">macro SetMMULoadConfiguration </td>
           <td>(</td>
-          <td class="paramtype">label</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype">config</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This macro provides a far branch if not equal (BNE) operation. </p>
-<p>The 6502 processor's BNE instruction can only jump a limited distance (from -128 to +127 bytes relative to the instruction following BNE). This macro extends that range by using a combination of BNE, BEQ, and JMP instructions.</p>
-<p>If the label is within the range of a normal BNE, it uses that. If not, it uses a BEQ to skip over a JMP instruction.; This works because BNE jumps if the zero flag is clear, and BEQ jumps if the zero flag is set - they are opposites. So if the BNE would not have jumped, the BEQ does, and the JMP is skipped. If the BNE would have jumped, the BEQ does not, and the JMP is executed, jumping to the label.;</p>
+<p>Macro for Mmu configuration. Uses $FF00 instead of $D500. </p>
+<p>I/O block selection</p>
+<ul>
+<li>Mmu.IO_ROM set I/O block visible on $D000-$DFFF</li>
+<li>Mmu.IO_RAM set area on $D000-$DFFF dependant from Mmu.ROM_HI selection</li>
+</ul>
+<p>If omitted, Mmu.IO_ROM will be used.</p>
+<p>Low-ram selection</p>
+<ul>
+<li>Mmu.ROM_LOW_ROM set rom active for low BASIC ($4000-$7FFF)</li>
+<li>Mmu.ROM_LOW_RAM set ram active on $4000-$7FFF</li>
+</ul>
+<p>If omitted, Mmu.ROM_LOW_ROM will be used.</p>
+<p>Mid-ram selection</p>
+<ul>
+<li>Mmu.ROM_MID_RAM set ram active on $8000-$AFFF and $B000-$BFFF</li>
+<li>Mmu.ROM_MID_EXT set external function ROM</li>
+<li>Mmu.ROM_MID_INT set internal function ROM</li>
+<li>Mmu.ROM_MID_ROM set rom active for BASIC ($8000-$AFFF) and monitor ($B000-$BFFF)</li>
+</ul>
+<p>If omitted, Mmu.ROM_MID_ROM will be used.</p>
+<p>Hi-ram selection</p>
+<ul>
+<li>Mmu.ROM_HI_RAM set ram active on $C000-$CFFF, $D000-$DFFF and $E000-$FFFF</li>
+<li>Mmu.ROM_HI_EXT set external function ROM</li>
+<li>Mmu.ROM_HI_INT set internal function ROM</li>
+<li>Mmu.ROM_HI set rom active for Screen editor ($C000-$CFFF), character ($D000-$DFFF), Kernal ($E000-$FFFF)</li>
+</ul>
+<p>If omitted, Mmu.ROM_HI will be used.</p>
+<p>Bank selection</p>
+<ul>
+<li>Mmu.RAM0 or Mmu.RAM1 can be used to set ram bank 0 or 1. If omitted, bank 0 will be selected.</li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">label</td><td>The label to jump to if the zero flag is not set.;</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>Values for Mmu confiuration</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
-
-</div>
-</div>
-<a id="ae98a137386860d11f55492f2e200df60" name="ae98a137386860d11f55492f2e200df60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae98a137386860d11f55492f2e200df60">&#9670;&#160;</a></span>c128lib_Fbmi()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">macro c128lib_Fbmi </td>
-          <td>(</td>
-          <td class="paramtype">label</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This macro provides a far branch if minus (BMI) operation. </p>
-<p>The 6502 processor's BMI instruction can only jump a limited distance (from -128 to +127 bytes relative to the instruction following BMI). This macro extends that range by using a combination of BMI, BPL, BEQ, and JMP instructions.</p>
-<p>If the label is within the range of a normal BMI, it uses that. If not, it uses a BPL and BEQ to skip over a JMP instruction.; This works because BMI jumps if the negative flag is set, and BPL jumps if the negative flag is clear - they are opposites. So if the BMI would not have jumped, the BPL and BEQ do, and the JMP is skipped. If the BMI would have jumped, the BPL and BEQ do not, and the JMP is executed, jumping to the label.;</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">label</td><td>The label to jump to if the negative flag is set.;</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
+<dd>
+Flags N and Z will be affected.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Use SetMMULoadConfiguration in <a class="el" href="mmu-global_8asm.html" title="Mmu module.">mmu-global.asm</a></dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.1.0 </dd></dl>
 
 </div>
 </div>
@@ -212,7 +250,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="common-global_8asm.html">common-global.asm</a></li>
+    <li class="navelem"><a class="el" href="mmu_8asm.html">mmu.asm</a></li>
     <li class="footer">Generated on Sun May 19 2024 20:25:07 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

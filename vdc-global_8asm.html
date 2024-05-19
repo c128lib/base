@@ -128,6 +128,9 @@ Functions</h2></td></tr>
 <tr class="memitem:afd991984d3b04faa872dd03688f74667" id="r_afd991984d3b04faa872dd03688f74667"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd991984d3b04faa872dd03688f74667">c128lib_WriteToVdcMemoryByAddress</a> (source, destination, qty)</td></tr>
 <tr class="memdesc:afd991984d3b04faa872dd03688f74667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read from Vic screen memory and write it to <a class="el" href="namespaceVdc.html">Vdc</a> internal memory by using coordinates.  <br /></td></tr>
 <tr class="separator:afd991984d3b04faa872dd03688f74667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a020327ff960e85c11d80f4449e7630d8" id="r_a020327ff960e85c11d80f4449e7630d8"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a020327ff960e85c11d80f4449e7630d8">c128lib_getTextOffset80Col</a> (xPos, yPos)</td></tr>
+<tr class="memdesc:a020327ff960e85c11d80f4449e7630d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates memory offset of text cell specified by given coordinates on 80 cols screen.  <br /></td></tr>
+<tr class="separator:a020327ff960e85c11d80f4449e7630d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcc0fa5eaf9dee48393b6e223b1aa95f" id="r_adcc0fa5eaf9dee48393b6e223b1aa95f"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcc0fa5eaf9dee48393b6e223b1aa95f">c128lib_GetVdcDisplayStart</a> ()</td></tr>
 <tr class="memdesc:adcc0fa5eaf9dee48393b6e223b1aa95f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the address start of <a class="el" href="namespaceVdc.html">Vdc</a> display memory data. This is stored in <a class="el" href="namespaceVdc.html">Vdc</a> register SCREEN_MEMORY_STARTING_HIGH_ADDRESS and SCREEN_MEMORY_STARTING_LOW_ADDRESS. The 16-bit value is stored in $FB and $FC.  <br /></td></tr>
 <tr class="separator:adcc0fa5eaf9dee48393b6e223b1aa95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -437,6 +440,38 @@ Flags N, Z and C will be affected.</dd></dl>
 
 </div>
 </div>
+<a id="a020327ff960e85c11d80f4449e7630d8" name="a020327ff960e85c11d80f4449e7630d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a020327ff960e85c11d80f4449e7630d8">&#9670;&#160;</a></span>c128lib_getTextOffset80Col()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">function c128lib_getTextOffset80Col </td>
+          <td>(</td>
+          <td class="paramtype">xPos</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">yPos</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates memory offset of text cell specified by given coordinates on 80 cols screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xPos</td><td>X coord on <a class="el" href="namespaceVdc.html">Vdc</a> screen </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yPos</td><td>Y coord on <a class="el" href="namespaceVdc.html">Vdc</a> screen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Memory offset of <a class="el" href="namespaceVdc.html">Vdc</a> specified coordinate</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.2.0 </dd></dl>
+
+</div>
+</div>
 <a id="adcc0fa5eaf9dee48393b6e223b1aa95f" name="adcc0fa5eaf9dee48393b6e223b1aa95f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adcc0fa5eaf9dee48393b6e223b1aa95f">&#9670;&#160;</a></span>c128lib_GetVdcDisplayStart()</h2>
 
@@ -544,7 +579,7 @@ Flags N, Z and O will be affected. </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="vdc-global_8asm.html">vdc-global.asm</a></li>
-    <li class="footer">Generated on Thu May 16 2024 20:53:17 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sun May 19 2024 20:25:07 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

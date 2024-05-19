@@ -8,6 +8,7 @@ var vdc_global_8asm =
     [ "c128lib_ReadFromVdcMemoryByAddress", "vdc-global_8asm.html#ab2e363c8ff0ba15375eac4176e47c64a", null ],
     [ "c128lib_WriteToVdcMemoryByCoordinates", "vdc-global_8asm.html#ae7ae05143f20725ebeff233f720afc85", null ],
     [ "c128lib_WriteToVdcMemoryByAddress", "vdc-global_8asm.html#afd991984d3b04faa872dd03688f74667", null ],
+    [ "c128lib_getTextOffset80Col", "vdc-global_8asm.html#a020327ff960e85c11d80f4449e7630d8", null ],
     [ "c128lib_GetVdcDisplayStart", "vdc-global_8asm.html#adcc0fa5eaf9dee48393b6e223b1aa95f", null ],
     [ "c128lib_SetVdcUpdateAddress", "vdc-global_8asm.html#a277b042526155e40ec729a1662e9c4a1", null ],
     [ "c128lib_WriteVdc", "vdc-global_8asm.html#a8d4c7abc3425bbd3cede649446b681b9", null ],

@@ -113,6 +113,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa2ba80b5bea957169c156383d8351076" id="r_aa2ba80b5bea957169c156383d8351076"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2ba80b5bea957169c156383d8351076">c128lib_SetBackgroundColor</a> (backgroundColor)</td></tr>
 <tr class="memdesc:aa2ba80b5bea957169c156383d8351076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the background color.  <br /></td></tr>
 <tr class="separator:aa2ba80b5bea957169c156383d8351076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc66b632a6103c2123c4b67e99b0470" id="r_aafc66b632a6103c2123c4b67e99b0470"><td class="memItemLeft" align="right" valign="top">function&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafc66b632a6103c2123c4b67e99b0470">c128lib_getTextOffset</a> (xPos, yPos)</td></tr>
+<tr class="memdesc:aafc66b632a6103c2123c4b67e99b0470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates memory offset of text cell specified by given coordinates on 40 cols screen.  <br /></td></tr>
+<tr class="separator:aafc66b632a6103c2123c4b67e99b0470"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7bc583c36627928a8a4bc8cb70a9cda" id="r_ac7bc583c36627928a8a4bc8cb70a9cda"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7bc583c36627928a8a4bc8cb70a9cda">c128lib_SetScreenAndCharacterMemory</a> (config)</td></tr>
 <tr class="memdesc:ac7bc583c36627928a8a4bc8cb70a9cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set screen memory and charset memory position.  <br /></td></tr>
 <tr class="separator:ac7bc583c36627928a8a4bc8cb70a9cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,6 +228,38 @@ Flags N and Z will be affected.</dd></dl>
 
 </div>
 </div>
+<a id="aafc66b632a6103c2123c4b67e99b0470" name="aafc66b632a6103c2123c4b67e99b0470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafc66b632a6103c2123c4b67e99b0470">&#9670;&#160;</a></span>c128lib_getTextOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">function c128lib_getTextOffset </td>
+          <td>(</td>
+          <td class="paramtype">xPos</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">yPos</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates memory offset of text cell specified by given coordinates on 40 cols screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xPos</td><td>X coord on <a class="el" href="namespaceVdc.html">Vdc</a> screen </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yPos</td><td>Y coord on <a class="el" href="namespaceVdc.html">Vdc</a> screen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Memory offset of Vic2 specified coordinate</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.1.0 </dd></dl>
+
+</div>
+</div>
 <a id="ac7bc583c36627928a8a4bc8cb70a9cda" name="ac7bc583c36627928a8a4bc8cb70a9cda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac7bc583c36627928a8a4bc8cb70a9cda">&#9670;&#160;</a></span>c128lib_SetScreenAndCharacterMemory()</h2>
 
@@ -327,7 +362,7 @@ Labels Vic2.CHAR* and Vic2.SCREEN_MEM* can be used to compose.</dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="vic2-global_8asm.html">vic2-global.asm</a></li>
-    <li class="footer">Generated on Thu May 16 2024 20:53:17 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sun May 19 2024 20:25:07 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

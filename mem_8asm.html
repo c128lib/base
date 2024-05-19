@@ -105,27 +105,27 @@ $(function(){initNavTree('mem_8asm.html',''); initResizable(); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afc2727473d6de1b8913efc1c55366d88" id="r_afc2727473d6de1b8913efc1c55366d88"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc2727473d6de1b8913efc1c55366d88">copyFast</a> (source, destination, count)</td></tr>
-<tr class="memdesc:afc2727473d6de1b8913efc1c55366d88"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another in a fast manner.  <br /></td></tr>
-<tr class="separator:afc2727473d6de1b8913efc1c55366d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e5c5b954e78454f629d566b8cb82ac6" id="r_a6e5c5b954e78454f629d566b8cb82ac6"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e5c5b954e78454f629d566b8cb82ac6">copyWithRelocation</a> (source, destination, count)</td></tr>
-<tr class="memdesc:a6e5c5b954e78454f629d566b8cb82ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another using page relocation.  <br /></td></tr>
-<tr class="separator:a6e5c5b954e78454f629d566b8cb82ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11505ec4ce2375e2b1533fc2b0cd6315" id="r_a11505ec4ce2375e2b1533fc2b0cd6315"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11505ec4ce2375e2b1533fc2b0cd6315">fillMemory</a> (<a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>, length, <a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a>)</td></tr>
-<tr class="memdesc:a11505ec4ce2375e2b1533fc2b0cd6315"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro fills memory with a specified value.  <br /></td></tr>
-<tr class="separator:a11505ec4ce2375e2b1533fc2b0cd6315"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b329476eb3c350a1536eb2db74e9d50" id="r_a9b329476eb3c350a1536eb2db74e9d50"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b329476eb3c350a1536eb2db74e9d50">cmp16</a> (<a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a>, <a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
-<tr class="memdesc:a9b329476eb3c350a1536eb2db74e9d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro compares a 16-bit value with a 16-bit memory location.  <br /></td></tr>
-<tr class="separator:a9b329476eb3c350a1536eb2db74e9d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf6111bcf2fbbc8f3dff73a33e4fd2c0" id="r_acf6111bcf2fbbc8f3dff73a33e4fd2c0"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf6111bcf2fbbc8f3dff73a33e4fd2c0">set8</a> (<a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a>, <a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
-<tr class="separator:acf6111bcf2fbbc8f3dff73a33e4fd2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e7eddb54f71c8bb1e3d8295cf05dc53" id="r_a5e7eddb54f71c8bb1e3d8295cf05dc53"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e7eddb54f71c8bb1e3d8295cf05dc53">set16</a> (<a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a>, <a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
-<tr class="memdesc:a5e7eddb54f71c8bb1e3d8295cf05dc53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills two-byte located in memory address "mem" with byte "value".  <br /></td></tr>
-<tr class="separator:a5e7eddb54f71c8bb1e3d8295cf05dc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91f628c476ff15d21e675cd8c0441002" id="r_a91f628c476ff15d21e675cd8c0441002"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91f628c476ff15d21e675cd8c0441002">CopyFast</a> (source, destination, count)</td></tr>
+<tr class="memdesc:a91f628c476ff15d21e675cd8c0441002"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another in a fast manner.  <br /></td></tr>
+<tr class="separator:a91f628c476ff15d21e675cd8c0441002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55061d19016a525ff8bbbf7946862bd4" id="r_a55061d19016a525ff8bbbf7946862bd4"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55061d19016a525ff8bbbf7946862bd4">CopyWithRelocation</a> (source, destination, count)</td></tr>
+<tr class="memdesc:a55061d19016a525ff8bbbf7946862bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another using page relocation.  <br /></td></tr>
+<tr class="separator:a55061d19016a525ff8bbbf7946862bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a42825fbfb732a2839f5adf6ccc5da4" id="r_a1a42825fbfb732a2839f5adf6ccc5da4"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a42825fbfb732a2839f5adf6ccc5da4">FillMemory</a> (<a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>, length, <a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a>)</td></tr>
+<tr class="memdesc:a1a42825fbfb732a2839f5adf6ccc5da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro fills memory with a specified value.  <br /></td></tr>
+<tr class="separator:a1a42825fbfb732a2839f5adf6ccc5da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eecc5c843b1e6d33e725bff22e509de" id="r_a8eecc5c843b1e6d33e725bff22e509de"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eecc5c843b1e6d33e725bff22e509de">Cmp16</a> (<a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a>, <a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
+<tr class="memdesc:a8eecc5c843b1e6d33e725bff22e509de"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro compares a 16-bit value with a 16-bit memory location.  <br /></td></tr>
+<tr class="separator:a8eecc5c843b1e6d33e725bff22e509de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4709c4cd23c0927e213e70b509f40da2" id="r_a4709c4cd23c0927e213e70b509f40da2"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4709c4cd23c0927e213e70b509f40da2">Set8</a> (<a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a>, <a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
+<tr class="separator:a4709c4cd23c0927e213e70b509f40da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a697bfde9d9ace484fb0c9b86fa208cb9" id="r_a697bfde9d9ace484fb0c9b86fa208cb9"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a697bfde9d9ace484fb0c9b86fa208cb9">Set16</a> (<a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a>, <a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
+<tr class="memdesc:a697bfde9d9ace484fb0c9b86fa208cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills two-byte located in memory address "mem" with byte "value".  <br /></td></tr>
+<tr class="separator:a697bfde9d9ace484fb0c9b86fa208cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a1e8d90edc813416c4cbfb995d68c893f" id="r_a1e8d90edc813416c4cbfb995d68c893f"><td class="memItemLeft" align="right" valign="top">pseudocommand <a class="el" href="#acf6111bcf2fbbc8f3dff73a33e4fd2c0">set8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a></td></tr>
+<tr class="memitem:a1e8d90edc813416c4cbfb995d68c893f" id="r_a1e8d90edc813416c4cbfb995d68c893f"><td class="memItemLeft" align="right" valign="top">pseudocommand set8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a></td></tr>
 <tr class="separator:a1e8d90edc813416c4cbfb995d68c893f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -138,14 +138,14 @@ Variables</h2></td></tr>
 <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <dl class="section date"><dt>Date</dt><dd>2024 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="afc2727473d6de1b8913efc1c55366d88" name="afc2727473d6de1b8913efc1c55366d88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc2727473d6de1b8913efc1c55366d88">&#9670;&#160;</a></span>copyFast()</h2>
+<a id="a91f628c476ff15d21e675cd8c0441002" name="a91f628c476ff15d21e675cd8c0441002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91f628c476ff15d21e675cd8c0441002">&#9670;&#160;</a></span>CopyFast()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">macro copyFast </td>
+          <td class="memname">macro CopyFast </td>
           <td>(</td>
           <td class="paramtype">source</td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
@@ -175,21 +175,21 @@ Variables</h2></td></tr>
 <dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
 <dd>
 Flags N and Z will be affected.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Usage: copyFast($C000, $C100, 256) // Copies 256 bytes from memory location $C000 to $C100 </dd>
+<dl class="section note"><dt>Note</dt><dd>Usage: CopyFast($C000, $C100, 256) // Copies 256 bytes from memory location $C000 to $C100 </dd>
 <dd>
-Use c128lib_copyFast in <a class="el" href="mem-global_8asm.html" title="Mem module.">mem-global.asm</a></dd></dl>
+Use c128lib_CopyFast in <a class="el" href="mem-global_8asm.html" title="Mem module.">mem-global.asm</a></dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a id="a6e5c5b954e78454f629d566b8cb82ac6" name="a6e5c5b954e78454f629d566b8cb82ac6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e5c5b954e78454f629d566b8cb82ac6">&#9670;&#160;</a></span>copyWithRelocation()</h2>
+<a id="a55061d19016a525ff8bbbf7946862bd4" name="a55061d19016a525ff8bbbf7946862bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55061d19016a525ff8bbbf7946862bd4">&#9670;&#160;</a></span>CopyWithRelocation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">macro copyWithRelocation </td>
+          <td class="memname">macro CopyWithRelocation </td>
           <td>(</td>
           <td class="paramtype">source</td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
@@ -207,7 +207,7 @@ Use c128lib_copyFast in <a class="el" href="mem-global_8asm.html" title="Mem mod
 </div><div class="memdoc">
 
 <p>This macro copies a block of memory from one location to another using page relocation. </p>
-<p>This macro also handles the page relocation of the memory block during the copy operation. It's slower than </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#afc2727473d6de1b8913efc1c55366d88" title="This macro copies a block of memory from one location to another in a fast manner.">copyFast</a> but it uses much less memory, especially for large memory blocks copy.</dd></dl>
+<p>This macro also handles the page relocation of the memory block during the copy operation. It's slower than </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#a91f628c476ff15d21e675cd8c0441002" title="This macro copies a block of memory from one location to another in a fast manner.">CopyFast</a> but it uses much less memory, especially for large memory blocks copy.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>The starting address of the memory block to be copied. </td></tr>
@@ -221,21 +221,21 @@ Use c128lib_copyFast in <a class="el" href="mem-global_8asm.html" title="Mem mod
 Flags N and Z will be affected. </dd>
 <dd>
 Zeropage location $fe will be used.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Usage: copyWithRelocation($C000, $C100, 256) // Copies 256 bytes from memory location $C000 to $C100 with relocation </dd>
+<dl class="section note"><dt>Note</dt><dd>Usage: CopyWithRelocation($C000, $C100, 256) // Copies 256 bytes from memory location $C000 to $C100 with relocation </dd>
 <dd>
-Use c128lib_copyWithRelocation in <a class="el" href="mem-global_8asm.html" title="Mem module.">mem-global.asm</a></dd></dl>
+Use c128lib_CopyWithRelocation in <a class="el" href="mem-global_8asm.html" title="Mem module.">mem-global.asm</a></dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a id="a11505ec4ce2375e2b1533fc2b0cd6315" name="a11505ec4ce2375e2b1533fc2b0cd6315"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11505ec4ce2375e2b1533fc2b0cd6315">&#9670;&#160;</a></span>fillMemory()</h2>
+<a id="a1a42825fbfb732a2839f5adf6ccc5da4" name="a1a42825fbfb732a2839f5adf6ccc5da4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a42825fbfb732a2839f5adf6ccc5da4">&#9670;&#160;</a></span>FillMemory()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">macro fillMemory </td>
+          <td class="memname">macro FillMemory </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a></td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
@@ -265,23 +265,23 @@ Use c128lib_copyWithRelocation in <a class="el" href="mem-global_8asm.html" titl
 <dl class="section remark"><dt>Remarks</dt><dd>Registers .A and .X will be modified. </dd>
 <dd>
 Flags N and Z will be affected.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Usage: fillMemory($0400, 50, $E0) // Fills 50 bytes in memory starting from memory location $0400 with the value $E0 </dd>
+<dl class="section note"><dt>Note</dt><dd>Usage: FillMemory($0400, 50, $E0) // Fills 50 bytes in memory starting from memory location $0400 with the value $E0 </dd>
 <dd>
-Use c128lib_fillMemory in <a class="el" href="mem-global_8asm.html" title="Mem module.">mem-global.asm</a> </dd>
+Use c128lib_FillMemory in <a class="el" href="mem-global_8asm.html" title="Mem module.">mem-global.asm</a> </dd>
 <dd>
 Minimum length is set to 5 because it's not convenient to use this macro for lower values.</dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a id="a9b329476eb3c350a1536eb2db74e9d50" name="a9b329476eb3c350a1536eb2db74e9d50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b329476eb3c350a1536eb2db74e9d50">&#9670;&#160;</a></span>cmp16()</h2>
+<a id="a8eecc5c843b1e6d33e725bff22e509de" name="a8eecc5c843b1e6d33e725bff22e509de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eecc5c843b1e6d33e725bff22e509de">&#9670;&#160;</a></span>Cmp16()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">macro cmp16 </td>
+          <td class="memname">macro Cmp16 </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a></td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
@@ -306,21 +306,21 @@ Minimum length is set to 5 because it's not convenient to use this macro for low
 <dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
 <dd>
 Flags N, Z and C will be affected.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Usage: cmp16($1234, $C000) // Compares the 16-bit value $1234 with the 16-bit memory location starting at $C000 </dd>
+<dl class="section note"><dt>Note</dt><dd>Usage: Cmp16($1234, $C000) // Compares the 16-bit value $1234 with the 16-bit memory location starting at $C000 </dd>
 <dd>
-Use c128lib_cmp16 in <a class="el" href="mem-global_8asm.html" title="Mem module.">mem-global.asm</a></dd></dl>
+Use c128lib_Cmp16 in <a class="el" href="mem-global_8asm.html" title="Mem module.">mem-global.asm</a></dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a id="acf6111bcf2fbbc8f3dff73a33e4fd2c0" name="acf6111bcf2fbbc8f3dff73a33e4fd2c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf6111bcf2fbbc8f3dff73a33e4fd2c0">&#9670;&#160;</a></span>set8()</h2>
+<a id="a4709c4cd23c0927e213e70b509f40da2" name="a4709c4cd23c0927e213e70b509f40da2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4709c4cd23c0927e213e70b509f40da2">&#9670;&#160;</a></span>Set8()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">macro set8 </td>
+          <td class="memname">macro Set8 </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a></td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
@@ -334,14 +334,14 @@ Use c128lib_cmp16 in <a class="el" href="mem-global_8asm.html" title="Mem module
 
 </div>
 </div>
-<a id="a5e7eddb54f71c8bb1e3d8295cf05dc53" name="a5e7eddb54f71c8bb1e3d8295cf05dc53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e7eddb54f71c8bb1e3d8295cf05dc53">&#9670;&#160;</a></span>set16()</h2>
+<a id="a697bfde9d9ace484fb0c9b86fa208cb9" name="a697bfde9d9ace484fb0c9b86fa208cb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a697bfde9d9ace484fb0c9b86fa208cb9">&#9670;&#160;</a></span>Set16()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">macro set16 </td>
+          <td class="memname">macro Set16 </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a></td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
@@ -364,7 +364,7 @@ Use c128lib_cmp16 in <a class="el" href="mem-global_8asm.html" title="Mem module
 <dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
 <dd>
 Flags N and Z will be affected.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Use c128lib_set16 in <a class="el" href="mem-global_8asm.html" title="Mem module.">mem-global.asm</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Use c128lib_Set16 in <a class="el" href="mem-global_8asm.html" title="Mem module.">mem-global.asm</a></dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
@@ -377,7 +377,7 @@ Flags N and Z will be affected.</dd></dl>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pseudocommand <a class="el" href="#acf6111bcf2fbbc8f3dff73a33e4fd2c0">set8</a> value</td>
+          <td class="memname">pseudocommand set8 value</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -390,7 +390,7 @@ Flags N and Z will be affected.</dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="mem_8asm.html">mem.asm</a></li>
-    <li class="footer">Generated on Thu May 16 2024 20:53:17 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sun May 19 2024 20:25:07 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

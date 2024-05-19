@@ -110,6 +110,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a2b820efff6c6e69199e09d8f4c820064" id="r_a2b820efff6c6e69199e09d8f4c820064"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b820efff6c6e69199e09d8f4c820064">GetFirePressedPort2</a> ()</td></tr>
 <tr class="memdesc:a2b820efff6c6e69199e09d8f4c820064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the fire button is pressed on joystick port 2.  <br /></td></tr>
 <tr class="separator:a2b820efff6c6e69199e09d8f4c820064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d78bbe8b9c68c88e35e82403adecf4d" id="r_a7d78bbe8b9c68c88e35e82403adecf4d"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d78bbe8b9c68c88e35e82403adecf4d">DisableCIAInterrupts</a> ()</td></tr>
+<tr class="memdesc:a7d78bbe8b9c68c88e35e82403adecf4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the interrupts from both CIA chips.  <br /></td></tr>
+<tr class="separator:a7d78bbe8b9c68c88e35e82403adecf4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Cia module. </p>
@@ -173,13 +176,38 @@ Flags N and Z will be affected.</dd></dl>
 
 </div>
 </div>
+<a id="a7d78bbe8b9c68c88e35e82403adecf4d" name="a7d78bbe8b9c68c88e35e82403adecf4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d78bbe8b9c68c88e35e82403adecf4d">&#9670;&#160;</a></span>DisableCIAInterrupts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">macro DisableCIAInterrupts </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disables the interrupts from both CIA chips. </p>
+<p>This macro disables the interrupts from both CIA chips on a Commodore 64. It loads the accumulator with the value $7F, which disables all interrupt sources, and then stores this value in the IRQ control registers of both CIA chips. It then reads the IRQ control registers to confirm the changes.</p>
+<dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
+<dd>
+Flags N and Z will be affected.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Use c128lib_GetFirePressedPort2 in <a class="el" href="cia-global_8asm.html" title="Cia module.">cia-global.asm</a></dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.1.0 </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="cia_8asm.html">cia.asm</a></li>
-    <li class="footer">Generated on Thu May 16 2024 20:53:17 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sun May 19 2024 20:25:07 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

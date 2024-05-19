@@ -2,7 +2,7 @@ var vdc_8asm =
 [
     [ "Go40", "vdc_8asm.html#a4933eeb9967b10432a9f17610ca5bc76", null ],
     [ "Go80", "vdc_8asm.html#a1ea5d9e3dc4d485b553d663a65c3a2a9", null ],
-    [ "CalculateBackgroundAndForeground", "vdc_8asm.html#a42d61b112809346b98c9c598ea006388", null ],
+    [ "calculateBackgroundAndForeground", "vdc_8asm.html#a6cfb83c44bf259de6994bcc7a8737a70", null ],
     [ "SetBackgroundForegroundColor", "vdc_8asm.html#abbad20cacc437923fcfa0e51b73219be", null ],
     [ "SetBackgroundForegroundColorWithVars", "vdc_8asm.html#adde6b74d1b7467a788824871f376e7d5", null ],
     [ "ReadFromVdcMemoryByCoordinates", "vdc_8asm.html#afe64706ebe1a53c820a412aa3b680f16", null ],

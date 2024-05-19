@@ -1,8 +1,8 @@
 var mem_global_8asm =
 [
-    [ "c128lib_copyFast", "mem-global_8asm.html#a148a4080835f59a286466140bb6b33b7", null ],
-    [ "c128lib_copyWithRelocation", "mem-global_8asm.html#aa8bf329385509978fd54c11eaa7f9a40", null ],
-    [ "c128lib_fillMemory", "mem-global_8asm.html#a0b6ce2d184b189d7e45a17525bca3c8a", null ],
-    [ "c128lib_cmp16", "mem-global_8asm.html#aef17db76ce01c65b7908839856e388cb", null ],
-    [ "c128lib_set16", "mem-global_8asm.html#a9434ef394fe6c697a8aae297a20fbbd5", null ]
+    [ "c128lib_CopyFast", "mem-global_8asm.html#aad7d5a9efa61b5d4df7887bd6d36f2f5", null ],
+    [ "c128lib_CopyWithRelocation", "mem-global_8asm.html#af9b332e235542f20e8dd6b8e0ab1790f", null ],
+    [ "c128lib_FillMemory", "mem-global_8asm.html#ab1ea541e2e4809693b3f68ed4d1c630e", null ],
+    [ "c128lib_Cmp16", "mem-global_8asm.html#aae623e7d1cfafb292bf07b0ccd958d49", null ],
+    [ "c128lib_Set16", "mem-global_8asm.html#ab43341521f31e4f25f8a82a7360dbe02", null ]
 ];
