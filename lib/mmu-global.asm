@@ -130,3 +130,53 @@
  * @since 1.1.0
  */
 .macro @c128lib_SetMMULoadConfiguration(config) { SetMMULoadConfiguration(config) }
+
+/**
+ * @brief Set banking. Only main banking are available.
+ *
+ * @param[in] config Values for Mmu confiuration
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N and Z will be affected.
+ *
+ * @note Use Basic banking, see reference https://c128lib.github.io/Reference/MemoryMap
+ * Only banking 0, 1, 4, 5, 12, 13, 14 and 15 are supported.
+ *
+ * @since 1.2.0
+ */
+.macro @c128lib_SetBankConfiguration(id) { SetBankConfiguration(id) }
+
+/**
+ * @brief Set mode configuration register.
+ *
+ * @param[in] config Values for configuration register
+ *
+ * @note Config parameter can be filled with Mmu.CPU_*, Mmu.FASTSERIAL*, Mmu.GAME_*, Mmu.EXROM_*, Mmu.KERNAL_*, Mmu.COLS_*
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N and Z will be affected.
+ *
+ * @since 1.2.0
+ */
+.macro c128lib_SetModeConfig(config) { SetModeConfig(config) }
+
+/**
+ * @brief Configure common RAM amount.
+ *
+ * RAM Bank 0 is always the visible RAM bank.
+ * Valid values are 1,4,8 and 16.
+ * For ex. if you choose 4K common ram at top and bottom
+ * you'll have 4K up and 4K bottom.
+ *
+ * @param[in] config Values for common ram configuration
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N and Z will be affected.
+ *
+ * @note Config parameter can be filled with Mmu.COMMON_RAM_*
+ *
+ * @note Use c128lib_SetCommonRAM in mmu-global.asm
+ *
+ * @since 1.2.0
+ */
+.macro c128lib_SetCommonRAM(config) { SetCommonRAM(config) }

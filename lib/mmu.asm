@@ -146,3 +146,120 @@
 .assert "SetMMULoadConfiguration(RAM1 | ROM_HI_RAM | ROM_MID_RAM | ROM_LOW_RAM | IO_RAM) sets accumulator to 7f", { SetMMULoadConfiguration(Mmu.RAM1 | Mmu.ROM_HI_RAM | Mmu.ROM_MID_RAM | Mmu.ROM_LOW_RAM | Mmu.IO_RAM) }, {
   lda #%01111111; sta $ff00
 }
+
+/**
+ * @brief Set banking. Only main banking are available.
+ *
+ * @param[in] config Values for Mmu confiuration
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N and Z will be affected.
+ *
+ * @note Use Basic banking, see reference https://c128lib.github.io/Reference/MemoryMap
+ * Only banking 0, 1, 4, 5, 12, 13, 14 and 15 are supported.
+ *
+ * @note Use c128lib_SetBankConfiguration in mmu-global.asm
+ *
+ * @since 1.2.0
+ */
+.macro SetBankConfiguration(id) {
+    .if (id==0) {
+      SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI_RAM | Mmu.ROM_MID_RAM | Mmu.ROM_LOW_RAM | Mmu.IO_RAM)
+    }
+    .if (id==1) {
+      SetMMULoadConfiguration(Mmu.RAM1 | Mmu.ROM_HI_RAM | Mmu.ROM_MID_RAM | Mmu.ROM_LOW_RAM | Mmu.IO_RAM)
+    }
+    .if (id==4) {
+      SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI_INT | Mmu.ROM_MID_INT | Mmu.ROM_LOW_RAM | Mmu.IO_ROM)
+    }
+    .if (id==5) {
+      SetMMULoadConfiguration(Mmu.RAM1 | Mmu.ROM_HI_INT | Mmu.ROM_MID_INT | Mmu.ROM_LOW_RAM | Mmu.IO_ROM)
+    }
+    .if (id==12) {
+      SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI | Mmu.ROM_MID_INT | Mmu.ROM_LOW_RAM | Mmu.IO_ROM)
+    }
+    .if (id==13) {
+      SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI | Mmu.ROM_MID_EXT | Mmu.ROM_LOW_RAM | Mmu.IO_ROM)
+    }
+    .if (id==14) {
+      SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI | Mmu.ROM_MID_ROM | Mmu.ROM_LOW_ROM | Mmu.IO_RAM)
+    }
+    .if (id==15) {
+      SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI | Mmu.ROM_MID_ROM | Mmu.ROM_LOW_ROM | Mmu.IO_ROM)
+    }
+}
+.assert "SetBankConfiguration(0)", { SetBankConfiguration(0) }, {
+  lda #%00111111; sta $ff00
+}
+.assert "SetBankConfiguration(1)", { SetBankConfiguration(1) }, {
+  lda #%01111111; sta $ff00
+}
+.assert "SetBankConfiguration(4)", { SetBankConfiguration(4) }, {
+  lda #%00010110; sta $ff00
+}
+.assert "SetBankConfiguration(5)", { SetBankConfiguration(5) }, {
+  lda #%01010110; sta $ff00
+}
+.assert "SetBankConfiguration(12)", { SetBankConfiguration(12) }, {
+  lda #%00000110; sta $ff00
+}
+.assert "SetBankConfiguration(13)", { SetBankConfiguration(13) }, {
+  lda #%00001010; sta $ff00
+}
+.assert "SetBankConfiguration(14)", { SetBankConfiguration(14) }, {
+  lda #%00000001; sta $ff00
+}
+.assert "SetBankConfiguration(15)", { SetBankConfiguration(15) }, {
+  lda #%00000000; sta $ff00
+}
+
+/**
+ * @brief Set mode configuration register.
+ *
+ * @param[in] config Values for configuration register
+ *
+ * @note Config parameter can be filled with Mmu.CPU_*, Mmu.FASTSERIAL*, Mmu.GAME_*, Mmu.EXROM_*, Mmu.KERNAL_*, Mmu.COLS_*
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N and Z will be affected.
+ *
+ * @note Use c128lib_SetModeConfig in mmu-global.asm
+ *
+ * @since 1.2.0
+ */
+.macro SetModeConfig(config) {
+    lda #config
+    sta Mmu.MODE_CONFIG
+}
+.assert "SetModeConfig(CPU_8502 | FASTSERIALOUTPUT | GAME_HI | EXROM_HI | KERNAL_64 | COLS_40) sets accumulator to 0f", {
+    SetModeConfig(Mmu.CPU_8502 | Mmu.FASTSERIALOUTPUT | Mmu.GAME_HI | Mmu.EXROM_HI | Mmu.KERNAL_64 | Mmu.COLS_40)
+}, {
+  lda #%11111001; sta $d505
+}
+
+/**
+ * @brief Configure common RAM amount.
+ *
+ * RAM Bank 0 is always the visible RAM bank.
+ * Valid values are 1,4,8 and 16.
+ * For ex. if you choose 4K common ram at top and bottom
+ * you'll have 4K up and 4K bottom.
+ *
+ * @param[in] config Values for common ram configuration
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N and Z will be affected.
+ *
+ * @note Config parameter can be filled with Mmu.COMMON_RAM_*
+ *
+ * @note Use c128lib_SetCommonRAM in mmu-global.asm
+ *
+ * @since 1.2.0
+ */
+.macro SetCommonRAM(config) {
+    lda #config
+    sta Mmu.RAM_CONFIG
+}
+.assert "SetCommonRAM(COMMON_RAM_16K | COMMON_RAM_BOTH) sets accumulator to 0f", { SetCommonRAM(Mmu.COMMON_RAM_16K | Mmu.COMMON_RAM_BOTH) }, {
+  lda #%00001111; sta $d506
+}
