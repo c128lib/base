@@ -1,19 +1,6 @@
 var searchData=
 [
-  ['set16_0',['Set16',['../mem_8asm.html#a697bfde9d9ace484fb0c9b86fa208cb9',1,'mem.asm']]],
-  ['set8_1',['Set8',['../mem_8asm.html#a4709c4cd23c0927e213e70b509f40da2',1,'mem.asm']]],
-  ['setbackgroundcolor_2',['SetBackgroundColor',['../vic2_8asm.html#a805440d17d14e6a7222ad8e12e211785',1,'vic2.asm']]],
-  ['setbackgroundforegroundcolor_3',['SetBackgroundForegroundColor',['../vdc_8asm.html#abbad20cacc437923fcfa0e51b73219be',1,'vdc.asm']]],
-  ['setbackgroundforegroundcolorwithvars_4',['SetBackgroundForegroundColorWithVars',['../vdc_8asm.html#adde6b74d1b7467a788824871f376e7d5',1,'vdc.asm']]],
-  ['setborderandbackgroundcolor_5',['SetBorderAndBackgroundColor',['../vic2_8asm.html#aaf271dfc5676d30854f6ee2ba9082f40',1,'vic2.asm']]],
-  ['setbordercolor_6',['SetBorderColor',['../vic2_8asm.html#ad745239cfce1e840c94493ca9639e75e',1,'vic2.asm']]],
-  ['setinputchannel_7',['SetInputChannel',['../io_8asm.html#a167a1bde025f06c5714671cbf3ad009d',1,'io.asm']]],
-  ['setioname_8',['SetIOName',['../io_8asm.html#ac1c8409202f1db62571b650979af277a',1,'io.asm']]],
-  ['setmmuconfiguration_9',['SetMMUConfiguration',['../mmu_8asm.html#a0e367e41fc25de49987703726aed4474',1,'mmu.asm']]],
-  ['setmmuloadconfiguration_10',['SetMMULoadConfiguration',['../mmu_8asm.html#a8028a51bdb8333c33e0a385e82b54716',1,'mmu.asm']]],
-  ['setoutputchannel_11',['SetOutputChannel',['../io_8asm.html#ace0cee82f210d4c15a3706327f664a3f',1,'io.asm']]],
-  ['setscreenandcharactermemory_12',['SetScreenAndCharacterMemory',['../vic2_8asm.html#a41bd78bc1430779dd005bd6eb18cc8bd',1,'vic2.asm']]],
-  ['setscreenmemoryandbitmappointer_13',['SetScreenMemoryAndBitmapPointer',['../vic2_8asm.html#a019728b3c82a42e44d6967ffbe8a28d4',1,'vic2.asm']]],
-  ['setvdcupdateaddress_14',['SetVdcUpdateAddress',['../vdc_8asm.html#a89ea57190f837c6fb925775d597e5c1e',1,'vdc.asm']]],
-  ['sub16_15',['Sub16',['../math_8asm.html#a277d29a8e58c921e5db820e1cf158bff',1,'math.asm']]]
+  ['readfromvdcmemorybyaddress_0',['ReadFromVdcMemoryByAddress',['../vdc_8asm.html#a22a7abb96293ea28ffba7b0ce95607de',1,'vdc.asm']]],
+  ['readfromvdcmemorybycoordinates_1',['ReadFromVdcMemoryByCoordinates',['../vdc_8asm.html#afe64706ebe1a53c820a412aa3b680f16',1,'vdc.asm']]],
+  ['readvdc_2',['ReadVdc',['../vdc_8asm.html#a0d42743594fd93e1a4f0927b14b4209c',1,'vdc.asm']]]
 ];

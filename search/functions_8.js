@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['readfromvdcmemorybyaddress_0',['ReadFromVdcMemoryByAddress',['../vdc_8asm.html#a22a7abb96293ea28ffba7b0ce95607de',1,'vdc.asm']]],
-  ['readfromvdcmemorybycoordinates_1',['ReadFromVdcMemoryByCoordinates',['../vdc_8asm.html#afe64706ebe1a53c820a412aa3b680f16',1,'vdc.asm']]],
-  ['readvdc_2',['ReadVdc',['../vdc_8asm.html#a0d42743594fd93e1a4f0927b14b4209c',1,'vdc.asm']]]
+  ['openfile_0',['OpenFile',['../io_8asm.html#ab2d4c5528f9f1009dcd2ef4ed86157fd',1,'io.asm']]],
+  ['openiochannel_1',['OpenIOChannel',['../io_8asm.html#a5a63a1df0d0afa9e32fc899b3c336466',1,'io.asm']]]
 ];
