@@ -115,13 +115,13 @@ Functions</h2></td></tr>
 <tr class="memitem:af9b332e235542f20e8dd6b8e0ab1790f" id="r_af9b332e235542f20e8dd6b8e0ab1790f"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9b332e235542f20e8dd6b8e0ab1790f">c128lib_CopyWithRelocation</a> (source, destination, count)</td></tr>
 <tr class="memdesc:af9b332e235542f20e8dd6b8e0ab1790f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another using page relocation.  <br /></td></tr>
 <tr class="separator:af9b332e235542f20e8dd6b8e0ab1790f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1ea541e2e4809693b3f68ed4d1c630e" id="r_ab1ea541e2e4809693b3f68ed4d1c630e"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1ea541e2e4809693b3f68ed4d1c630e">c128lib_FillMemory</a> (<a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>, length, <a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a>)</td></tr>
+<tr class="memitem:ab1ea541e2e4809693b3f68ed4d1c630e" id="r_ab1ea541e2e4809693b3f68ed4d1c630e"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1ea541e2e4809693b3f68ed4d1c630e">c128lib_FillMemory</a> (address, length, <a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a>)</td></tr>
 <tr class="memdesc:ab1ea541e2e4809693b3f68ed4d1c630e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro fills memory with a specified value.  <br /></td></tr>
 <tr class="separator:ab1ea541e2e4809693b3f68ed4d1c630e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae623e7d1cfafb292bf07b0ccd958d49" id="r_aae623e7d1cfafb292bf07b0ccd958d49"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae623e7d1cfafb292bf07b0ccd958d49">c128lib_Cmp16</a> (<a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a>, <a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
+<tr class="memitem:aae623e7d1cfafb292bf07b0ccd958d49" id="r_aae623e7d1cfafb292bf07b0ccd958d49"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae623e7d1cfafb292bf07b0ccd958d49">c128lib_Cmp16</a> (<a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a>, address)</td></tr>
 <tr class="memdesc:aae623e7d1cfafb292bf07b0ccd958d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro compares a 16-bit value with a 16-bit memory location.  <br /></td></tr>
 <tr class="separator:aae623e7d1cfafb292bf07b0ccd958d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab43341521f31e4f25f8a82a7360dbe02" id="r_ab43341521f31e4f25f8a82a7360dbe02"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab43341521f31e4f25f8a82a7360dbe02">c128lib_Set16</a> (<a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a>, <a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
+<tr class="memitem:ab43341521f31e4f25f8a82a7360dbe02" id="r_ab43341521f31e4f25f8a82a7360dbe02"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab43341521f31e4f25f8a82a7360dbe02">c128lib_Set16</a> (<a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a>, address)</td></tr>
 <tr class="memdesc:ab43341521f31e4f25f8a82a7360dbe02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills two-byte located in memory address "mem" with byte "value".  <br /></td></tr>
 <tr class="separator:ab43341521f31e4f25f8a82a7360dbe02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -232,7 +232,7 @@ Minimum length is set to 5 because it's not convenient to use this macro for low
         <tr>
           <td class="memname">macro c128lib_FillMemory </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+          <td class="paramtype">address</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -278,7 +278,7 @@ Flags N and Z will be affected.</dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+          <td class="paramtype">address</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -315,7 +315,7 @@ Flags N, Z and C will be affected.</dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+          <td class="paramtype">address</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -341,7 +341,7 @@ Flags N and Z will be affected.</dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="mem-global_8asm.html">mem-global.asm</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 16:55:32 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Sun Jun 2 2024 16:29:27 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

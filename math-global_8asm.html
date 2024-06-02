@@ -115,13 +115,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a99eb50c46d857ee7b32f8ae1f813ceb1" id="r_a99eb50c46d857ee7b32f8ae1f813ceb1"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99eb50c46d857ee7b32f8ae1f813ceb1">c128lib_Sub16</a> (<a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a>, dest)</td></tr>
 <tr class="memdesc:a99eb50c46d857ee7b32f8ae1f813ceb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro performs a 16-bit subtraction operation.  <br /></td></tr>
 <tr class="separator:a99eb50c46d857ee7b32f8ae1f813ceb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e42e35cd554ada4862166e904014ecb" id="r_a9e42e35cd554ada4862166e904014ecb"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e42e35cd554ada4862166e904014ecb">c128lib_Asl16</a> (<a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
+<tr class="memitem:a9e42e35cd554ada4862166e904014ecb" id="r_a9e42e35cd554ada4862166e904014ecb"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e42e35cd554ada4862166e904014ecb">c128lib_Asl16</a> (address)</td></tr>
 <tr class="memdesc:a9e42e35cd554ada4862166e904014ecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro performs a 16-bit arithmetic shift left (ASL) operation.  <br /></td></tr>
 <tr class="separator:a9e42e35cd554ada4862166e904014ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b2cb0369c6aaf9cb284a3550724ece8" id="r_a2b2cb0369c6aaf9cb284a3550724ece8"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b2cb0369c6aaf9cb284a3550724ece8">c128lib_Inc16</a> (<a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
+<tr class="memitem:a2b2cb0369c6aaf9cb284a3550724ece8" id="r_a2b2cb0369c6aaf9cb284a3550724ece8"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b2cb0369c6aaf9cb284a3550724ece8">c128lib_Inc16</a> (address)</td></tr>
 <tr class="memdesc:a2b2cb0369c6aaf9cb284a3550724ece8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro performs a 16-bit increment operation.  <br /></td></tr>
 <tr class="separator:a2b2cb0369c6aaf9cb284a3550724ece8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7d232beb792760f0c2f35dd261f23e8" id="r_ac7d232beb792760f0c2f35dd261f23e8"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7d232beb792760f0c2f35dd261f23e8">c128lib_Dec16</a> (<a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
+<tr class="memitem:ac7d232beb792760f0c2f35dd261f23e8" id="r_ac7d232beb792760f0c2f35dd261f23e8"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7d232beb792760f0c2f35dd261f23e8">c128lib_Dec16</a> (address)</td></tr>
 <tr class="memdesc:ac7d232beb792760f0c2f35dd261f23e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro performs a 16-bit decrement operation.  <br /></td></tr>
 <tr class="separator:ac7d232beb792760f0c2f35dd261f23e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae739e5204f8182212b67b928b91d90b4" id="r_ae739e5204f8182212b67b928b91d90b4"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae739e5204f8182212b67b928b91d90b4">c128lib_Div16By16</a> (dividend, divisor, remainder)</td></tr>
@@ -221,7 +221,7 @@ Flags N, O, Z and C will be affected.</dd></dl>
         <tr>
           <td class="memname">macro c128lib_Asl16 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">address</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -252,7 +252,7 @@ Flags N, Z and C will be affected.</dd></dl>
         <tr>
           <td class="memname">macro c128lib_Inc16 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">address</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -281,7 +281,7 @@ Flags N, Z and C will be affected.</dd></dl>
         <tr>
           <td class="memname">macro c128lib_Dec16 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">address</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -391,7 +391,7 @@ Flags N, O, Z and C will be affected.</dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="math-global_8asm.html">math-global.asm</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 16:55:32 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Sun Jun 2 2024 16:29:27 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

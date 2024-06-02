@@ -196,7 +196,7 @@ Functions</h2></td></tr>
 
 <p>This macro provides a far branch if not equal (BNE) operation. </p>
 <p>The 6502 processor's BNE instruction can only jump a limited distance (from -128 to +127 bytes relative to the instruction following BNE). This macro extends that range by using a combination of BNE, BEQ, and JMP instructions.</p>
-<p>If the label is within the range of a normal BNE, it uses that. If not, it uses a BEQ to skip over a JMP instruction.; This works because BNE jumps if the zero flag is clear, and BEQ jumps if the zero flag is set - they are opposites. So if the BNE would not have jumped, the BEQ does, and the JMP is skipped. If the BNE would have jumped, the BEQ does not, and the JMP is executed, jumping to the label.;</p>
+<p>If the label is within the range of a normal BNE;, it uses that. If not, it uses a BEQ to skip over a JMP instruction. This works because BNE jumps if the zero flag is clear, and BEQ jumps if the zero flag is set - they are opposites. So if the BNE would not have jumped, the BEQ does, and the JMP is skipped. If the BNE would have jumped, the BEQ does not, and the JMP is executed, jumping to the label.;</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">label</td><td>The label to jump to if the zero flag is not set.;</td></tr>
@@ -225,7 +225,7 @@ Functions</h2></td></tr>
 
 <p>This macro provides a far branch if minus (BMI) operation. </p>
 <p>The 6502 processor's BMI instruction can only jump a limited distance (from -128 to +127 bytes relative to the instruction following BMI). This macro extends that range by using a combination of BMI, BPL, BEQ, and JMP instructions.</p>
-<p>If the label is within the range of a normal BMI, it uses that. If not, it uses a BPL and BEQ to skip over a JMP instruction.; This works because BMI jumps if the negative flag is set, and BPL jumps if the negative flag is clear - they are opposites. So if the BMI would not have jumped, the BPL and BEQ do, and the JMP is skipped. If the BMI would have jumped, the BPL and BEQ do not, and the JMP is executed, jumping to the label.;</p>
+<p>If the label is within the range of a normal BMI;, it uses that. If not, it uses a BPL and BEQ to skip over a JMP instruction. This works because BMI jumps if the negative flag is set, and BPL jumps if the negative flag is clear - they are opposites. So if the BMI would not have jumped, the BPL and BEQ do, and the JMP is skipped. If the BMI would have jumped, the BPL and BEQ do not, and the JMP is executed, jumping to the label.;</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">label</td><td>The label to jump to if the negative flag is set.;</td></tr>
@@ -269,7 +269,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="common_8asm.html">common.asm</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 16:55:32 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Sun Jun 2 2024 16:29:27 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

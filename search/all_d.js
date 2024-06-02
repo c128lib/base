@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['value_0',['value',['../mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f',1,'mem.asm']]],
-  ['vdc_1',['Vdc',['../namespaceVdc.html',1,'']]],
-  ['vdc_2dglobal_2easm_2',['vdc-global.asm',['../vdc-global_8asm.html',1,'']]],
-  ['vdc_2easm_3',['vdc.asm',['../vdc_8asm.html',1,'']]],
-  ['vic2_2dglobal_2easm_4',['vic2-global.asm',['../vic2-global_8asm.html',1,'']]],
-  ['vic2_2easm_5',['vic2.asm',['../vic2_8asm.html',1,'']]]
+  ['writetovdcmemorybyaddress_0',['WriteToVdcMemoryByAddress',['../vdc_8asm.html#af5ee110102d974e26be1806e9fd1e54f',1,'vdc.asm']]],
+  ['writetovdcmemorybycoordinates_1',['WriteToVdcMemoryByCoordinates',['../vdc_8asm.html#ae1a0da2f272109b89dc83947052a32c9',1,'vdc.asm']]],
+  ['writevdc_2',['WriteVdc',['../vdc_8asm.html#aee87372293dba2955633d1407303c89e',1,'vdc.asm']]]
 ];

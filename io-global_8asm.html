@@ -112,7 +112,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ac02b781f904890be296f7a1f814a52da" id="r_ac02b781f904890be296f7a1f814a52da"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac02b781f904890be296f7a1f814a52da">c128lib_OpenIOChannel</a> (filenumber, devicenumber, secondary)</td></tr>
 <tr class="memdesc:ac02b781f904890be296f7a1f814a52da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens an I/O channel.  <br /></td></tr>
 <tr class="separator:ac02b781f904890be296f7a1f814a52da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48d03d6b05c12d5812cf2db1fa89a942" id="r_a48d03d6b05c12d5812cf2db1fa89a942"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48d03d6b05c12d5812cf2db1fa89a942">c128lib_SetIOName</a> (length, <a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
+<tr class="memitem:a48d03d6b05c12d5812cf2db1fa89a942" id="r_a48d03d6b05c12d5812cf2db1fa89a942"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48d03d6b05c12d5812cf2db1fa89a942">c128lib_SetIOName</a> (length, address)</td></tr>
 <tr class="memdesc:a48d03d6b05c12d5812cf2db1fa89a942"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the name for I/O operations.  <br /></td></tr>
 <tr class="separator:a48d03d6b05c12d5812cf2db1fa89a942"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a348ac48c2acaa04d8a45161e4ec3c96e" id="r_a348ac48c2acaa04d8a45161e4ec3c96e"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a348ac48c2acaa04d8a45161e4ec3c96e">c128lib_SetInputChannel</a> (filenumber)</td></tr>
@@ -121,7 +121,7 @@ Functions</h2></td></tr>
 <tr class="memitem:aa0d25b30762bd148f1f29db4ea259a22" id="r_aa0d25b30762bd148f1f29db4ea259a22"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0d25b30762bd148f1f29db4ea259a22">c128lib_SetOutputChannel</a> (filenumber)</td></tr>
 <tr class="memdesc:aa0d25b30762bd148f1f29db4ea259a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the output channel.  <br /></td></tr>
 <tr class="separator:aa0d25b30762bd148f1f29db4ea259a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91d52675ce72abaeed5aefc8c6c69b07" id="r_a91d52675ce72abaeed5aefc8c6c69b07"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91d52675ce72abaeed5aefc8c6c69b07">c128lib_OpenFile</a> (length, <a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>, filenumber, devicenumber, secondary)</td></tr>
+<tr class="memitem:a91d52675ce72abaeed5aefc8c6c69b07" id="r_a91d52675ce72abaeed5aefc8c6c69b07"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91d52675ce72abaeed5aefc8c6c69b07">c128lib_OpenFile</a> (length, address, filenumber, devicenumber, secondary)</td></tr>
 <tr class="memdesc:a91d52675ce72abaeed5aefc8c6c69b07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a file for I/O operations.  <br /></td></tr>
 <tr class="separator:a91d52675ce72abaeed5aefc8c6c69b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -190,7 +190,7 @@ Flags N and Z will be affected.</dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+          <td class="paramtype">address</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -286,7 +286,7 @@ Flags N and Z will be affected.</dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+          <td class="paramtype">address</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -328,7 +328,7 @@ Flags N and Z will be affected.</dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="io-global_8asm.html">io-global.asm</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 16:55:32 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Sun Jun 2 2024 16:29:27 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

@@ -146,9 +146,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:af86f8f1ea8abf7daaf5425a0aeb1b992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates memory offset of text cell specified by given coordinates on 80 cols screen.  <br /></td></tr>
 <tr class="separator:af86f8f1ea8abf7daaf5425a0aeb1b992"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6a19a819159bc39fba5e188b1778622" id="r_ad6a19a819159bc39fba5e188b1778622"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6a19a819159bc39fba5e188b1778622">GetVdcDisplayStart</a> ()</td></tr>
-<tr class="memdesc:ad6a19a819159bc39fba5e188b1778622"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the address start of <a class="el" href="namespaceVdc.html">Vdc</a> display memory data. This is stored in <a class="el" href="namespaceVdc.html">Vdc</a> register SCREEN_MEMORY_STARTING_HIGH_ADDRESS and SCREEN_MEMORY_STARTING_LOW_ADDRESS. The 16-bit value is stored in $FB and $FC.  <br /></td></tr>
 <tr class="separator:ad6a19a819159bc39fba5e188b1778622"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89ea57190f837c6fb925775d597e5c1e" id="r_a89ea57190f837c6fb925775d597e5c1e"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89ea57190f837c6fb925775d597e5c1e">SetVdcUpdateAddress</a> (<a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a>)</td></tr>
+<tr class="memitem:a89ea57190f837c6fb925775d597e5c1e" id="r_a89ea57190f837c6fb925775d597e5c1e"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89ea57190f837c6fb925775d597e5c1e">SetVdcUpdateAddress</a> (address)</td></tr>
 <tr class="memdesc:a89ea57190f837c6fb925775d597e5c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the pointer to the RAM area that is to be updated. The update pointer is stored in <a class="el" href="namespaceVdc.html">Vdc</a> register CURRENT_MEMORY_HIGH_ADDRESS and CURRENT_MEMORY_LOW_ADDRESS.  <br /></td></tr>
 <tr class="separator:a89ea57190f837c6fb925775d597e5c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee87372293dba2955633d1407303c89e" id="r_aee87372293dba2955633d1407303c89e"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee87372293dba2955633d1407303c89e">WriteVdc</a> ()</td></tr>
@@ -541,13 +540,6 @@ Flags N, Z and C will be affected.</dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the address start of <a class="el" href="namespaceVdc.html">Vdc</a> display memory data. This is stored in <a class="el" href="namespaceVdc.html">Vdc</a> register SCREEN_MEMORY_STARTING_HIGH_ADDRESS and SCREEN_MEMORY_STARTING_LOW_ADDRESS. The 16-bit value is stored in $FB and $FC. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Register .A and .X will be modified. </dd>
-<dd>
-Flags N, Z and O will be affected.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Use c128lib_GetVdcDisplayStart in <a class="el" href="vdc-global_8asm.html" title="Vdc module.">vdc-global.asm</a></dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.1.0 </dd></dl>
-
 </div>
 </div>
 <a id="a89ea57190f837c6fb925775d597e5c1e" name="a89ea57190f837c6fb925775d597e5c1e"></a>
@@ -559,7 +551,7 @@ Flags N, Z and O will be affected.</dd></dl>
         <tr>
           <td class="memname">macro SetVdcUpdateAddress </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="math_8asm.html#ad4fd58a50f930619fc64223327a1ddf1">address</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">address</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -637,7 +629,7 @@ Flags N, Z and O will be affected. </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="vdc_8asm.html">vdc.asm</a></li>
-    <li class="footer">Generated on Sat Jun 1 2024 16:55:32 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Sun Jun 2 2024 16:29:27 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>
