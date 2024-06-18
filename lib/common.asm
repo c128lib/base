@@ -144,3 +144,17 @@ upstartEnd:
       }
     }
 }
+
+/**
+ * @brief Generates the negative value for the argument
+ *
+ * @param[in] value Value to negated
+ *
+ * @since 1.2.0
+*/
+.function neg(value) {
+  .return value ^ $FF
+}
+.assert "neg($00) gives $FF", neg($00), $FF
+.assert "neg($FF) gives $00", neg($FF), $00
+.assert "neg(%10101010) gives %01010101", neg(%10101010), %01010101

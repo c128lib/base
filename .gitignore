@@ -13,9 +13,10 @@
 # Doxygen
 html/*
 xml/*
-lib/output
+output
 
 # IDE and tool files
 .idea
 .ra
 .vscode
+.code-workspace
