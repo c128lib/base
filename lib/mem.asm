@@ -77,36 +77,42 @@
  *
  * @param[in] source The starting address of the memory block to be copied.
  * @param[in] destination The starting address of the location where the memory block will be copied to.
- * @param[in] count The number of bytes to be copied.
  *
- * @remark Registers .A, .X, and .Y will be modified.
+ * @remark Registers .A and .X will be modified.
  * @remark Flags N and Z will be affected.
  * @remark Zeropage location $fe will be used.
+ * @remark During copy, interrupts are disabled.
  *
- * @note Usage: CopyWithRelocation($C000, $C100, 256)  // Copies 256 bytes from memory location $C000 to $C100 with relocation
+ * @note Usage: CopyWithRelocation($C000, $C100)  // Copies 256 bytes from memory location $C000 to $C100 with relocation
+ * @note The number of bytes that can be copied is always 256.
+ * @note Source and destination less significant byte should be $00. Any
+ * different value will be ignored.
  * @note Use c128lib_CopyWithRelocation in mem-global.asm
  *
  * @since 1.0.0
  */
-.macro CopyWithRelocation(source, destination, count) {
+.macro CopyWithRelocation(source, destination) {
     .label TEMP = $fe
     sei
+    ldx #>source  // Preparing self mod code
     stx !+ + 2
-    tsx
+    tsx           // Save current stack pointer
     stx TEMP
-    sty Mmu.PAGE1_PAGE_POINTER
+    ldx #>destination
+    stx Mmu.PAGE1_PAGE_POINTER
 
     ldx #0
     txs
-!:  lda Mmu.LOAD_CONFIGURATION,x
+!:  lda $FF00,x   // Placeholder for self mod code
     pha
     dex
     bne !-
 
-    ldx #1
+    // .X contains 0 because bne didn't jump to the start of the loop
+    inx           // Setting back stack page to 1
     stx Mmu.PAGE1_PAGE_POINTER
     ldx TEMP
-    txs
+    txs           // Setting stack pointer to previous value
     cli
     rts
 }
