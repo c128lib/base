@@ -37,7 +37,7 @@ var searchData=
   ['c128lib_5fsetmmuconfiguration_34',['c128lib_SetMMUConfiguration',['../mmu-global_8asm.html#a70dc6e9f686455e98ff2ad8035b0fe05',1,'mmu-global.asm']]],
   ['c128lib_5fsetmmuloadconfiguration_35',['c128lib_SetMMULoadConfiguration',['../mmu-global_8asm.html#a4e5266f100b800a3513f982dfb34fa04',1,'mmu-global.asm']]],
   ['c128lib_5fsetoutputchannel_36',['c128lib_SetOutputChannel',['../io-global_8asm.html#aa0d25b30762bd148f1f29db4ea259a22',1,'io-global.asm']]],
-  ['c128lib_5fsetscreenandcharactermemory_37',['c128lib_SetScreenAndCharacterMemory',['../vic2-global_8asm.html#ac7bc583c36627928a8a4bc8cb70a9cda',1,'vic2-global.asm']]],
+  ['c128lib_5fsetscreenandcharactermemorywithshadow_37',['c128lib_SetScreenAndCharacterMemoryWithShadow',['../vic2-global_8asm.html#ac04ab6209dff9795a96866454b62cae1',1,'vic2-global.asm']]],
   ['c128lib_5fsetscreenmemoryandbitmappointer_38',['c128lib_SetScreenMemoryAndBitmapPointer',['../vic2-global_8asm.html#a4d9519360e0285099b393dfc1e788791',1,'vic2-global.asm']]],
   ['c128lib_5fsetspriteposition_39',['c128lib_SetSpritePosition',['../vic2-global_8asm.html#a11a60b083059321eae69da6dd6ee3bd0',1,'vic2-global.asm']]],
   ['c128lib_5fsetspritepositionwithshadow_40',['c128lib_SetSpritePositionWithShadow',['../vic2-global_8asm.html#a3b56730a2c348420481395329b737106',1,'vic2-global.asm']]],

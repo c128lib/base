@@ -4,7 +4,7 @@ var vic2_8asm =
     [ "SetBorderColor", "vic2_8asm.html#ad745239cfce1e840c94493ca9639e75e", null ],
     [ "SetBackgroundColor", "vic2_8asm.html#a805440d17d14e6a7222ad8e12e211785", null ],
     [ "getTextOffset", "vic2_8asm.html#ad440bb847c466649947bcb26ac5eae9d", null ],
-    [ "SetScreenAndCharacterMemory", "vic2_8asm.html#a41bd78bc1430779dd005bd6eb18cc8bd", null ],
+    [ "SetScreenAndCharacterMemoryWithShadow", "vic2_8asm.html#a6dc93ae75f9b3ac9f9d5ea9456c588f1", null ],
     [ "SetScreenMemoryAndBitmapPointer", "vic2_8asm.html#a019728b3c82a42e44d6967ffbe8a28d4", null ],
     [ "spriteXReg", "vic2_8asm.html#ab087daae40e959d4d46dd7b09f9cba0e", null ],
     [ "spriteShadowXReg", "vic2_8asm.html#adbeb79e20563404fe32a2f3b77a225f3", null ],

@@ -11,7 +11,7 @@ var searchData=
   ['setmmuconfiguration_8',['SetMMUConfiguration',['../mmu_8asm.html#a0e367e41fc25de49987703726aed4474',1,'mmu.asm']]],
   ['setmmuloadconfiguration_9',['SetMMULoadConfiguration',['../mmu_8asm.html#a8028a51bdb8333c33e0a385e82b54716',1,'mmu.asm']]],
   ['setoutputchannel_10',['SetOutputChannel',['../io_8asm.html#ace0cee82f210d4c15a3706327f664a3f',1,'io.asm']]],
-  ['setscreenandcharactermemory_11',['SetScreenAndCharacterMemory',['../vic2_8asm.html#a41bd78bc1430779dd005bd6eb18cc8bd',1,'vic2.asm']]],
+  ['setscreenandcharactermemorywithshadow_11',['SetScreenAndCharacterMemoryWithShadow',['../vic2_8asm.html#a6dc93ae75f9b3ac9f9d5ea9456c588f1',1,'vic2.asm']]],
   ['setscreenmemoryandbitmappointer_12',['SetScreenMemoryAndBitmapPointer',['../vic2_8asm.html#a019728b3c82a42e44d6967ffbe8a28d4',1,'vic2.asm']]],
   ['setspriteposition_13',['SetSpritePosition',['../vic2_8asm.html#a6e1467f92f74dd051509c89af37f7dc7',1,'vic2.asm']]],
   ['setspritepositionwithshadow_14',['SetSpritePositionWithShadow',['../vic2_8asm.html#a555d98a6f57d64e95152b9c24dd36fa0',1,'vic2.asm']]],

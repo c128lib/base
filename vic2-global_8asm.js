@@ -4,7 +4,7 @@ var vic2_global_8asm =
     [ "c128lib_SetBorderColor", "vic2-global_8asm.html#a1d25d9c0f296b1f0d7fe9a4ee6833b1a", null ],
     [ "c128lib_SetBackgroundColor", "vic2-global_8asm.html#aa2ba80b5bea957169c156383d8351076", null ],
     [ "c128lib_getTextOffset", "vic2-global_8asm.html#aafc66b632a6103c2123c4b67e99b0470", null ],
-    [ "c128lib_SetScreenAndCharacterMemory", "vic2-global_8asm.html#ac7bc583c36627928a8a4bc8cb70a9cda", null ],
+    [ "c128lib_SetScreenAndCharacterMemoryWithShadow", "vic2-global_8asm.html#ac04ab6209dff9795a96866454b62cae1", null ],
     [ "c128lib_SetScreenMemoryAndBitmapPointer", "vic2-global_8asm.html#a4d9519360e0285099b393dfc1e788791", null ],
     [ "c128lib_SetSpriteXPosition", "vic2-global_8asm.html#a24eb4bd0efa4ecde70c77740d7edd4bc", null ],
     [ "c128lib_SetSpriteXPositionWithShadow", "vic2-global_8asm.html#aeaa3b7884e042d42ae9809a50d659c85", null ],
