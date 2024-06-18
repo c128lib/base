@@ -112,9 +112,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aad7d5a9efa61b5d4df7887bd6d36f2f5" id="r_aad7d5a9efa61b5d4df7887bd6d36f2f5"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad7d5a9efa61b5d4df7887bd6d36f2f5">c128lib_CopyFast</a> (source, destination, count)</td></tr>
 <tr class="memdesc:aad7d5a9efa61b5d4df7887bd6d36f2f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another in a fast manner.  <br /></td></tr>
 <tr class="separator:aad7d5a9efa61b5d4df7887bd6d36f2f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9b332e235542f20e8dd6b8e0ab1790f" id="r_af9b332e235542f20e8dd6b8e0ab1790f"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9b332e235542f20e8dd6b8e0ab1790f">c128lib_CopyWithRelocation</a> (source, destination, count)</td></tr>
-<tr class="memdesc:af9b332e235542f20e8dd6b8e0ab1790f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another using page relocation.  <br /></td></tr>
-<tr class="separator:af9b332e235542f20e8dd6b8e0ab1790f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2f961bda68327124afa39c13867578b" id="r_ad2f961bda68327124afa39c13867578b"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2f961bda68327124afa39c13867578b">c128lib_CopyWithRelocation</a> (source, destination)</td></tr>
+<tr class="memdesc:ad2f961bda68327124afa39c13867578b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another using page relocation.  <br /></td></tr>
+<tr class="separator:ad2f961bda68327124afa39c13867578b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1ea541e2e4809693b3f68ed4d1c630e" id="r_ab1ea541e2e4809693b3f68ed4d1c630e"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1ea541e2e4809693b3f68ed4d1c630e">c128lib_FillMemory</a> (address, length, <a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a>)</td></tr>
 <tr class="memdesc:ab1ea541e2e4809693b3f68ed4d1c630e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro fills memory with a specified value.  <br /></td></tr>
 <tr class="separator:ab1ea541e2e4809693b3f68ed4d1c630e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,8 +177,8 @@ Flags N and Z will be affected.</dd></dl>
 
 </div>
 </div>
-<a id="af9b332e235542f20e8dd6b8e0ab1790f" name="af9b332e235542f20e8dd6b8e0ab1790f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9b332e235542f20e8dd6b8e0ab1790f">&#9670;&#160;</a></span>c128lib_CopyWithRelocation()</h2>
+<a id="ad2f961bda68327124afa39c13867578b" name="ad2f961bda68327124afa39c13867578b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2f961bda68327124afa39c13867578b">&#9670;&#160;</a></span>c128lib_CopyWithRelocation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,34 +191,32 @@ Flags N and Z will be affected.</dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">destination</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">count</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+          <td class="paramtype">destination</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>This macro copies a block of memory from one location to another using page relocation. </p>
-<p>This macro also handles the page relocation of the memory block during the copy operation. It's slower than </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="#aad7d5a9efa61b5d4df7887bd6d36f2f5" title="This macro copies a block of memory from one location to another in a fast manner.">c128lib_CopyFast</a> but it uses much less memory, especially for large memory blocks copy.</dd></dl>
+<p>This macro also handles the page relocation of the memory block during the copy operation. It's slower than </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="mem_8asm.html#a91f628c476ff15d21e675cd8c0441002" title="This macro copies a block of memory from one location to another in a fast manner.">CopyFast</a> but it uses much less memory, especially for large memory blocks copy.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>The starting address of the memory block to be copied. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">destination</td><td>The starting address of the location where the memory block will be copied to. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>The number of bytes to be copied.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">destination</td><td>The starting address of the location where the memory block will be copied to.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Registers .A, .X, and .Y will be modified. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Registers .A and .X will be modified. </dd>
 <dd>
 Flags N and Z will be affected. </dd>
 <dd>
-Zeropage location $fe will be used.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Usage: c128lib_CopyWithRelocation($C000, $C100, 256) // Copies 256 bytes from memory location $C000 to $C100 with relocation </dd>
+Zeropage location $fe will be used. </dd>
 <dd>
-Minimum length is set to 5 because it's not convenient to use this macro for lower values.</dd></dl>
+During copy, interrupts are disabled.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Usage: c128lib_CopyWithRelocation($C000, $C100) // Copies 256 bytes from memory location $C000 to $C100 with relocation </dd>
+<dd>
+The number of bytes that can be copied is always 256. </dd>
+<dd>
+Source and destination less significant byte should be $00. Any different value will be ignored.</dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
@@ -341,7 +339,7 @@ Flags N and Z will be affected.</dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="mem-global_8asm.html">mem-global.asm</a></li>
-    <li class="footer">Generated on Tue Jun 18 2024 18:16:20 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Tue Jun 18 2024 20:06:30 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>

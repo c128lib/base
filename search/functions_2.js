@@ -5,7 +5,7 @@ var searchData=
   ['c128lib_5fbasicupstart128_2',['c128lib_BasicUpstart128',['../common-global_8asm.html#a83e3c1a543120b67e330db3c1779656c',1,'common-global.asm']]],
   ['c128lib_5fcmp16_3',['c128lib_Cmp16',['../mem-global_8asm.html#aae623e7d1cfafb292bf07b0ccd958d49',1,'mem-global.asm']]],
   ['c128lib_5fcopyfast_4',['c128lib_CopyFast',['../mem-global_8asm.html#aad7d5a9efa61b5d4df7887bd6d36f2f5',1,'mem-global.asm']]],
-  ['c128lib_5fcopywithrelocation_5',['c128lib_CopyWithRelocation',['../mem-global_8asm.html#af9b332e235542f20e8dd6b8e0ab1790f',1,'mem-global.asm']]],
+  ['c128lib_5fcopywithrelocation_5',['c128lib_CopyWithRelocation',['../mem-global_8asm.html#ad2f961bda68327124afa39c13867578b',1,'mem-global.asm']]],
   ['c128lib_5fdec16_6',['c128lib_Dec16',['../math-global_8asm.html#ac7d232beb792760f0c2f35dd261f23e8',1,'math-global.asm']]],
   ['c128lib_5fdisableciainterrupts_7',['c128lib_DisableCIAInterrupts',['../cia-global_8asm.html#a5987c4a815721a5c6bf2b7758ec06cc6',1,'cia-global.asm']]],
   ['c128lib_5fdiv16by16_8',['c128lib_Div16By16',['../math-global_8asm.html#ae739e5204f8182212b67b928b91d90b4',1,'math-global.asm']]],
@@ -64,5 +64,5 @@ var searchData=
   ['calculatebackgroundandforeground_61',['calculateBackgroundAndForeground',['../vdc_8asm.html#a6cfb83c44bf259de6994bcc7a8737a70',1,'vdc.asm']]],
   ['cmp16_62',['Cmp16',['../mem_8asm.html#a8eecc5c843b1e6d33e725bff22e509de',1,'mem.asm']]],
   ['copyfast_63',['CopyFast',['../mem_8asm.html#a91f628c476ff15d21e675cd8c0441002',1,'mem.asm']]],
-  ['copywithrelocation_64',['CopyWithRelocation',['../mem_8asm.html#a55061d19016a525ff8bbbf7946862bd4',1,'mem.asm']]]
+  ['copywithrelocation_64',['CopyWithRelocation',['../mem_8asm.html#acaa6a1733935dd3ac48ce6e4bf0becc9',1,'mem.asm']]]
 ];

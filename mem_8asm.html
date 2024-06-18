@@ -113,9 +113,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a91f628c476ff15d21e675cd8c0441002" id="r_a91f628c476ff15d21e675cd8c0441002"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91f628c476ff15d21e675cd8c0441002">CopyFast</a> (source, destination, count)</td></tr>
 <tr class="memdesc:a91f628c476ff15d21e675cd8c0441002"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another in a fast manner.  <br /></td></tr>
 <tr class="separator:a91f628c476ff15d21e675cd8c0441002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55061d19016a525ff8bbbf7946862bd4" id="r_a55061d19016a525ff8bbbf7946862bd4"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55061d19016a525ff8bbbf7946862bd4">CopyWithRelocation</a> (source, destination, count)</td></tr>
-<tr class="memdesc:a55061d19016a525ff8bbbf7946862bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another using page relocation.  <br /></td></tr>
-<tr class="separator:a55061d19016a525ff8bbbf7946862bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa6a1733935dd3ac48ce6e4bf0becc9" id="r_acaa6a1733935dd3ac48ce6e4bf0becc9"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaa6a1733935dd3ac48ce6e4bf0becc9">CopyWithRelocation</a> (source, destination)</td></tr>
+<tr class="memdesc:acaa6a1733935dd3ac48ce6e4bf0becc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another using page relocation.  <br /></td></tr>
+<tr class="separator:acaa6a1733935dd3ac48ce6e4bf0becc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a42825fbfb732a2839f5adf6ccc5da4" id="r_a1a42825fbfb732a2839f5adf6ccc5da4"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a42825fbfb732a2839f5adf6ccc5da4">FillMemory</a> (address, length, <a class="el" href="#a1e8d90edc813416c4cbfb995d68c893f">value</a>)</td></tr>
 <tr class="memdesc:a1a42825fbfb732a2839f5adf6ccc5da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro fills memory with a specified value.  <br /></td></tr>
 <tr class="separator:a1a42825fbfb732a2839f5adf6ccc5da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,8 +184,8 @@ Use c128lib_CopyFast in <a class="el" href="mem-global_8asm.html" title="Mem mod
 
 </div>
 </div>
-<a id="a55061d19016a525ff8bbbf7946862bd4" name="a55061d19016a525ff8bbbf7946862bd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55061d19016a525ff8bbbf7946862bd4">&#9670;&#160;</a></span>CopyWithRelocation()</h2>
+<a id="acaa6a1733935dd3ac48ce6e4bf0becc9" name="acaa6a1733935dd3ac48ce6e4bf0becc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa6a1733935dd3ac48ce6e4bf0becc9">&#9670;&#160;</a></span>CopyWithRelocation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,12 +198,7 @@ Use c128lib_CopyFast in <a class="el" href="mem-global_8asm.html" title="Mem mod
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">destination</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">count</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+          <td class="paramtype">destination</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -213,17 +208,22 @@ Use c128lib_CopyFast in <a class="el" href="mem-global_8asm.html" title="Mem mod
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>The starting address of the memory block to be copied. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">destination</td><td>The starting address of the location where the memory block will be copied to. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>The number of bytes to be copied.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">destination</td><td>The starting address of the location where the memory block will be copied to.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Registers .A, .X, and .Y will be modified. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Registers .A and .X will be modified. </dd>
 <dd>
 Flags N and Z will be affected. </dd>
 <dd>
-Zeropage location $fe will be used.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Usage: CopyWithRelocation($C000, $C100, 256) // Copies 256 bytes from memory location $C000 to $C100 with relocation </dd>
+Zeropage location $fe will be used. </dd>
+<dd>
+During copy, interrupts are disabled.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Usage: CopyWithRelocation($C000, $C100) // Copies 256 bytes from memory location $C000 to $C100 with relocation </dd>
+<dd>
+The number of bytes that can be copied is always 256. </dd>
+<dd>
+Source and destination less significant byte should be $00. Any different value will be ignored. </dd>
 <dd>
 Use c128lib_CopyWithRelocation in <a class="el" href="mem-global_8asm.html" title="Mem module.">mem-global.asm</a></dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
@@ -357,7 +357,7 @@ Use c128lib_Cmp16 in <a class="el" href="mem-global_8asm.html" title="Mem module
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="mem_8asm.html">mem.asm</a></li>
-    <li class="footer">Generated on Tue Jun 18 2024 18:16:20 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Tue Jun 18 2024 20:06:30 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>
