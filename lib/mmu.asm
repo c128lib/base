@@ -135,8 +135,6 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use SetMMULoadConfiguration in mmu-global.asm
- *
  * @since 1.1.0
  */
 .macro SetMMULoadConfiguration(config) {
