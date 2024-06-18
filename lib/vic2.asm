@@ -190,15 +190,15 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_SetScreenAndCharacterMemory in vic2-global.asm
+ * @note Use c128lib_SetScreenAndCharacterMemoryWithShadow in vic2-global.asm
  *
  * @since 1.0.0
  */
-.macro SetScreenAndCharacterMemory(config) {
+.macro SetScreenAndCharacterMemoryWithShadow(config) {
     lda #config
     sta Vic2.VIC_SCREEN_CHAR_SHADOW
 }
-.assert "SetScreenAndCharacterMemory(Vic2.CHAR_MEM_3800 | Vic2.SCREEN_MEM_3C00) sets char to $3800 and Screen to $3c00 in shadow MEMORY_CONTROL",  { SetScreenAndCharacterMemory(Vic2.CHAR_MEM_3800 | Vic2.SCREEN_MEM_3C00) }, {
+.assert "SetScreenAndCharacterMemoryWithShadow(Vic2.CHAR_MEM_3800 | Vic2.SCREEN_MEM_3C00) sets char to $3800 and Screen to $3c00 in shadow MEMORY_CONTROL",  { SetScreenAndCharacterMemoryWithShadow(Vic2.CHAR_MEM_3800 | Vic2.SCREEN_MEM_3C00) }, {
   lda #%11111110; sta $0A2C
 }
 

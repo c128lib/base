@@ -141,7 +141,7 @@
  *
  * @since 1.0.0
  */
-.macro @c128lib_SetScreenAndCharacterMemory(config) { SetScreenAndCharacterMemory(config) }
+.macro @c128lib_SetScreenAndCharacterMemoryWithShadow(config) { SetScreenAndCharacterMemoryWithShadow(config) }
 
 /**
  * @brief Set screen memory and bitmap memory pointer
