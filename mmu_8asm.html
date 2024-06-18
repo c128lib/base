@@ -115,6 +115,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a8028a51bdb8333c33e0a385e82b54716" id="r_a8028a51bdb8333c33e0a385e82b54716"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8028a51bdb8333c33e0a385e82b54716">SetMMULoadConfiguration</a> (config)</td></tr>
 <tr class="memdesc:a8028a51bdb8333c33e0a385e82b54716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for Mmu configuration. Uses $FF00 instead of $D500.  <br /></td></tr>
 <tr class="separator:a8028a51bdb8333c33e0a385e82b54716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed26fccb43d0f7053fd361a273d0ed4" id="r_afed26fccb43d0f7053fd361a273d0ed4"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afed26fccb43d0f7053fd361a273d0ed4">SetBankConfiguration</a> (id)</td></tr>
+<tr class="memdesc:afed26fccb43d0f7053fd361a273d0ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set banking. Only main banking are available.  <br /></td></tr>
+<tr class="separator:afed26fccb43d0f7053fd361a273d0ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7af66efa2e8684b329aef1a7124c9f12" id="r_a7af66efa2e8684b329aef1a7124c9f12"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7af66efa2e8684b329aef1a7124c9f12">SetModeConfig</a> (config)</td></tr>
+<tr class="memdesc:a7af66efa2e8684b329aef1a7124c9f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set mode configuration register.  <br /></td></tr>
+<tr class="separator:a7af66efa2e8684b329aef1a7124c9f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95264c496f278c41ef154133319b9d95" id="r_a95264c496f278c41ef154133319b9d95"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95264c496f278c41ef154133319b9d95">SetCommonRAM</a> (config)</td></tr>
+<tr class="memdesc:a95264c496f278c41ef154133319b9d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure common RAM amount.  <br /></td></tr>
+<tr class="separator:a95264c496f278c41ef154133319b9d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Mmu module. </p>
@@ -245,8 +254,103 @@ Flags N and Z will be affected.</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
 <dd>
 Flags N and Z will be affected.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Use SetMMULoadConfiguration in <a class="el" href="mmu-global_8asm.html" title="Mmu module.">mmu-global.asm</a></dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.1.0 </dd></dl>
+
+</div>
+</div>
+<a id="afed26fccb43d0f7053fd361a273d0ed4" name="afed26fccb43d0f7053fd361a273d0ed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afed26fccb43d0f7053fd361a273d0ed4">&#9670;&#160;</a></span>SetBankConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">macro SetBankConfiguration </td>
+          <td>(</td>
+          <td class="paramtype">id</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set banking. Only main banking are available. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>Values for Mmu confiuration</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
+<dd>
+Flags N and Z will be affected.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Use Basic banking, see reference <a href="https://c128lib.github.io/Reference/MemoryMap">https://c128lib.github.io/Reference/MemoryMap</a> Only banking 0, 1, 4, 5, 12, 13, 14 and 15 are supported.</dd>
+<dd>
+Use c128lib_SetBankConfiguration in <a class="el" href="mmu-global_8asm.html" title="Mmu module.">mmu-global.asm</a></dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.2.0 </dd></dl>
+
+</div>
+</div>
+<a id="a7af66efa2e8684b329aef1a7124c9f12" name="a7af66efa2e8684b329aef1a7124c9f12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7af66efa2e8684b329aef1a7124c9f12">&#9670;&#160;</a></span>SetModeConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">macro SetModeConfig </td>
+          <td>(</td>
+          <td class="paramtype">config</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set mode configuration register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>Values for configuration register</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Config parameter can be filled with Mmu.CPU_*, Mmu.FASTSERIAL*, Mmu.GAME_*, Mmu.EXROM_*, Mmu.KERNAL_*, Mmu.COLS_*</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
+<dd>
+Flags N and Z will be affected.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Use c128lib_SetModeConfig in <a class="el" href="mmu-global_8asm.html" title="Mmu module.">mmu-global.asm</a></dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.2.0 </dd></dl>
+
+</div>
+</div>
+<a id="a95264c496f278c41ef154133319b9d95" name="a95264c496f278c41ef154133319b9d95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95264c496f278c41ef154133319b9d95">&#9670;&#160;</a></span>SetCommonRAM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">macro SetCommonRAM </td>
+          <td>(</td>
+          <td class="paramtype">config</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure common RAM amount. </p>
+<p>RAM Bank 0 is always the visible RAM bank. Valid values are 1,4,8 and 16. For ex. if you choose 4K common ram at top and bottom you'll have 4K up and 4K bottom.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>Values for common ram configuration</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Register .A will be modified. </dd>
+<dd>
+Flags N and Z will be affected.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Config parameter can be filled with Mmu.COMMON_RAM_*</dd>
+<dd>
+Use c128lib_SetCommonRAM in <a class="el" href="mmu-global_8asm.html" title="Mmu module.">mmu-global.asm</a></dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.2.0 </dd></dl>
 
 </div>
 </div>
@@ -256,7 +360,7 @@ Flags N and Z will be affected.</dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="mmu_8asm.html">mmu.asm</a></li>
-    <li class="footer">Generated on Tue Jun 18 2024 18:07:46 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Tue Jun 18 2024 18:16:20 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>
