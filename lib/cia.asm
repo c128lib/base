@@ -76,7 +76,7 @@
 /**
  * @brief Disables the interrupts from both CIA chips.
  *
- * This macro disables the interrupts from both CIA chips on a Commodore 64. It loads the accumulator with the value $7F, which disables all interrupt sources, 
+ * This macro disables the interrupts from both CIA chips on a Commodore 64. It loads the accumulator with the value $7F, which disables all interrupt sources,
  * and then stores this value in the IRQ control registers of both CIA chips. It then reads the IRQ control registers to confirm the changes.
  *
  * @remark Register .A will be modified.
@@ -92,4 +92,38 @@
   sta Cia.CIA2_IRQ_CONTROL
   lda Cia.CIA1_IRQ_CONTROL
   lda Cia.CIA2_IRQ_CONTROL
+}
+
+/**
+ * @brief Configures Vic bank (16K) which is directly addressable by VIC2 chip.
+ *
+ * @param[in] bank Bank to set
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N, Z and C will be affected.
+ *
+ * @note Bank parameter can be filled with Cia.BANK_0, Cia.BANK_1, Cia.BANK_2, Cia.BANK_3
+ * @note BANK_0 $0000-$3FFF, BANK_1 $4000-$7FFF, BANK_2 $8000-$BFFF, BANK_3 $C000-$FFFF
+ *
+ * @note Use c128lib_SetVicBank in cia-global.asm
+ *
+ * @since 1.2.0
+ */
+.macro SetVicBank(bank) {
+  lda Cia.CIA2_DATA_PORT_A
+  and #%11111100
+  ora #[bank & %00000011]
+  sta Cia.CIA2_DATA_PORT_A
+}
+.assert "SetVicBank(BANK_0) sets 11", { SetVicBank(Cia.BANK_0) }, {
+  lda $DD00
+  and #%11111100
+  ora #%00000011
+  sta $DD00
+}
+.assert "SetVicBank(BANK_3) sets 00", { SetVicBank(Cia.BANK_3) }, {
+  lda $DD00
+  and #%11111100
+  ora #%00000000
+  sta $DD00
 }
