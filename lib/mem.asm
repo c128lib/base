@@ -32,6 +32,7 @@
  #importonce
 
 #import "labels/lib/mmu.asm"
+#import "labels/lib/zeropage.asm"
 
 .filenamespace c128lib
 
@@ -80,7 +81,7 @@
  *
  * @remark Registers .A and .X will be modified.
  * @remark Flags N and Z will be affected.
- * @remark Zeropage location $fe will be used.
+ * @remark Zeropage location $FE will be used.
  * @remark During copy, interrupts are disabled.
  *
  * @note Usage: CopyWithRelocation($C000, $C100)  // Copies 256 bytes from memory location $C000 to $C100 with relocation
@@ -92,12 +93,11 @@
  * @since 1.0.0
  */
 .macro CopyWithRelocation(source, destination) {
-    .label TEMP = $fe
     sei
     ldx #>source  // Preparing self mod code
     stx !+ + 2
     tsx           // Save current stack pointer
-    stx TEMP
+    stx Zeropage.FE
     ldx #>destination
     stx Mmu.PAGE1_PAGE_POINTER
 
@@ -111,10 +111,76 @@
     // .X contains 0 because bne didn't jump to the start of the loop
     inx           // Setting back stack page to 1
     stx Mmu.PAGE1_PAGE_POINTER
-    ldx TEMP
+    ldx Zeropage.FE
     txs           // Setting stack pointer to previous value
     cli
-    rts
+}
+
+/**
+ * @brief This macro copies a block of memory from one location to another using page relocation
+ * with bank selection.
+ *
+ * @details This macro also handles the page relocation of the memory block during the copy operation.
+ * It's slower than @sa CopyFast but it uses much less memory, especially for large memory blocks copy.
+ * This version allows to specify the bank for source and destination memory locations.
+ *
+ * @param[in] source The starting address of the memory block to be copied.
+ * @param[in] sourceBank Bank of the starting address.
+ * @param[in] destination The starting address of the location where the memory block will be copied to.
+ * @param[in] destinationBank Bank of the destination address.
+ *
+ * @remark Registers .A and .X will be modified.
+ * @remark Flags N and Z will be affected.
+ * @remark Zeropage location $FE will be used.
+ * @remark During copy, interrupts are disabled.
+ *
+ * @note The number of bytes that can be copied is always 256.
+ * @note Source and destination less significant byte should be $00. Any
+ * different value will be ignored.
+ * @note Use c128lib_CopyWithRelocationWithBank in mem-global.asm
+ *
+ * @since 1.2.0
+ */
+.macro CopyWithRelocationWithBank(source, sourceBank, destination, destinationBank) {
+    sei
+    ldx #>source  // Preparing self mod code
+    stx !+ + 2
+    tsx           // Save current stack pointer
+
+    lda Mmu.PAGE0_BLOCK_POINTER
+    pha
+    lda sourceBank
+    sta Mmu.PAGE0_BLOCK_POINTER
+
+    lda Mmu.PAGE1_BLOCK_POINTER
+    pha
+    lda destinationBank
+    sta Mmu.PAGE1_BLOCK_POINTER
+
+    stx Zeropage.FE
+    ldx #>destination
+    stx Mmu.PAGE1_PAGE_POINTER
+    
+    ldx #0
+    txs
+!:  lda $FF00,x   // Placeholder for self mod code
+    pha
+    dex
+    bne !-
+
+    // .X contains 0 because bne didn't jump to the start of the loop
+    inx           // Setting back stack page to 1
+    stx Mmu.PAGE1_PAGE_POINTER
+    ldx Zeropage.FE
+    txs           // Setting stack pointer to previous value
+
+    pla
+    sta Mmu.PAGE1_BLOCK_POINTER
+
+    pla
+    sta Mmu.PAGE0_BLOCK_POINTER
+
+    cli
 }
 
 /**

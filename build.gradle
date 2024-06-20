@@ -15,6 +15,6 @@ retroProject {
 
     viceExecutable = 'x128'
 
-    libFromGitHub "c128lib/labels", "0.2.0"
+    libFromGitHub "c128lib/labels", "0.3.0"
     libFromGitHub "c128lib/128spec", "0.7.2"
 }
