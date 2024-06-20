@@ -79,6 +79,32 @@
 .macro @c128lib_CopyWithRelocation(source, destination) { CopyWithRelocation(source, destination) }
 
 /**
+ * @brief This macro copies a block of memory from one location to another using page relocation
+ * with bank selection.
+ *
+ * @details This macro also handles the page relocation of the memory block during the copy operation.
+ * It's slower than @sa CopyFast but it uses much less memory, especially for large memory blocks copy.
+ * This version allows to specify the bank for source and destination memory locations.
+ *
+ * @param[in] source The starting address of the memory block to be copied.
+ * @param[in] sourceBank Bank of the starting address.
+ * @param[in] destination The starting address of the location where the memory block will be copied to.
+ * @param[in] destinationBank Bank of the destination address.
+ *
+ * @remark Registers .A and .X will be modified.
+ * @remark Flags N and Z will be affected.
+ * @remark Zeropage location $FE will be used.
+ * @remark During copy, interrupts are disabled.
+ *
+ * @note The number of bytes that can be copied is always 256.
+ * @note Source and destination less significant byte should be $00. Any
+ * different value will be ignored.
+ *
+ * @since 1.2.0
+ */
+.macro @c128lib_CopyWithRelocationWithBank(source, sourceBank, destination, destinationBank) { CopyWithRelocationWithBank(source, sourceBank, destination, destinationBank) }
+
+/**
  * @brief This macro fills memory with a specified value.
  * 
  * @details This macro fills memory starting from the specified address with the given value.
