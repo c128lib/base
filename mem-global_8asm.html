@@ -115,6 +115,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ad2f961bda68327124afa39c13867578b" id="r_ad2f961bda68327124afa39c13867578b"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2f961bda68327124afa39c13867578b">c128lib_CopyWithRelocation</a> (source, destination)</td></tr>
 <tr class="memdesc:ad2f961bda68327124afa39c13867578b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another using page relocation.  <br /></td></tr>
 <tr class="separator:ad2f961bda68327124afa39c13867578b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a3b0e1fca17db34992733806f1f1005" id="r_a3a3b0e1fca17db34992733806f1f1005"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a3b0e1fca17db34992733806f1f1005">c128lib_CopyWithRelocationWithBank</a> (source, sourceBank, destination, destinationBank)</td></tr>
+<tr class="memdesc:a3a3b0e1fca17db34992733806f1f1005"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro copies a block of memory from one location to another using page relocation with bank selection.  <br /></td></tr>
+<tr class="separator:a3a3b0e1fca17db34992733806f1f1005"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1ea541e2e4809693b3f68ed4d1c630e" id="r_ab1ea541e2e4809693b3f68ed4d1c630e"><td class="memItemLeft" align="right" valign="top">macro&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1ea541e2e4809693b3f68ed4d1c630e">c128lib_FillMemory</a> (address, length, <a class="el" href="mem_8asm.html#a1e8d90edc813416c4cbfb995d68c893f">value</a>)</td></tr>
 <tr class="memdesc:ab1ea541e2e4809693b3f68ed4d1c630e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro fills memory with a specified value.  <br /></td></tr>
 <tr class="separator:ab1ea541e2e4809693b3f68ed4d1c630e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,6 +221,60 @@ The number of bytes that can be copied is always 256. </dd>
 <dd>
 Source and destination less significant byte should be $00. Any different value will be ignored.</dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
+</div>
+</div>
+<a id="a3a3b0e1fca17db34992733806f1f1005" name="a3a3b0e1fca17db34992733806f1f1005"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a3b0e1fca17db34992733806f1f1005">&#9670;&#160;</a></span>c128lib_CopyWithRelocationWithBank()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">macro c128lib_CopyWithRelocationWithBank </td>
+          <td>(</td>
+          <td class="paramtype">source</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sourceBank</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">destination</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">destinationBank</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This macro copies a block of memory from one location to another using page relocation with bank selection. </p>
+<p>This macro also handles the page relocation of the memory block during the copy operation. It's slower than </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="mem_8asm.html#a91f628c476ff15d21e675cd8c0441002" title="This macro copies a block of memory from one location to another in a fast manner.">CopyFast</a> but it uses much less memory, especially for large memory blocks copy. This version allows to specify the bank for source and destination memory locations.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>The starting address of the memory block to be copied. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sourceBank</td><td>Bank of the starting address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">destination</td><td>The starting address of the location where the memory block will be copied to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">destinationBank</td><td>Bank of the destination address.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Registers .A and .X will be modified. </dd>
+<dd>
+Flags N and Z will be affected. </dd>
+<dd>
+Zeropage location $FE will be used. </dd>
+<dd>
+During copy, interrupts are disabled.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The number of bytes that can be copied is always 256. </dd>
+<dd>
+Source and destination less significant byte should be $00. Any different value will be ignored.</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.2.0 </dd></dl>
 
 </div>
 </div>
@@ -339,7 +396,7 @@ Flags N and Z will be affected.</dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="mem-global_8asm.html">mem-global.asm</a></li>
-    <li class="footer">Generated on Tue Jun 18 2024 20:06:30 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+    <li class="footer">Generated on Thu Jun 20 2024 18:35:01 for c128lib Base by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>
 </body>
