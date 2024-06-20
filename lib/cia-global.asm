@@ -76,3 +76,17 @@
  */
 .macro @c128lib_DisableCIAInterrupts() { DisableCIAInterrupts() }
 
+/**
+ * @brief Configures Vic bank (16K) which is directly addressable by VIC2 chip.
+ *
+ * @param[in] bank Bank to set
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N, Z and C will be affected.
+ *
+ * @note Bank parameter can be filled with Cia.BANK_0, Cia.BANK_1, Cia.BANK_2, Cia.BANK_3
+ * @note BANK_0 $0000-$3FFF, BANK_1 $4000-$7FFF, BANK_2 $8000-$BFFF, BANK_3 $C000-$FFFF
+ *
+ * @since 1.2.0
+ */
+.macro c128lib_SetVicBank(bank) { SetVicBank(bank) }
