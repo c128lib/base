@@ -158,7 +158,7 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SetModeConfig(config) { SetModeConfig(config) }
+.macro @c128lib_SetModeConfig(config) { SetModeConfig(config) }
 
 /**
  * @brief Configure common RAM amount.
@@ -175,8 +175,6 @@
  *
  * @note Config parameter can be filled with Mmu.COMMON_RAM_*
  *
- * @note Use c128lib_SetCommonRAM in mmu-global.asm
- *
  * @since 1.2.0
  */
-.macro c128lib_SetCommonRAM(config) { SetCommonRAM(config) }
+.macro @c128lib_SetCommonRAM(config) { SetCommonRAM(config) }

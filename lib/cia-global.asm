@@ -89,4 +89,4 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SetVicBank(bank) { SetVicBank(bank) }
+.macro @c128lib_SetVicBank(bank) { SetVicBank(bank) }

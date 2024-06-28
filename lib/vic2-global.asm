@@ -169,7 +169,7 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SetSpriteXPosition(spriteNo, x) { SetSpriteXPosition(spriteNo, x) }
+.macro @c128lib_SetSpriteXPosition(spriteNo, x) { SetSpriteXPosition(spriteNo, x) }
 
 /**
  * @brief Sets X position of given sprite (uses sprite MSB register if necessary)
@@ -183,7 +183,7 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SetSpriteXPositionWithShadow(spriteNo, x) { SetSpriteXPositionWithShadow(spriteNo, x) }
+.macro @c128lib_SetSpriteXPositionWithShadow(spriteNo, x) { SetSpriteXPositionWithShadow(spriteNo, x) }
 
 /**
  * @brief Sets y position of given sprite
@@ -196,7 +196,7 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SetSpriteYPosition(spriteNo, y) { SetSpriteYPosition(spriteNo, y) }
+.macro @c128lib_SetSpriteYPosition(spriteNo, y) { SetSpriteYPosition(spriteNo, y) }
 
 /**
  * @brief Sets y position of given sprite using shadow registers
@@ -209,7 +209,7 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SetSpriteYPositionWithShadow(spriteNo, y) { SetSpriteYPositionWithShadow(spriteNo, y) }
+.macro @c128lib_SetSpriteYPositionWithShadow(spriteNo, y) { SetSpriteYPositionWithShadow(spriteNo, y) }
 
 /**
  * @brief Sets x and y position of given sprite
@@ -223,7 +223,7 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SetSpritePosition(spriteNo, x, y) { SetSpritePosition(spriteNo, x, y) }
+.macro @c128lib_SetSpritePosition(spriteNo, x, y) { SetSpritePosition(spriteNo, x, y) }
 
 /**
  * @brief Sets x and y position of given sprite using shadow registers
@@ -237,7 +237,7 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SetSpritePositionWithShadow(spriteNo, x, y) { SetSpritePositionWithShadow(spriteNo, x, y) }
+.macro @c128lib_SetSpritePositionWithShadow(spriteNo, x, y) { SetSpritePositionWithShadow(spriteNo, x, y) }
 
 /**
  * @brief Define sprite movement
@@ -253,7 +253,7 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SpriteMove(spriteNo, speed, quadrant, deltaX, deltaY) { SpriteMove(spriteNo, speed, quadrant, deltaX, deltaY) }
+.macro @c128lib_SpriteMove(spriteNo, speed, quadrant, deltaX, deltaY) { SpriteMove(spriteNo, speed, quadrant, deltaX, deltaY) }
 
 /**
  * @brief Enable one or more sprite, preserving status of other sprites.
@@ -266,7 +266,7 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SpriteEnable(mask) { SpriteEnable(mask) }
+.macro @c128lib_SpriteEnable(mask) { SpriteEnable(mask) }
 
 /**
  * @brief Disable one or more sprite, preserving status of other sprites.
@@ -279,7 +279,7 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SpriteDisable(mask) { SpriteDisable(mask) }
+.macro @c128lib_SpriteDisable(mask) { SpriteDisable(mask) }
 
 /**
  * @brief Enable multicolor setting for one or more sprite, preserving status of other sprites.
@@ -292,7 +292,7 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SpriteEnableMulticolor(mask) { SpriteEnableMulticolor(mask) }
+.macro @c128lib_SpriteEnableMulticolor(mask) { SpriteEnableMulticolor(mask) }
 
 /**
  * @brief Disable multicolor setting for one or more sprite, preserving status of other sprites.
@@ -305,7 +305,7 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SpriteDisableMulticolor(mask) { SpriteDisableMulticolor(mask) }
+.macro @c128lib_SpriteDisableMulticolor(mask) { SpriteDisableMulticolor(mask) }
 
 /**
  * @brief Disable multicolor setting for one or more sprite.
@@ -318,21 +318,19 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SpriteColor(spriteNo, color) { SpriteColor(spriteNo, color) }
+.macro @c128lib_SpriteColor(spriteNo, color) { SpriteColor(spriteNo, color) }
 
 /**
  * @brief Set sprite multi color 0
  *
  * @param[in] color Color to set
  *
- * @note Use c128lib_SpriteMultiColor0 in vic2-global.asm
- *
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
  * @since 1.2.0
  */
-.macro c128lib_SpriteMultiColor0(color) { SpriteMultiColor0(color) }
+.macro @c128lib_SpriteMultiColor0(color) { SpriteMultiColor0(color) }
 
 /**
  * @brief Set sprite multi color 1
@@ -344,4 +342,4 @@
  *
  * @since 1.2.0
  */
-.macro c128lib_SpriteMultiColor1(color) { SpriteMultiColor1(color) }
+.macro @c128lib_SpriteMultiColor1(color) { SpriteMultiColor1(color) }
