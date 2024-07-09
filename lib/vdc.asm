@@ -83,10 +83,10 @@ FillAttribute: {
 MoveScreenPointerTo00: {
     lda vdcram
     ldx #CURRENT_MEMORY_LOW_ADDRESS
-    WriteVdc()
+    c128lib_WriteVdc()
     dex
     lda vdcram+1
-    WriteVdc()
+    c128lib_WriteVdc()
     rts
 }
 #endif
@@ -95,10 +95,10 @@ MoveScreenPointerTo00: {
 MoveAttributePointerTo00: {
     lda vdcattr
     ldx #CURRENT_MEMORY_LOW_ADDRESS
-    WriteVdc()
+    c128lib_WriteVdc()
     dex
     lda vdcattr+1
-    WriteVdc()
+    c128lib_WriteVdc()
     rts
 }
 #endif
@@ -148,10 +148,10 @@ PositionXy: {
     sta high          // added offset for start of screen RAM
     ldx #CURRENT_MEMORY_HIGH_ADDRESS
     lda high
-    WriteVdc()
+    c128lib_WriteVdc()
     inx
     lda low
-    WriteVdc()
+    c128lib_WriteVdc()
     rts
 }
 #endif
@@ -189,10 +189,10 @@ PositionAttrXy: {
     sta high          // added offset for start of attribute RAM
     ldx #CURRENT_MEMORY_HIGH_ADDRESS
     lda high
-    WriteVdc()
+    c128lib_WriteVdc()
     inx
     lda low
-    WriteVdc()
+    c128lib_WriteVdc()
     rts
 }
 #endif
@@ -201,12 +201,12 @@ PositionAttrXy: {
 RepeatByte: {
     pha
     ldx #VERTICAL_SMOOTH_SCROLLING
-    ReadVdc()
+    c128lib_ReadVdc()
     and #$7f
-    WriteVdc()
+    c128lib_WriteVdc()
     pla
     ldx #NUMBER_OF_BYTES_FOR_BLOCK_WRITE_OR_COPY
-    WriteVdc()
+    c128lib_WriteVdc()
     rts
 }
 #endif
@@ -214,7 +214,7 @@ RepeatByte: {
 #if VDC_WRITEBYTE
 WriteByte: {
     ldx #MEMORY_READ_WRITE
-    WriteVdc()
+    c128lib_WriteVdc()
     rts
 }
 #endif
@@ -222,10 +222,10 @@ WriteByte: {
 #if VDC_SETRAMPOINTER
 SetRamPointer: {
     ldx #CURRENT_MEMORY_LOW_ADDRESS
-    WriteVdc()
+    c128lib_WriteVdc()
     tya
     dex
-    WriteVdc()
+    c128lib_WriteVdc()
     rts
 }
 #endif
@@ -233,20 +233,20 @@ SetRamPointer: {
 #if VDC_INITTEXT
 InitText: {
     ldx #HORIZONTAL_SMOOTH_SCROLLING
-    ReadVdc()
+    c128lib_ReadVdc()
     and #$7f
-    WriteVdc()              // set text mode
+    c128lib_WriteVdc()              // set text mode
     ldx #SCREEN_MEMORY_STARTING_HIGH_ADDRESS
-    ReadVdc()
+    c128lib_ReadVdc()
     sta vdcram+1
     inx
-    ReadVdc()
+    c128lib_ReadVdc()
     sta vdcram            // save screen RAM address
     ldx #ATTRIBUTE_MEMORY_HIGH_ADDRESS
-    ReadVdc()
+    c128lib_ReadVdc()
     sta vdcattr+1
     inx
-    ReadVdc()
+    c128lib_ReadVdc()
     sta vdcattr           // save attribute RAM address
 
     rts
@@ -271,17 +271,15 @@ InitText: {
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_Go40 in vdc-global.asm
- *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro Go40() {
+.macro @c128lib_Go40() {
   lda Vdc.MODE                // are we in 40 columns mode?
   bpl !+                      // bit 7 clear? then yes
   jsr Kernal.JSWAPPER         // swap mode to 40 columns
 !:
 }
-.assert "Go40()", { Go40() },
+.assert "c128lib_Go40()", { c128lib_Go40() },
 {
   lda $d7; bpl *+5; jsr $FF5F
 }
@@ -292,17 +290,15 @@ InitText: {
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_Go80 in vdc-global.asm
- *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro Go80() {
+.macro @c128lib_Go80() {
   lda Vdc.MODE                // are we in 80 columns mode?
   bmi !+                      // bit 7 set? then yes
   jsr Kernal.JSWAPPER         // swap mode to 80 columns
 !:
 }
-.assert "Go80()", { Go80() },
+.assert "c128lib_Go80()", { c128lib_Go80() },
 {
   lda $d7; bmi *+5; jsr $FF5F
 }
@@ -315,9 +311,9 @@ InitText: {
  * @param[in] foreground Foreground color
  * @return Byte with foreground and background color combined
  *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.function calculateBackgroundAndForeground(background, foreground) {
+.function @c128lib_calculateBackgroundAndForeground(background, foreground) {
   .return ((foreground << 4) + background)
 }
 
@@ -331,24 +327,22 @@ InitText: {
  * @remark Register .A and .X will be modified.
  * @remark Flags N, Z and O will be affected.
  *
- * @note Use c128lib_SetBackgroundForegroundColor in vdc-global.asm
- *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro SetBackgroundForegroundColor(background, foreground) {
+.macro @c128lib_SetBackgroundForegroundColor(background, foreground) {
     lda #0
     ldx #Vdc.HORIZONTAL_SMOOTH_SCROLLING
-    ReadVdc()
+    c128lib_ReadVdc()
 
     and #%10111111
-    WriteVdc()
+    c128lib_WriteVdc()
 
-    lda #calculateBackgroundAndForeground(background, foreground)
+    lda #c128lib_calculateBackgroundAndForeground(background, foreground)
     ldx #Vdc.FOREGROUND_BACKGROUND_COLOR
-    WriteVdc()
+    c128lib_WriteVdc()
 }
-.assert "SetBackgroundForegroundColor(background, foreground)", {
-    SetBackgroundForegroundColor(Vdc.VDC_DARK_GREEN, Vdc.VDC_LIGHT_GREEN)
+.assert "c128lib_SetBackgroundForegroundColor(background, foreground)", {
+    c128lib_SetBackgroundForegroundColor(Vdc.VDC_DARK_GREEN, Vdc.VDC_LIGHT_GREEN)
   }, {
     lda #0; ldx #$19;
     stx $d600; bit $d600; bpl *-3; lda $d601
@@ -371,17 +365,15 @@ InitText: {
  * @remark Register .A and .X will be modified.
  * @remark Flags N, Z, C and O will be affected.
  *
- * @note Use c128lib_SetBackgroundForegroundColorWithVars in vdc-global.asm
- *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro SetBackgroundForegroundColorWithVars(background, foreground) {
+.macro @c128lib_SetBackgroundForegroundColorWithVars(background, foreground) {
     lda #0
     ldx #Vdc.HORIZONTAL_SMOOTH_SCROLLING
-    ReadVdc()
+    c128lib_ReadVdc()
 
     and #%10111111
-    WriteVdc()
+    c128lib_WriteVdc()
 
     lda foreground
     asl
@@ -390,10 +382,10 @@ InitText: {
     asl
     ora background
     ldx #Vdc.FOREGROUND_BACKGROUND_COLOR
-    WriteVdc()
+    c128lib_WriteVdc()
 }
-.assert "SetBackgroundForegroundColorWithVars(background, foreground)", {
-    SetBackgroundForegroundColorWithVars($beef, $baab)
+.assert "c128lib_SetBackgroundForegroundColorWithVars(background, foreground)", {
+    c128lib_SetBackgroundForegroundColorWithVars($beef, $baab)
   }, {
     lda #0; ldx #$19;
     stx $d600; bit $d600; bpl *-3; lda $d601
@@ -418,11 +410,9 @@ InitText: {
  * @remark Register .A and .X will be modified.
  * @remark Flags N, Z and O will be affected.
  *
- * @note Use c128lib_ReadFromVdcMemoryByCoordinates in vdc-global.asm
- *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro ReadFromVdcMemoryByCoordinates(xPos, yPos, destination, qty) {
+.macro @c128lib_ReadFromVdcMemoryByCoordinates(xPos, yPos, destination, qty) {
   .errorif (xPos == -1 && yPos != -1), "xPos and yPos must be -1 at same time"
   .errorif (xPos != -1 && yPos == -1), "xPos and yPos must be -1 at same time"
   .errorif (xPos < -1 || yPos < -1), "xPos and yPos can't be lower than -1"
@@ -430,9 +420,9 @@ InitText: {
   .errorif (qty > 255), "qty must be lower than 256"
   .if (xPos != -1 && yPos != -1) {
     ldx #$12
-    lda #>getTextOffset80Col(xPos, yPos)
+    lda #>c128lib_getTextOffset80Col(xPos, yPos)
     jsr ScreenEditor.WRITEREG
-    lda #<getTextOffset80Col(xPos, yPos)
+    lda #<c128lib_getTextOffset80Col(xPos, yPos)
     inx
     jsr ScreenEditor.WRITEREG
   }
@@ -444,23 +434,23 @@ InitText: {
     cpy #qty
     bne CopyLoop
 }
-.asserterror "ReadFromVdcMemoryByCoordinates(-1, 0, $beef, 100)", { ReadFromVdcMemoryByCoordinates(-1, 0, $beef, 100) }
-.asserterror "ReadFromVdcMemoryByCoordinates(0, -1, $beef, 100)", { ReadFromVdcMemoryByCoordinates(0, -1, $beef, 100) }
-.asserterror "ReadFromVdcMemoryByCoordinates(-2, 0, $beef, 100)", { ReadFromVdcMemoryByCoordinates(-2, 0, $beef, 100) }
-.asserterror "ReadFromVdcMemoryByCoordinates(0, -2, $beef, 100)", { ReadFromVdcMemoryByCoordinates(0, -2, $beef, 100) }
-.asserterror "ReadFromVdcMemoryByCoordinates(-2, -2, $beef, 100)", { ReadFromVdcMemoryByCoordinates(-2, -2, $beef, 100) }
-.asserterror "ReadFromVdcMemoryByCoordinates(2, 2, $beef, 0)", { ReadFromVdcMemoryByCoordinates(2, 2, $beef, 0) }
-.asserterror "ReadFromVdcMemoryByCoordinates(2, 2, $beef, 256)", { ReadFromVdcMemoryByCoordinates(2, 2, $beef, 256) }
-.assert "ReadFromVdcMemoryByCoordinates(-1, -1, $beef, 100)", { ReadFromVdcMemoryByCoordinates(-1, -1, $beef, 100) },
+.asserterror "c128lib_ReadFromVdcMemoryByCoordinates(-1, 0, $beef, 100)", { c128lib_ReadFromVdcMemoryByCoordinates(-1, 0, $beef, 100) }
+.asserterror "c128lib_ReadFromVdcMemoryByCoordinates(0, -1, $beef, 100)", { c128lib_ReadFromVdcMemoryByCoordinates(0, -1, $beef, 100) }
+.asserterror "c128lib_ReadFromVdcMemoryByCoordinates(-2, 0, $beef, 100)", { c128lib_ReadFromVdcMemoryByCoordinates(-2, 0, $beef, 100) }
+.asserterror "c128lib_ReadFromVdcMemoryByCoordinates(0, -2, $beef, 100)", { c128lib_ReadFromVdcMemoryByCoordinates(0, -2, $beef, 100) }
+.asserterror "c128lib_ReadFromVdcMemoryByCoordinates(-2, -2, $beef, 100)", { c128lib_ReadFromVdcMemoryByCoordinates(-2, -2, $beef, 100) }
+.asserterror "c128lib_ReadFromVdcMemoryByCoordinates(2, 2, $beef, 0)", { c128lib_ReadFromVdcMemoryByCoordinates(2, 2, $beef, 0) }
+.asserterror "c128lib_ReadFromVdcMemoryByCoordinates(2, 2, $beef, 256)", { c128lib_ReadFromVdcMemoryByCoordinates(2, 2, $beef, 256) }
+.assert "c128lib_ReadFromVdcMemoryByCoordinates(-1, -1, $beef, 100)", { c128lib_ReadFromVdcMemoryByCoordinates(-1, -1, $beef, 100) },
 {
     ldy #0; jsr $CDD8; sta $beef, y; iny; cpy #100; bne *-9;
 }
-.assert "ReadFromVdcMemoryByCoordinates(1, 1, $beef, 100)", { ReadFromVdcMemoryByCoordinates(1, 1, $beef, 100) },
+.assert "c128lib_ReadFromVdcMemoryByCoordinates(1, 1, $beef, 100)", { c128lib_ReadFromVdcMemoryByCoordinates(1, 1, $beef, 100) },
 {
     ldx #$12; lda #0; jsr $CDCC; lda #81; inx; jsr $CDCC;
     ldy #0; jsr $CDD8; sta $beef, y; iny; cpy #100; bne *-9;
 }
-.assert "ReadFromVdcMemoryByCoordinates(1, 1, $beef, 255)", { ReadFromVdcMemoryByCoordinates(1, 1, $beef, 255) },
+.assert "c128lib_ReadFromVdcMemoryByCoordinates(1, 1, $beef, 255)", { c128lib_ReadFromVdcMemoryByCoordinates(1, 1, $beef, 255) },
 {
     ldx #$12; lda #0; jsr $CDCC; lda #81; inx; jsr $CDCC;
     ldy #0; jsr $CDD8; sta $beef, y; iny; cpy #255; bne *-9;
@@ -477,11 +467,9 @@ InitText: {
  * @remark Register .A, .X and .Y will be modified.
  * @remark Flags N, Z and C will be affected.
  *
- * @note Use c128lib_ReadFromVdcMemoryByAddress in vdc-global.asm
- *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro ReadFromVdcMemoryByAddress(source, destination, qty) {
+.macro @c128lib_ReadFromVdcMemoryByAddress(source, destination, qty) {
   .errorif (qty <= 0), "qty must be greater than 0"
   .errorif (qty > 255), "qty must be lower than 256"
     ldx #$12
@@ -499,14 +487,14 @@ InitText: {
     cpy #qty
     bne CopyLoop
 }
-.asserterror "ReadFromVdcMemoryByAddress($beef, $baab, 0)", { ReadFromVdcMemoryByAddress($beef, $baab, 0) }
-.asserterror "ReadFromVdcMemoryByAddress($beef, $baab, 256)", { ReadFromVdcMemoryByAddress($beef, $baab, 256) }
-.assert "ReadFromVdcMemoryByAddress($beef, $baab, 100)", { ReadFromVdcMemoryByAddress($beef, $baab, 100) },
+.asserterror "c128lib_ReadFromVdcMemoryByAddress($beef, $baab, 0)", { c128lib_ReadFromVdcMemoryByAddress($beef, $baab, 0) }
+.asserterror "c128lib_ReadFromVdcMemoryByAddress($beef, $baab, 256)", { c128lib_ReadFromVdcMemoryByAddress($beef, $baab, 256) }
+.assert "c128lib_ReadFromVdcMemoryByAddress($beef, $baab, 100)", { c128lib_ReadFromVdcMemoryByAddress($beef, $baab, 100) },
 {
     ldx #$12; lda #$be; jsr $CDCC; lda #$ef; inx; jsr $CDCC;
     ldy #0; jsr $CDCA; sta $baab, y; iny; cpy #100; bne *-9;
 }
-.assert "ReadFromVdcMemoryByAddress($beef, $baab, 255)", { ReadFromVdcMemoryByAddress($beef, $baab, 255) },
+.assert "c128lib_ReadFromVdcMemoryByAddress($beef, $baab, 255)", { c128lib_ReadFromVdcMemoryByAddress($beef, $baab, 255) },
 {
     ldx #$12; lda #$be; jsr $CDCC; lda #$ef; inx; jsr $CDCC;
     ldy #0; jsr $CDCA; sta $baab, y; iny; cpy #255; bne *-9;
@@ -524,11 +512,9 @@ InitText: {
  * @remark Register .A, .X and .Y will be modified.
  * @remark Flags N, Z and C will be affected.
  *
- * @note Use c128lib_WriteToVdcMemoryByCoordinates in vdc-global.asm
- *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro WriteToVdcMemoryByCoordinates(source, xPos, yPos, qty) {
+.macro @c128lib_WriteToVdcMemoryByCoordinates(source, xPos, yPos, qty) {
   .errorif (xPos == -1 && yPos != -1), "xPos and yPos must be -1 at same time"
   .errorif (xPos != -1 && yPos == -1), "xPos and yPos must be -1 at same time"
   .errorif (xPos < -1 || yPos < -1), "xPos and yPos can't be lower than -1"
@@ -536,9 +522,9 @@ InitText: {
   .errorif (qty > 255), "qty must be lower than 256"
   .if (xPos != -1 && yPos != -1) {
     ldx #$12
-    lda #>getTextOffset80Col(xPos, yPos)
+    lda #>c128lib_getTextOffset80Col(xPos, yPos)
     jsr ScreenEditor.WRITEREG
-    lda #<getTextOffset80Col(xPos, yPos)
+    lda #<c128lib_getTextOffset80Col(xPos, yPos)
     inx
     jsr ScreenEditor.WRITEREG
   }
@@ -550,23 +536,23 @@ InitText: {
     cpy #qty
     bne CopyLoop
 }
-.asserterror "WriteToVdcMemoryByCoordinates($beef, -1, 0, 100)", { WriteToVdcMemoryByCoordinates($beef, -1, 0, 100) }
-.asserterror "WriteToVdcMemoryByCoordinates($beef, 0, -1, 100)", { WriteToVdcMemoryByCoordinates($beef, 0, -1, 100) }
-.asserterror "WriteToVdcMemoryByCoordinates($beef, -2, 0, 100)", { WriteToVdcMemoryByCoordinates($beef, -2, 0, 100) }
-.asserterror "WriteToVdcMemoryByCoordinates($beef, 0, -2, 100)", { WriteToVdcMemoryByCoordinates($beef, 0, -2, 100) }
-.asserterror "WriteToVdcMemoryByCoordinates($beef, -2, -2, 100)", { WriteToVdcMemoryByCoordinates($beef, -2, -2, 100) }
-.asserterror "WriteToVdcMemoryByCoordinates($beef, 2, 2, 0)", { WriteToVdcMemoryByCoordinates($beef, 2, 2, 0) }
-.asserterror "WriteToVdcMemoryByCoordinates($beef, 2, 2, 256)", { WriteToVdcMemoryByCoordinates($beef, 2, 2, 256) }
-.assert "WriteToVdcMemoryByCoordinates($beef, -1, -1, 100)", { WriteToVdcMemoryByCoordinates($beef, -1, -1, 100) },
+.asserterror "c128lib_WriteToVdcMemoryByCoordinates($beef, -1, 0, 100)", { c128lib_WriteToVdcMemoryByCoordinates($beef, -1, 0, 100) }
+.asserterror "c128lib_WriteToVdcMemoryByCoordinates($beef, 0, -1, 100)", { c128lib_WriteToVdcMemoryByCoordinates($beef, 0, -1, 100) }
+.asserterror "c128lib_WriteToVdcMemoryByCoordinates($beef, -2, 0, 100)", { c128lib_WriteToVdcMemoryByCoordinates($beef, -2, 0, 100) }
+.asserterror "c128lib_WriteToVdcMemoryByCoordinates($beef, 0, -2, 100)", { c128lib_WriteToVdcMemoryByCoordinates($beef, 0, -2, 100) }
+.asserterror "c128lib_WriteToVdcMemoryByCoordinates($beef, -2, -2, 100)", { c128lib_WriteToVdcMemoryByCoordinates($beef, -2, -2, 100) }
+.asserterror "c128lib_WriteToVdcMemoryByCoordinates($beef, 2, 2, 0)", { c128lib_WriteToVdcMemoryByCoordinates($beef, 2, 2, 0) }
+.asserterror "c128lib_WriteToVdcMemoryByCoordinates($beef, 2, 2, 256)", { c128lib_WriteToVdcMemoryByCoordinates($beef, 2, 2, 256) }
+.assert "c128lib_WriteToVdcMemoryByCoordinates($beef, -1, -1, 100)", { c128lib_WriteToVdcMemoryByCoordinates($beef, -1, -1, 100) },
 {
     ldy #0; lda $beef, y; jsr $CDCA; iny; cpy #100; bne *-9;
 }
-.assert "WriteToVdcMemoryByCoordinates($beef, 1, 1, 100)", { WriteToVdcMemoryByCoordinates($beef, 1, 1, 100) },
+.assert "c128lib_WriteToVdcMemoryByCoordinates($beef, 1, 1, 100)", { c128lib_WriteToVdcMemoryByCoordinates($beef, 1, 1, 100) },
 {
     ldx #$12; lda #0; jsr $CDCC; lda #81; inx; jsr $CDCC;
     ldy #0; lda $beef, y; jsr $CDCA; iny; cpy #100; bne *-9;
 }
-.assert "WriteToVdcMemoryByCoordinates($beef, 1, 1, 255)", { WriteToVdcMemoryByCoordinates($beef, 1, 1, 255) },
+.assert "c128lib_WriteToVdcMemoryByCoordinates($beef, 1, 1, 255)", { c128lib_WriteToVdcMemoryByCoordinates($beef, 1, 1, 255) },
 {
     ldx #$12; lda #0; jsr $CDCC; lda #81; inx; jsr $CDCC;
     ldy #0; lda $beef, y; jsr $CDCA; iny; cpy #255; bne *-9;
@@ -583,11 +569,9 @@ InitText: {
  * @remark Register .A, .X and .Y will be modified.
  * @remark Flags N, Z and C will be affected.
  *
- * @note Use c128lib_WriteToVdcMemoryByAddress in vdc-global.asm
- *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro WriteToVdcMemoryByAddress(source, destination, qty) {
+.macro @c128lib_WriteToVdcMemoryByAddress(source, destination, qty) {
   .errorif (qty <= 0), "qty must be greater than 0"
   .errorif (qty > 255), "qty must be lower than 256"
     ldx #$12
@@ -605,14 +589,14 @@ InitText: {
     cpy #qty
     bne CopyLoop
 }
-.asserterror "WriteToVdcMemoryByAddress($beef, $baab, 0)", { WriteToVdcMemoryByAddress($beef, $baab, 0) }
-.asserterror "WriteToVdcMemoryByAddress($beef, $baab, 256)", { WriteToVdcMemoryByAddress($beef, $baab, 256) }
-.assert "WriteToVdcMemoryByAddress($beef, $baab, 100)", { WriteToVdcMemoryByAddress($beef, $baab, 100) },
+.asserterror "c128lib_WriteToVdcMemoryByAddress($beef, $baab, 0)", { c128lib_WriteToVdcMemoryByAddress($beef, $baab, 0) }
+.asserterror "c128lib_WriteToVdcMemoryByAddress($beef, $baab, 256)", { c128lib_WriteToVdcMemoryByAddress($beef, $baab, 256) }
+.assert "c128lib_WriteToVdcMemoryByAddress($beef, $baab, 100)", { c128lib_WriteToVdcMemoryByAddress($beef, $baab, 100) },
 {
     ldx #$12; lda #$ba; jsr $CDCC; lda #$ab; inx; jsr $CDCC;
     ldy #0; lda $beef, y; jsr $CDCA; iny; cpy #100; bne *-9;
 }
-.assert "WriteToVdcMemoryByAddress($beef, $baab, 255)", { WriteToVdcMemoryByAddress($beef, $baab, 255) },
+.assert "c128lib_WriteToVdcMemoryByAddress($beef, $baab, 255)", { c128lib_WriteToVdcMemoryByAddress($beef, $baab, 255) },
 {
     ldx #$12; lda #$ba; jsr $CDCC; lda #$ab; inx; jsr $CDCC;
     ldy #0; lda $beef, y; jsr $CDCA; iny; cpy #255; bne *-9;
@@ -626,16 +610,16 @@ InitText: {
  * @param[in] yPos Y coord on Vdc screen
  * @return Memory offset of Vdc specified coordinate
  *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.function getTextOffset80Col(xPos, yPos) {
+.function @c128lib_getTextOffset80Col(xPos, yPos) {
   .return xPos + Vdc.TEXT_SCREEN_80_COL_WIDTH * yPos
 }
-.assert "getTextOffset80Col(0,0) gives 0", getTextOffset80Col(0, 0), 0
-.assert "getTextOffset80Col(79,0) gives 79", getTextOffset80Col(79, 0), 79
-.assert "getTextOffset80Col(0,1) gives 80", getTextOffset80Col(0, 1), 80
-.assert "getTextOffset80Col(19,12) gives 979", getTextOffset80Col(19, 12), 979
-.assert "getTextOffset80Col(79,24) gives 1999", getTextOffset80Col(79, 24), 1999
+.assert "c128lib_getTextOffset80Col(0,0) gives 0", c128lib_getTextOffset80Col(0, 0), 0
+.assert "c128lib_getTextOffset80Col(79,0) gives 79", c128lib_getTextOffset80Col(79, 0), 79
+.assert "c128lib_getTextOffset80Col(0,1) gives 80", c128lib_getTextOffset80Col(0, 1), 80
+.assert "c128lib_getTextOffset80Col(19,12) gives 979", c128lib_getTextOffset80Col(19, 12), 979
+.assert "c128lib_getTextOffset80Col(79,24) gives 1999", c128lib_getTextOffset80Col(79, 24), 1999
 
 /**
  * @brief Returns the address start of Vdc display memory data. This
@@ -648,15 +632,15 @@ InitText: {
  *
  * @note Use c128lib_GetVdcDisplayStart in vdc-global.asm
  *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro GetVdcDisplayStart() {
+.macro @c128lib_GetVdcDisplayStart() {
   ldx #Vdc.SCREEN_MEMORY_STARTING_HIGH_ADDRESS
-  ReadVdc()
+  c128lib_ReadVdc()
 
   sta $fb
   inx
-  ReadVdc()
+  c128lib_ReadVdc()
   sta $fc
 }
 
@@ -672,12 +656,12 @@ InitText: {
  *
  * @note Use c128lib_SetVdcUpdateAddress in vdc-global.asm
  *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro SetVdcUpdateAddress(address) {
+.macro @c128lib_SetVdcUpdateAddress(address) {
   ldx #Vdc.CURRENT_MEMORY_HIGH_ADDRESS
   lda #>address
-  WriteVdc();
+  c128lib_ReadVdc();
 
   inx
   .var a1 = <address
@@ -685,7 +669,7 @@ InitText: {
   .if (a1 != a2) {
     lda #<address // include if different from hi-byte.
   }
-  WriteVdc()
+  c128lib_ReadVdc()
 }
 
 /**
@@ -702,15 +686,15 @@ InitText: {
  *
  * @note Use c128lib_WriteVdc in vdc-global.asm
  *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro WriteVdc() {
+.macro @c128lib_WriteVdc() {
     stx Vdc.VDCADR
 !:  bit Vdc.VDCADR
     bpl !-
     sta Vdc.VDCDAT
 }
-.assert "WriteVdc()", { WriteVdc() }, {
+.assert "c128lib_ReadVdc()", { c128lib_ReadVdc() }, {
   stx $d600; bit $d600; bpl *-3; sta $d601
 }
 
@@ -729,14 +713,14 @@ InitText: {
  *
  * @note Use c128lib_ReadVdc in vdc-global.asm
  *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro ReadVdc() {
+.macro @c128lib_ReadVdc() {
     stx Vdc.VDCADR
 !:  bit Vdc.VDCADR
     bpl !-
     lda Vdc.VDCDAT
 }
-.assert "ReadVdc()", { ReadVdc() }, {
+.assert "c128lib_ReadVdc()", { c128lib_ReadVdc() }, {
   stx $d600; bit $d600; bpl *-3; lda $d601
 }

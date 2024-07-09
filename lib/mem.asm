@@ -50,22 +50,21 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Usage: CopyFast($C000, $C100, 256)  // Copies 256 bytes from memory location $C000 to $C100
- * @note Use c128lib_CopyFast in mem-global.asm
+ * @note Usage: c128lib_CopyFast($C000, $C100, 256)  // Copies 256 bytes from memory location $C000 to $C100
  *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro CopyFast(source, destination, count) {
+.macro @c128lib_CopyFast(source, destination, count) {
   .for(var i = 0; i < count; i++) {
     lda source + i
     sta destination + i
   }
 }
-.assert "CopyFast($A000, $B000, 0) copies nothing", { CopyFast($A000, $B000, 0) }, {}
-.assert "CopyFast($A000, $B000, 1) copies one byte", { CopyFast($A000, $B000, 1) }, {
+.assert "c128lib_CopyFast($A000, $B000, 0) copies nothing", { c128lib_CopyFast($A000, $B000, 0) }, {}
+.assert "c128lib_CopyFast($A000, $B000, 1) copies one byte", { c128lib_CopyFast($A000, $B000, 1) }, {
   lda $A000; sta $B000
 }
-.assert "CopyFast($A000, $B000, 2) copies two bytes", { CopyFast($A000, $B000, 2) }, {
+.assert "c128lib_CopyFast($A000, $B000, 2) copies two bytes", { c128lib_CopyFast($A000, $B000, 2) }, {
   lda $A000; sta $B000
   lda $A001; sta $B001
 }
@@ -74,7 +73,7 @@
  * @brief This macro copies a block of memory from one location to another using page relocation.
  *
  * @details This macro also handles the page relocation of the memory block during the copy operation.
- * It's slower than @sa CopyFast but it uses much less memory, especially for large memory blocks copy.
+ * It's slower than @sa c128lib_CopyFast but it uses much less memory, especially for large memory blocks copy.
  *
  * @param[in] source The starting address of the memory block to be copied.
  * @param[in] destination The starting address of the location where the memory block will be copied to.
@@ -84,15 +83,14 @@
  * @remark Zeropage location $FE will be used.
  * @remark During copy, interrupts are disabled.
  *
- * @note Usage: CopyWithRelocation($C000, $C100)  // Copies 256 bytes from memory location $C000 to $C100 with relocation
+ * @note Usage: c128lib_CopyWithRelocation($C000, $C100)  // Copies 256 bytes from memory location $C000 to $C100 with relocation
  * @note The number of bytes that can be copied is always 256.
  * @note Source and destination less significant byte should be $00. Any
  * different value will be ignored.
- * @note Use c128lib_CopyWithRelocation in mem-global.asm
  *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro CopyWithRelocation(source, destination) {
+.macro @c128lib_CopyWithRelocation(source, destination) {
     sei
     ldx #>source  // Preparing self mod code
     stx !+ + 2
@@ -139,9 +137,9 @@
  * different value will be ignored.
  * @note Use c128lib_CopyWithRelocationWithBank in mem-global.asm
  *
- * @since 1.2.0
+ * @since 1.3.0
  */
-.macro CopyWithRelocationWithBank(source, sourceBank, destination, destinationBank) {
+.macro @c128lib_CopyWithRelocationWithBank(source, sourceBank, destination, destinationBank) {
     sei
     ldx #>source  // Preparing self mod code
     stx !+ + 2
@@ -195,14 +193,13 @@
  * @remark Registers .A and .X will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Usage: FillMemory($0400, 50, $E0)  // Fills 50 bytes in memory starting from memory location $0400 with the value $E0
- * @note Use c128lib_FillMemory in mem-global.asm
+ * @note Usage: c128lib_FillMemory($0400, 50, $E0)  // Fills 50 bytes in memory starting from memory location $0400 with the value $E0
  * @note Minimum length is set to 5 because it's not convenient to use this
  * macro for lower values.
  *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro FillMemory(address, length, value) {
+.macro @c128lib_FillMemory(address, length, value) {
   .errorif (length < 5 || length > 255), "length must be from 5 to 255"
   .errorif (value < 0 || value > 255), "value must be from 0 to 255"
   ldx #0
@@ -218,11 +215,11 @@
   dey
   bne !-
 }
-.asserterror "FillMemory($A000, 4, 10)", { FillMemory($A000, 4, 10) }
-.asserterror "FillMemory($A000, 256, 10)", { FillMemory($A000, 256, 10) }
-.asserterror "FillMemory($A000, 10, -1)", { FillMemory($A000, 10, -1) }
-.asserterror "FillMemory($A000, 10, 256)", { FillMemory($A000, 10, 256) }
-.assert "FillMemory($A000, 10, 10) fill 10 byte with optimization", { FillMemory($A000, 10, 10) }, {
+.asserterror "c128lib_FillMemory($A000, 4, 10)", { c128lib_FillMemory($A000, 4, 10) }
+.asserterror "c128lib_FillMemory($A000, 256, 10)", { c128lib_FillMemory($A000, 256, 10) }
+.asserterror "c128lib_FillMemory($A000, 10, -1)", { c128lib_FillMemory($A000, 10, -1) }
+.asserterror "c128lib_FillMemory($A000, 10, 256)", { c128lib_FillMemory($A000, 10, 256) }
+.assert "c128lib_FillMemory($A000, 10, 10) fill 10 byte with optimization", { c128lib_FillMemory($A000, 10, 10) }, {
     ldx #0
     ldy #10
     tya
@@ -231,7 +228,7 @@
     dey
     bne *-5
 }
-.assert "FillMemory($A000, 5, 24) fill 5 byte", { FillMemory($A000, 5, 24) }, {
+.assert "c128lib_FillMemory($A000, 5, 24) fill 5 byte", { c128lib_FillMemory($A000, 5, 24) }, {
     ldx #0
     ldy #5
     lda #24
@@ -240,7 +237,7 @@
     dey
     bne *-5
 }
-.assert "FillMemory($B000, 16, 24) fill 16 bytes", { FillMemory($B000, 16, 24) }, {
+.assert "c128lib_FillMemory($B000, 16, 24) fill 16 bytes", { c128lib_FillMemory($B000, 16, 24) }, {
     ldx #0
     ldy #16
     lda #24
@@ -264,12 +261,11 @@
  * @remark Register .A will be modified.
  * @remark Flags N, Z and C will be affected.
  *
- * @note Usage: Cmp16($1234, $C000)  // Compares the 16-bit value $1234 with the 16-bit memory location starting at $C000
- * @note Use c128lib_Cmp16 in mem-global.asm
+ * @note Usage: c128lib_Cmp16($1234, $C000)  // Compares the 16-bit value $1234 with the 16-bit memory location starting at $C000
  *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro Cmp16(value, address) {
+.macro @c128lib_Cmp16(value, address) {
   lda #<value
   cmp address
   bne end
@@ -278,8 +274,23 @@
 end:
 }
 
-.macro Set8(value, address) {
+/**
+ * @brief Fills one-byte located in memory address "mem" with byte "value".
+ *
+ * @param[in] value value to set on specified address
+ * @param[in] address address to set
+ *
+ * @remark Register .A will be modified.
+ * @remark Flags N and Z will be affected.
+ *
+ * @since 1.3.0
+ */
+.macro @c128lib_Set8(value, address) {
   set8 #value : address
+}
+.assert "c128lib_Set8($34, $A000) stores $34 under $A000", { c128lib_Set8($34, $A000) }, {
+  lda #$34
+  sta $A000
 }
 
 .pseudocommand set8 value : address {
@@ -296,15 +307,13 @@ end:
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_Set16 in mem-global.asm
- *
- * @since 1.0.0
-*/
-.macro Set16(value, address) {
-  Set8(<value, address)
-  Set8(>value, address + 1)
+ * @since 1.3.0
+ */
+.macro @c128lib_Set16(value, address) {
+  c128lib_Set8(<value, address)
+  c128lib_Set8(>value, address + 1)
 }
-.assert "Set16($1234, $A000) stores $34 under $A000 and $12 under $A001", { Set16($3412, $A000) }, {
+.assert "c128lib_Set16($1234, $A000) stores $34 under $A000 and $12 under $A001", { c128lib_Set16($3412, $A000) }, {
   lda #$12
   sta $A000
   lda #$34

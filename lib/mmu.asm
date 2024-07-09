@@ -79,15 +79,13 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_SetMMUConfiguration in mmu-global.asm
- *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro SetMMUConfiguration(config) {
+.macro @c128lib_SetMMUConfiguration(config) {
     lda #config
     sta Mmu.CONFIGURATION
 }
-.assert "SetMMUConfiguration(RAM1 | ROM_HI_RAM | ROM_MID_RAM | ROM_LOW_RAM | IO_RAM) sets accumulator to 7f", { SetMMUConfiguration(Mmu.RAM1 | Mmu.ROM_HI_RAM | Mmu.ROM_MID_RAM | Mmu.ROM_LOW_RAM | Mmu.IO_RAM) }, {
+.assert "c128lib_SetMMUConfiguration(RAM1 | ROM_HI_RAM | ROM_MID_RAM | ROM_LOW_RAM | IO_RAM) sets accumulator to 7f", { c128lib_SetMMUConfiguration(Mmu.RAM1 | Mmu.ROM_HI_RAM | Mmu.ROM_MID_RAM | Mmu.ROM_LOW_RAM | Mmu.IO_RAM) }, {
   lda #%01111111; sta $d500
 }
 
@@ -135,13 +133,13 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro SetMMULoadConfiguration(config) {
+.macro @c128lib_SetMMULoadConfiguration(config) {
     lda #config
     sta Mmu.LOAD_CONFIGURATION
 }
-.assert "SetMMULoadConfiguration(RAM1 | ROM_HI_RAM | ROM_MID_RAM | ROM_LOW_RAM | IO_RAM) sets accumulator to 7f", { SetMMULoadConfiguration(Mmu.RAM1 | Mmu.ROM_HI_RAM | Mmu.ROM_MID_RAM | Mmu.ROM_LOW_RAM | Mmu.IO_RAM) }, {
+.assert "c128lib_SetMMULoadConfiguration(RAM1 | ROM_HI_RAM | ROM_MID_RAM | ROM_LOW_RAM | IO_RAM) sets accumulator to 7f", { c128lib_SetMMULoadConfiguration(Mmu.RAM1 | Mmu.ROM_HI_RAM | Mmu.ROM_MID_RAM | Mmu.ROM_LOW_RAM | Mmu.IO_RAM) }, {
   lda #%01111111; sta $ff00
 }
 
@@ -156,58 +154,56 @@
  * @note Use Basic banking, see reference https://c128lib.github.io/Reference/MemoryMap
  * Only banking 0, 1, 4, 5, 12, 13, 14 and 15 are supported.
  *
- * @note Use c128lib_SetBankConfiguration in mmu-global.asm
- *
- * @since 1.2.0
+ * @since 1.3.0
  */
-.macro SetBankConfiguration(id) {
+.macro @c128lib_SetBankConfiguration(id) {
     .if (id==0) {
-      SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI_RAM | Mmu.ROM_MID_RAM | Mmu.ROM_LOW_RAM | Mmu.IO_RAM)
+      c128lib_SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI_RAM | Mmu.ROM_MID_RAM | Mmu.ROM_LOW_RAM | Mmu.IO_RAM)
     }
     .if (id==1) {
-      SetMMULoadConfiguration(Mmu.RAM1 | Mmu.ROM_HI_RAM | Mmu.ROM_MID_RAM | Mmu.ROM_LOW_RAM | Mmu.IO_RAM)
+      c128lib_SetMMULoadConfiguration(Mmu.RAM1 | Mmu.ROM_HI_RAM | Mmu.ROM_MID_RAM | Mmu.ROM_LOW_RAM | Mmu.IO_RAM)
     }
     .if (id==4) {
-      SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI_INT | Mmu.ROM_MID_INT | Mmu.ROM_LOW_RAM | Mmu.IO_ROM)
+      c128lib_SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI_INT | Mmu.ROM_MID_INT | Mmu.ROM_LOW_RAM | Mmu.IO_ROM)
     }
     .if (id==5) {
-      SetMMULoadConfiguration(Mmu.RAM1 | Mmu.ROM_HI_INT | Mmu.ROM_MID_INT | Mmu.ROM_LOW_RAM | Mmu.IO_ROM)
+      c128lib_SetMMULoadConfiguration(Mmu.RAM1 | Mmu.ROM_HI_INT | Mmu.ROM_MID_INT | Mmu.ROM_LOW_RAM | Mmu.IO_ROM)
     }
     .if (id==12) {
-      SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI | Mmu.ROM_MID_INT | Mmu.ROM_LOW_RAM | Mmu.IO_ROM)
+      c128lib_SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI | Mmu.ROM_MID_INT | Mmu.ROM_LOW_RAM | Mmu.IO_ROM)
     }
     .if (id==13) {
-      SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI | Mmu.ROM_MID_EXT | Mmu.ROM_LOW_RAM | Mmu.IO_ROM)
+      c128lib_SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI | Mmu.ROM_MID_EXT | Mmu.ROM_LOW_RAM | Mmu.IO_ROM)
     }
     .if (id==14) {
-      SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI | Mmu.ROM_MID_ROM | Mmu.ROM_LOW_ROM | Mmu.IO_RAM)
+      c128lib_SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI | Mmu.ROM_MID_ROM | Mmu.ROM_LOW_ROM | Mmu.IO_RAM)
     }
     .if (id==15) {
-      SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI | Mmu.ROM_MID_ROM | Mmu.ROM_LOW_ROM | Mmu.IO_ROM)
+      c128lib_SetMMULoadConfiguration(Mmu.RAM0 | Mmu.ROM_HI | Mmu.ROM_MID_ROM | Mmu.ROM_LOW_ROM | Mmu.IO_ROM)
     }
 }
-.assert "SetBankConfiguration(0)", { SetBankConfiguration(0) }, {
+.assert "c128lib_SetBankConfiguration(0)", { c128lib_SetBankConfiguration(0) }, {
   lda #%00111111; sta $ff00
 }
-.assert "SetBankConfiguration(1)", { SetBankConfiguration(1) }, {
+.assert "c128lib_SetBankConfiguration(1)", { c128lib_SetBankConfiguration(1) }, {
   lda #%01111111; sta $ff00
 }
-.assert "SetBankConfiguration(4)", { SetBankConfiguration(4) }, {
+.assert "c128lib_SetBankConfiguration(4)", { c128lib_SetBankConfiguration(4) }, {
   lda #%00010110; sta $ff00
 }
-.assert "SetBankConfiguration(5)", { SetBankConfiguration(5) }, {
+.assert "c128lib_SetBankConfiguration(5)", { c128lib_SetBankConfiguration(5) }, {
   lda #%01010110; sta $ff00
 }
-.assert "SetBankConfiguration(12)", { SetBankConfiguration(12) }, {
+.assert "c128lib_SetBankConfiguration(12)", { c128lib_SetBankConfiguration(12) }, {
   lda #%00000110; sta $ff00
 }
-.assert "SetBankConfiguration(13)", { SetBankConfiguration(13) }, {
+.assert "c128lib_SetBankConfiguration(13)", { c128lib_SetBankConfiguration(13) }, {
   lda #%00001010; sta $ff00
 }
-.assert "SetBankConfiguration(14)", { SetBankConfiguration(14) }, {
+.assert "c128lib_SetBankConfiguration(14)", { c128lib_SetBankConfiguration(14) }, {
   lda #%00000001; sta $ff00
 }
-.assert "SetBankConfiguration(15)", { SetBankConfiguration(15) }, {
+.assert "c128lib_SetBankConfiguration(15)", { c128lib_SetBankConfiguration(15) }, {
   lda #%00000000; sta $ff00
 }
 
@@ -221,16 +217,14 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_SetModeConfig in mmu-global.asm
- *
- * @since 1.2.0
+ * @since 1.3.0
  */
-.macro SetModeConfig(config) {
+.macro @c128lib_SetModeConfig(config) {
     lda #config
     sta Mmu.MODE_CONFIG
 }
-.assert "SetModeConfig(CPU_8502 | FASTSERIALOUTPUT | GAME_HI | EXROM_HI | KERNAL_64 | COLS_40) sets accumulator to 0f", {
-    SetModeConfig(Mmu.CPU_8502 | Mmu.FASTSERIALOUTPUT | Mmu.GAME_HI | Mmu.EXROM_HI | Mmu.KERNAL_64 | Mmu.COLS_40)
+.assert "c128lib_SetModeConfig(CPU_8502 | FASTSERIALOUTPUT | GAME_HI | EXROM_HI | KERNAL_64 | COLS_40) sets accumulator to 0f", {
+    c128lib_SetModeConfig(Mmu.CPU_8502 | Mmu.FASTSERIALOUTPUT | Mmu.GAME_HI | Mmu.EXROM_HI | Mmu.KERNAL_64 | Mmu.COLS_40)
 }, {
   lda #%11111001; sta $d505
 }
@@ -250,14 +244,12 @@
  *
  * @note Config parameter can be filled with Mmu.COMMON_RAM_*
  *
- * @note Use c128lib_SetCommonRAM in mmu-global.asm
- *
- * @since 1.2.0
+ * @since 1.3.0
  */
-.macro SetCommonRAM(config) {
+.macro @c128lib_SetCommonRAM(config) {
     lda #config
     sta Mmu.RAM_CONFIG
 }
-.assert "SetCommonRAM(COMMON_RAM_16K | COMMON_RAM_BOTH) sets accumulator to 0f", { SetCommonRAM(Mmu.COMMON_RAM_16K | Mmu.COMMON_RAM_BOTH) }, {
+.assert "c128lib_SetCommonRAM(COMMON_RAM_16K | COMMON_RAM_BOTH) sets accumulator to 0f", { c128lib_SetCommonRAM(Mmu.COMMON_RAM_16K | Mmu.COMMON_RAM_BOTH) }, {
   lda #%00001111; sta $d506
 }

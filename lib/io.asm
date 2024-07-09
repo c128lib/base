@@ -47,17 +47,15 @@
  * @remark Register .A, .X and .Y will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_OpenIOChannel in io-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro OpenIOChannel(filenumber, devicenumber, secondary) {
+.macro @c128lib_OpenIOChannel(filenumber, devicenumber, secondary) {
   lda #filenumber
   ldx #devicenumber
   ldy #secondary
   jsr Kernal.JSETLFS
 }
-.assert "OpenIOChannel(15, 8, 15)", { OpenIOChannel(15, 8, 15) }, {
+.assert "OpenIOChannel(15, 8, 15)", { c128lib_OpenIOChannel(15, 8, 15) }, {
   lda #15; ldx #8; ldy #15; jsr $FFBA
 }
 
@@ -72,17 +70,15 @@
  * @remark Register .A, .X and .Y will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_SetIOName in io-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro SetIOName(length, address) {
+.macro @c128lib_SetIOName(length, address) {
   lda #length
   ldx #<address
   ldy #>address
   jsr Kernal.JSETNAM
 }
-.assert "SetIOName(5, $beef)", { SetIOName(5, $beef) }, {
+.assert "SetIOName(5, $beef)", { c128lib_SetIOName(5, $beef) }, {
   lda #5; ldx #$ef; ldy #$be; jsr $FFBD
 }
 
@@ -95,15 +91,13 @@
  * @remark Register .X will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_SetInputChannel in io-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro SetInputChannel(filenumber) {
+.macro @c128lib_SetInputChannel(filenumber) {
   ldx #filenumber
   jsr Kernal.JCHKIN
 }
-.assert "SetInputChannel(5)", { SetInputChannel(5) }, {
+.assert "SetInputChannel(5)", { c128lib_SetInputChannel(5) }, {
   ldx #5; jsr $FFC6
 }
 
@@ -116,15 +110,13 @@
  * @remark Register .X will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_SetOutputChannel in io-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro SetOutputChannel(filenumber) {
+.macro @c128lib_SetOutputChannel(filenumber) {
   ldx #filenumber
   jsr Kernal.JCHKOUT
 }
-.assert "SetOutputChannel(5)", { SetOutputChannel(5) }, {
+.assert "SetOutputChannel(5)", { c128lib_SetOutputChannel(5) }, {
   ldx #5; jsr $FFC9
 }
 
@@ -140,17 +132,15 @@
  * @param[in] devicenumber The device number for the I/O channel.
  * @param[in] secondary The secondary address for the I/O channel.
  *
- * @note Use c128lib_OpenFile in io-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro OpenFile(length, address, filenumber, devicenumber, secondary) {
-  SetIOName(length, address)
-  OpenIOChannel(filenumber, devicenumber, secondary)
+.macro @c128lib_OpenFile(length, address, filenumber, devicenumber, secondary) {
+  c128lib_SetIOName(length, address)
+  c128lib_OpenIOChannel(filenumber, devicenumber, secondary)
   jsr Kernal.JOPEN
-  SetInputChannel(filenumber)
+  c128lib_SetInputChannel(filenumber)
 }
-.assert "OpenFile(5, $beef, 1, 2, 3)", { OpenFile(5, $beef, 1, 2, 3) }, {
+.assert "OpenFile(5, $beef, 1, 2, 3)", { c128lib_OpenFile(5, $beef, 1, 2, 3) }, {
   lda #5; ldx #$ef; ldy #$be; jsr $FFBD;
   lda #1; ldx #2; ldy #3; jsr $FFBA;
   jsr $FFC0

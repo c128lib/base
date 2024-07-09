@@ -43,11 +43,9 @@
  *
  * @param[in] sysAddress The address to which the BASIC program will SYS to start the machine code part.
  *
- * @note Use c128lib_BasicUpstart128 in common-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro BasicUpstart128(sysAddress) {
+.macro @c128lib_BasicUpstart128(sysAddress) {
     .pc = $1c01 "C128 Basic"
     .word upstartEnd  // link address
     .word 10   // line num
@@ -76,11 +74,9 @@ upstartEnd:
  *
  * @param[in] label The label to jump to if the zero flag is not set.
  *
- * @note Use c128lib_Fbne in common-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro Fbne(label) {
+.macro @c128lib_Fbne(label) {
   here: // we have to add 2 to "here", because relative jump is counted right after bne xx, and this instruction takes 2 bytes
     .if (here > label) {
       // jump back
@@ -116,11 +112,9 @@ upstartEnd:
  *
  * @param[in] label The label to jump to if the negative flag is set.
  *
- * @note Use c128lib_Fbmi in common-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
- .macro Fbmi(label) {
+ .macro @c128lib_Fbmi(label) {
   here: // we have to add 2 to "here", because relative jump is counted right after bne xx, and this instruction takes 2 bytes
     .if (here > label) {
       // jump back
@@ -150,7 +144,7 @@ upstartEnd:
  *
  * @param[in] value Value to negated
  *
- * @since 1.2.0
+ * @since 1.3.0
 */
 .function neg(value) {
   .return value ^ $FF

@@ -45,11 +45,9 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_GetFirePressedPort1 in cia-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro GetFirePressedPort1() {
+.macro @c128lib_GetFirePressedPort1() {
   lda Cia.CIA1_DATA_PORT_B
   and #Cia.JOY_FIRE
 }
@@ -64,11 +62,9 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_GetFirePressedPort2 in cia-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro GetFirePressedPort2() {
+.macro @c128lib_GetFirePressedPort2() {
   lda Cia.CIA1_DATA_PORT_A
   and #Cia.JOY_FIRE
 }
@@ -82,11 +78,9 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_GetFirePressedPort2 in cia-global.asm
- *
- * @since 1.1.0
+ * @since 1.3.0
  */
-.macro DisableCIAInterrupts() {
+.macro @c128lib_DisableCIAInterrupts() {
   lda #$7f
   sta Cia.CIA1_IRQ_CONTROL
   sta Cia.CIA2_IRQ_CONTROL
@@ -105,23 +99,21 @@
  * @note Bank parameter can be filled with Cia.BANK_0, Cia.BANK_1, Cia.BANK_2, Cia.BANK_3
  * @note BANK_0 $0000-$3FFF, BANK_1 $4000-$7FFF, BANK_2 $8000-$BFFF, BANK_3 $C000-$FFFF
  *
- * @note Use c128lib_SetVicBank in cia-global.asm
- *
- * @since 1.2.0
+ * @since 1.3.0
  */
-.macro SetVicBank(bank) {
+.macro @c128lib_SetVicBank(bank) {
   lda Cia.CIA2_DATA_PORT_A
   and #%11111100
   ora #[bank & %00000011]
   sta Cia.CIA2_DATA_PORT_A
 }
-.assert "SetVicBank(BANK_0) sets 11", { SetVicBank(Cia.BANK_0) }, {
+.assert "SetVicBank(BANK_0) sets 11", { c128lib_SetVicBank(Cia.BANK_0) }, {
   lda $DD00
   and #%11111100
   ora #%00000011
   sta $DD00
 }
-.assert "SetVicBank(BANK_3) sets 00", { SetVicBank(Cia.BANK_3) }, {
+.assert "SetVicBank(BANK_3) sets 00", { c128lib_SetVicBank(Cia.BANK_3) }, {
   lda $DD00
   and #%11111100
   ora #%00000000

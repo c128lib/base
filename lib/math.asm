@@ -49,11 +49,9 @@
  * @param[in,out] dest The memory location of the other 16-bit value.
  * @returns Result is returned in dest memory location.
  *
- * @note Use c128lib_Add16 in math-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
- .macro Add16(value, dest) {
+ .macro @c128lib_Add16(value, dest) {
   clc
   lda dest
   adc #<value
@@ -62,7 +60,7 @@
   adc #>value
   sta dest + 1
 }
-.assert "Add16($0102, $A000) ", { Add16($0102, $A000) }, {
+.assert "Add16($0102, $A000) ", { c128lib_Add16($0102, $A000) }, {
   clc; lda $A000; adc #$02; sta $A000
   lda $A001; adc #$01; sta $A001
 }
@@ -82,11 +80,9 @@
  * @remark Register .A will be modified.
  * @remark Flags N, O, Z and C will be affected.
  *
- * @note Use c128lib_Sub16 in math-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro Sub16(value, dest) {
+.macro @c128lib_Sub16(value, dest) {
   sec
   lda dest
   sbc #<value
@@ -95,11 +91,11 @@
   sbc #>value
   sta dest + 1
 }
-.assert "Sub16($0102, $A000)", { Sub16($0102, $A000) }, {
+.assert "Sub16($0102, $A000)", { c128lib_Sub16($0102, $A000) }, {
   sec; lda $A000; sbc #$02; sta $A000
   lda $A001; sbc #$01; sta $A001
 }
-.assert "Sub16(256, $A000)", { Sub16(256, $A000) }, {
+.assert "Sub16(256, $A000)", { c128lib_Sub16(256, $A000) }, {
   sec; lda $A000; sbc #0; sta $A000
   lda $A001; sbc #1; sta $A001
 }
@@ -116,11 +112,9 @@
  * @remark Register .A will be modified.
  * @remark Flags N, Z and C will be affected.
  *
- * @note Use c128lib_Asl16 in math-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro Asl16(address) {
+.macro @c128lib_Asl16(address) {
   asl16 address
 }
 
@@ -146,11 +140,9 @@
  * @returns Result is returned in address memory location.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_Inc16 in math-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro Inc16(address) {
+.macro @c128lib_Inc16(address) {
   inc16 address
 }
 
@@ -173,11 +165,9 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Use c128lib_Dec16 in math-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro Dec16(address) {
+.macro @c128lib_Dec16(address) {
   dec16 address
 }
 
@@ -203,11 +193,9 @@
  * @remark Registers .A, .X and .Y will be modified.
  * @remark Flags N, O, Z and C will be affected.
  *
- * @note Use c128lib_div16By16 in math-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro Div16By16(dividend, divisor, remainder) {
+.macro @c128lib_Div16By16(dividend, divisor, remainder) {
     lda #0
     sta remainder     // Initialize remainder to 0.
     sta remainder+1
@@ -252,11 +240,9 @@
  * @remark Registers .A and .X will be modified.
  * @remark Flags N, O, Z and C will be affected.
  *
- * @note Use c128lib_Div16By8 in math-global.asm
- *
- * @since 1.0.0
+ * @since 1.3.0
  */
-.macro Div16By8(dividend, divisor, remainder) {
+.macro @c128lib_Div16By8(dividend, divisor, remainder) {
     lda #0
     sta remainder     // Initialize remainder to 0.
     ldx #16           // There are 16 bits in the dividend
