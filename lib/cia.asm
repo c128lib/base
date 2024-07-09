@@ -45,6 +45,13 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
+ * @par Usage
+ * @code{.asm}
+ * // Loops until fire is pressed on joystick in port 1
+ * !: c128lib_GetFirePressedPort1()
+ *    beq !-
+ * @endcode
+ *
  * @since 1.3.0
  */
 .macro @c128lib_GetFirePressedPort1() {
@@ -62,6 +69,13 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
+ * @par Usage
+ * @code{.asm}
+ * // Loops until fire is pressed on joystick in port 2
+ * !: c128lib_GetFirePressedPort2()
+ *    beq !-
+ * @endcode
+ *
  * @since 1.3.0
  */
 .macro @c128lib_GetFirePressedPort2() {
@@ -77,6 +91,11 @@
  *
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
+ *
+ * @par Usage
+ * @code{.asm}
+ *  c128lib_DisableCIAInterrupts()
+ * @endcode
  *
  * @since 1.3.0
  */
@@ -98,6 +117,11 @@
  *
  * @note Bank parameter can be filled with Cia.BANK_0, Cia.BANK_1, Cia.BANK_2, Cia.BANK_3
  * @note BANK_0 $0000-$3FFF, BANK_1 $4000-$7FFF, BANK_2 $8000-$BFFF, BANK_3 $C000-$FFFF
+ *
+ * @par Usage
+ * @code{.asm}
+ *  c128lib_SetVicBank(c128lib.Cia.BANK_0)
+ * @endcode
  *
  * @since 1.3.0
  */

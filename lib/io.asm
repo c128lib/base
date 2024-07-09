@@ -47,6 +47,16 @@
  * @remark Register .A, .X and .Y will be modified.
  * @remark Flags N and Z will be affected.
  *
+ * @par Usage
+ * @code{.asm}
+ * // Sets file name
+ * c128lib_SetIOName(10, FileName)
+ * // Opens I/O channel
+ * c128lib_OpenIOChannel(0, 8, 0)
+ * // Loads a file
+ * c128lib_LoadFile(0, LoadAddress)
+ * @endcode
+ *
  * @since 1.3.0
  */
 .macro @c128lib_OpenIOChannel(filenumber, devicenumber, secondary) {
@@ -55,7 +65,7 @@
   ldy #secondary
   jsr Kernal.JSETLFS
 }
-.assert "OpenIOChannel(15, 8, 15)", { c128lib_OpenIOChannel(15, 8, 15) }, {
+.assert "c128lib_OpenIOChannel(15, 8, 15)", { c128lib_OpenIOChannel(15, 8, 15) }, {
   lda #15; ldx #8; ldy #15; jsr $FFBA
 }
 
@@ -145,4 +155,21 @@
   lda #1; ldx #2; ldy #3; jsr $FFBA;
   jsr $FFC0
   ldx #1; jsr $FFC6
+}
+
+/**
+ * @brief Loads or verifies a file.
+ *
+ * @details This macro loads or verifies a file.
+ *
+ * @param[in] loadOrVerify If 0, a load operation will be performed. Otherwise, a verify operation will be performed.
+ * @param[in] address The address where the file will be loaded.
+ *
+ * @since 1.3.0
+ */
+.macro @c128lib_LoadFile(loadOrVerify, address) {
+  lda #loadOrVerify
+  ldx #<address
+  ldy #>address
+  jsr Kernal.JLOAD
 }

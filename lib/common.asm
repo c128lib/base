@@ -43,6 +43,12 @@
  *
  * @param[in] sysAddress The address to which the BASIC program will SYS to start the machine code part.
  *
+ * @par Usage
+ * @code{.asm}
+ * // Generates a sys command to start the machine code at $1c10
+ * c128lib_BasicUpstart128($1c10)
+ * @endcode
+ *
  * @since 1.3.0
  */
 .macro @c128lib_BasicUpstart128(sysAddress) {
@@ -73,6 +79,16 @@ upstartEnd:
  * If the BNE would have jumped, the BEQ does not, and the JMP is executed, jumping to the label.
  *
  * @param[in] label The label to jump to if the zero flag is not set.
+ *
+ * @par Usage
+ * @code{.asm}
+ *    LDA NumA              // Read the value "NumA"
+ *    CMP NumB              // Compare against "NumB"
+ *    c128lib_Fbne(!Differ) // Go to label "Differ" if "NumA" <> "NumB"
+ * ... // Code executed if NumA == NumB, longer than 128 bytes
+ * !Differ:
+ * ... // Code executed if NumA <> NumB
+ * @endcode
  *
  * @since 1.3.0
  */
@@ -111,6 +127,16 @@ upstartEnd:
  * If the BMI would have jumped, the BPL and BEQ do not, and the JMP is executed, jumping to the label.
  *
  * @param[in] label The label to jump to if the negative flag is set.
+ *
+ * @par Usage
+ * @code{.asm}
+ *    LDA NumA              // Read the value "NumA"
+ *    CMP NumB              // Compare against "NumB"
+ *    c128lib_Fbmi(!Minus)  // Go to label "Minus" if "NumA" < "NumB"
+ * ... // Code executed if NumA >= NumB, longer than 128 bytes
+ * !Minus:
+ * ... // Code executed if NumA < NumB
+ * @endcode
  *
  * @since 1.3.0
  */
