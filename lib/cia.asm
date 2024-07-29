@@ -115,7 +115,7 @@
  * @remark Register .A will be modified.
  * @remark Flags N, Z and C will be affected.
  *
- * @note Bank parameter can be filled with Cia.BANK_0, Cia.BANK_1, Cia.BANK_2, Cia.BANK_3
+ * @note Bank parameter can be filled with c128lib.Cia.BANK_0, c128lib.Cia.BANK_1, c128lib.Cia.BANK_2, c128lib.Cia.BANK_3
  * @note BANK_0 $0000-$3FFF, BANK_1 $4000-$7FFF, BANK_2 $8000-$BFFF, BANK_3 $C000-$FFFF
  *
  * @par Usage

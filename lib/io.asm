@@ -39,7 +39,7 @@
  * @brief Opens an I/O channel.
  *
  * @details This macro opens an I/O channel with the specified file number, device number, and secondary address.
- * It loads the parameters into the appropriate registers and then calls the SETLFS routine in the C128 Kernal.
+ * It loads the parameters into the appropriate registers and then calls the Kernal.JSETLFS routine in the C128 Kernal.
  *
  * @param[in] filenumber The file number for the I/O channel.
  * @param[in] devicenumber The device number for the I/O channel.
@@ -95,7 +95,7 @@
 /**
  * @brief Sets the input channel.
  *
- * @details This macro sets the input channel for subsequent I/O operations. It loads the file number into the X register and then calls the CHKIN routine in the C128 Kernal.
+ * @details This macro sets the input channel for subsequent I/O operations. It loads the file number into the X register and then calls the Kernal.JCHKIN routine in the C128 Kernal.
  *
  * @param[in] filenumber The file number for the input channel.
  * @remark Register .X will be modified.
@@ -134,7 +134,7 @@
  * @brief Opens a file for I/O operations.
  *
  * @details This macro opens a file for I/O operations. It sets the name for I/O operations, opens an I/O channel with the specified file number, device number, and secondary address,
- * calls the OPEN routine in the C128 Kernal, and sets the input channel for subsequent I/O operations.
+ * calls the Kernal.JOPEN routine in the C128 Kernal, and sets the input channel for subsequent I/O operations.
  *
  * @param[in] length The length of the name.
  * @param[in] address The address where the name is stored.

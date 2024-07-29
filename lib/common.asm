@@ -85,7 +85,7 @@ upstartEnd:
  *    LDA NumA              // Read the value "NumA"
  *    CMP NumB              // Compare against "NumB"
  *    c128lib_Fbne(!Differ) // Go to label "Differ" if "NumA" <> "NumB"
- * ... // Code executed if NumA == NumB, longer than 128 bytes
+ * ... // Code executed if NumA == NumB (this code can be longer than 128 bytes)
  * !Differ:
  * ... // Code executed if NumA <> NumB
  * @endcode
@@ -133,7 +133,7 @@ upstartEnd:
  *    LDA NumA              // Read the value "NumA"
  *    CMP NumB              // Compare against "NumB"
  *    c128lib_Fbmi(!Minus)  // Go to label "Minus" if "NumA" < "NumB"
- * ... // Code executed if NumA >= NumB, longer than 128 bytes
+ * ... // Code executed if NumA >= NumB (this code can be longer than 128 bytes)
  * !Minus:
  * ... // Code executed if NumA < NumB
  * @endcode

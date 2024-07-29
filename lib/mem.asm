@@ -50,7 +50,11 @@
  * @remark Register .A will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Usage: c128lib_CopyFast($C000, $C100, 256)  // Copies 256 bytes from memory location $C000 to $C100
+ * @par Usage
+ * @code{.asm}
+ * // Copies 256 bytes from memory location $C000 to $C100
+ * c128lib_CopyFast($C000, $C100, 256)
+ * @endcode
  *
  * @since 1.3.0
  */
@@ -83,7 +87,12 @@
  * @remark Zeropage location $FE will be used.
  * @remark During copy, interrupts are disabled.
  *
- * @note Usage: c128lib_CopyWithRelocation($C000, $C100)  // Copies 256 bytes from memory location $C000 to $C100 with relocation
+ * @par Usage
+ * @code{.asm}
+ * // Copies 256 bytes from memory location $C000 to $C100 with relocation
+ * c128lib_CopyWithRelocation($C000, $C100, 256)
+ * @endcode
+ *
  * @note The number of bytes that can be copied is always 256.
  * @note Source and destination less significant byte should be $00. Any
  * different value will be ignored.
@@ -132,10 +141,15 @@
  * @remark Zeropage location $FE will be used.
  * @remark During copy, interrupts are disabled.
  *
+ * @par Usage
+ * @code{.asm}
+ * // Copies 256 bytes from memory location $C000 in bank 0 to $C100 in bank 1 with relocation
+ * c128lib_CopyWithRelocationWithBank($C000, 0, $C100, 1)
+ * @endcode
+ *
  * @note The number of bytes that can be copied is always 256.
  * @note Source and destination less significant byte should be $00. Any
  * different value will be ignored.
- * @note Use c128lib_CopyWithRelocationWithBank in mem-global.asm
  *
  * @since 1.3.0
  */
@@ -193,7 +207,12 @@
  * @remark Registers .A and .X will be modified.
  * @remark Flags N and Z will be affected.
  *
- * @note Usage: c128lib_FillMemory($0400, 50, $E0)  // Fills 50 bytes in memory starting from memory location $0400 with the value $E0
+ * @par Usage
+ * @code{.asm}
+ * // Fills 50 bytes in memory starting from memory location $0400 with the value $E0
+ * c128lib_FillMemory($0400, 50, $E0)
+ * @endcode
+ *
  * @note Minimum length is set to 5 because it's not convenient to use this
  * macro for lower values.
  *
@@ -261,7 +280,11 @@
  * @remark Register .A will be modified.
  * @remark Flags N, Z and C will be affected.
  *
- * @note Usage: c128lib_Cmp16($1234, $C000)  // Compares the 16-bit value $1234 with the 16-bit memory location starting at $C000
+ * @par Usage
+ * @code{.asm}
+ * // Compares the 16-bit value $1234 with the 16-bit memory location starting at $C000
+ * c128lib_Cmp16($1234, $C000)
+ * @endcode
  *
  * @since 1.3.0
  */

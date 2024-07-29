@@ -48,6 +48,14 @@
  * @param[in] value The 16-bit value to add.
  * @param[in,out] dest The memory location of the other 16-bit value.
  * @returns Result is returned in dest memory location.
+ * @remark Register .A will be modified.
+ * @remark Flags N, O, Z and C will be affected.
+ *
+ * @par Usage
+ * @code{.asm}
+ * // Adds $1234 to value at $beef
+ * c128lib_Add16($1234, $beef)
+ * @endcode
  *
  * @since 1.3.0
  */
@@ -60,7 +68,7 @@
   adc #>value
   sta dest + 1
 }
-.assert "Add16($0102, $A000) ", { c128lib_Add16($0102, $A000) }, {
+.assert "c128lib_Add16($0102, $A000) ", { c128lib_Add16($0102, $A000) }, {
   clc; lda $A000; adc #$02; sta $A000
   lda $A001; adc #$01; sta $A001
 }
@@ -193,6 +201,11 @@
  * @remark Registers .A, .X and .Y will be modified.
  * @remark Flags N, O, Z and C will be affected.
  *
+ * @par Usage
+ * @code{.asm}
+ * c128lib_Div16By16(dividend, divisor, remainder)
+ * @endcode
+ *
  * @since 1.3.0
  */
 .macro @c128lib_Div16By16(dividend, divisor, remainder) {
@@ -239,6 +252,11 @@
  * @param[out] remainder remainder (wide as divisor)
  * @remark Registers .A and .X will be modified.
  * @remark Flags N, O, Z and C will be affected.
+ *
+ * @par Usage
+ * @code{.asm}
+ * c128lib_Div16By8(dividend, divisor, remainder)
+ * @endcode
  *
  * @since 1.3.0
  */
