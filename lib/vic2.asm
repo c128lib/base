@@ -116,6 +116,33 @@
 }
 
 /**
+ * @brief Clear 40 cols screen by filling with a custom character.
+ * It doesn't affect sprite pointer area.
+ *
+ * @param[in] address Screen memory address
+ * @param[in] char Char used to fill screen
+ *
+ * @remark Register .A and .Z will be modified.
+ * @remark Flags N and Z will be affected.
+ *
+ * @since 1.3.0
+ */
+.macro @c128lib_ClearScreen(address, char) {
+  lda #char
+  ldx #250
+!:
+  sta address - 1, x
+  sta address - 1 + 250, x
+  sta address - 1 + 500, x
+  sta address - 1 + 750, x
+  dex
+  bne !-
+}
+.assert "c128lib_ClearScreen($4000, 50)",  { c128lib_ClearScreen($4000, 50) }, {
+  lda #50; ldx #250; sta $3FFF,x; sta $40F9,x; sta $41F3,x; sta $42ED,x; dex; bne *-13
+}
+
+/**
  * @brief Calculates memory offset of text cell specified by given coordinates
  * on 40 cols screen
  *
